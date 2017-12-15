@@ -15,8 +15,8 @@
     <nav class="navbar navbar-expand-md navbar-light ">
       <div class="container">
         <!-- <a class="navbar-brand" href="#"><h1>E-commerce</h1></a> -->
-        <%= link_to ecommerce_path, class: "navbar-brand" do%>
-          <h1>E-commerce</h1>
+        <%= link_to ecommerce_path, class: "navbar-brand", id: "title" do%>
+          <strong>E-commerce</strong>
         <%end%>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa fa-bars fa-inverse" aria-hidden="true"></i>
@@ -31,7 +31,7 @@
               <strong><%= link_to "Tienda", about_path, :class=>"nav-link", id: "tienda"%></strong>
             </li>
             <li class="nav-item">
-              <strong><%= link_to "Contactanos", contact_path, :class=>"nav-link", id: "contact"%></strong>
+              <strong><%= link_to "Contáctanos", contact_path, :class=>"nav-link", id: "contact"%></strong>
             </li>
             <li class="nav-item">
               <strong><%= link_to  about_path, :class=>"nav-link", id: "carrito" do%>
