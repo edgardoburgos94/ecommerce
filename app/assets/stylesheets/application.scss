@@ -15,6 +15,15 @@
  */
 @import "bootstrap";
 
-body {
-  background: grey;
+nav {
+  background: #000;
+  border-bottom: 2px solid #e00;
+}
+nav h1 {
+  color: #fff;
+}
+
+#prueba, #carrito,#contact, #about, #tienda {
+  color: #fff;
+  margin: 10px;
 }
