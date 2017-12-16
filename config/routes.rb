@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   get '/contactanos', to: 'pages#contact', as: 'contact'
   get '/quienessomos', to: 'pages#about', as: 'about'
 
-  root 'pages#about'
+  root 'categories#index'
 
 end

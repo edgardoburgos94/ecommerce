@@ -1,3 +1,39 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.category-page h1, h2 {
+  text-align: center;
+  margin: 0px;
+  color: black;
+}
+.category-container {
+  // border: 2px solid black;
+  width: auto;
+  text-align: center;
+  display: inline-block;
+  margin: 5px;
+  opacity: 0.7;
+}
+
+.category-container  img{
+  height: 370px;
+  width: 270px;
+}
+
+.category-container  a {
+  color: black;
+  text-decoration: none;
+}
+.category-container a:hover{
+  color: black;
+  text-decoration: none;
+}
+
+.categories {
+  text-align: center;
+  margin: 25px 0px 0px 0px;
+}
+
+.category-container:hover {
+  opacity: 1;
+}
