@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
 
-  get '/ecommerce', to: 'pages#ecommerce', as: 'ecommerce'
+  get '/alfa', to: 'pages#alfa', as: 'alfa'
   get '/contactanos', to: 'pages#contact', as: 'contact'
   get '/quienessomos', to: 'pages#about', as: 'about'
 

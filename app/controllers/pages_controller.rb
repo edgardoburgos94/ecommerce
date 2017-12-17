@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
-  
+
   def about
   end
 
-  def ecommerce
+  def alfa
   end
 
   def contact
