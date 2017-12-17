@@ -1,0 +1,13 @@
+<h1>Detalles del producto</h1>
+
+<h4><%= @product.title %></h4>
+<p><%= @product.description %></p>
+<h5>$<%= number_with_delimiter(@product.price, :delimiter => '.') %></h5>
+<% @product.sizes.each do |size|%>
+  <p>Talla s: <%=size.s%></p>
+  <p>Talla l: <%=size.m%></p>
+  <p>Talla xl: <%=size.xl%></p>
+  <p>Talla xxl: <%=size.xxl%></p>
+<%end%>
+
+<img src="<%= @product.img_url %>" >

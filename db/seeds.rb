@@ -13,8 +13,8 @@ c4 = Category.create(title:"Jeans", img_url: "https://drive.google.com/uc?export
 c5 = Category.create(title:"Saco", img_url: "https://drive.google.com/uc?export=view&id=16Jp56DeQclRtS9enMCrZpovbMMrYD-CR")
 
 20.times do |i|
-  c2.products.create(title: "Camisa manga larga #{i.to_s}", description: "Una Camisa perfecta para ti", price: i*1230, img_url: "https://drive.google.com/uc?export=view&id=12Qo9_TE94Ge4rPRrHpOISBPKpegklete" ).sizes.create(xs: 1, s: i*3, m: i, l: i+1, xl: i+3, xxl: 0)
-  
+  c1.products.create(title: "Camisa manga larga #{i.to_s}", description: "Una Camisa perfecta para ti", price: i*1230, img_url: "https://drive.google.com/uc?export=view&id=12Qo9_TE94Ge4rPRrHpOISBPKpegklete" ).sizes.create(xs: 1, s: i*3, m: i, l: i+1, xl: i+3, xxl: 0)
+
 end
 
 20.times do |i|
@@ -28,7 +28,7 @@ end
 end
 
 20.times do |i|
-  c4.products.create(title: "Jean #{i.to_s}", description: "El jean perfecta para ti", price: i*1230, img_url: "https://drive.google.com/uc?export=view&id=12Qo9_TE94Ge4rPRrHpOISBPKpegklete" ).sizes.create(xs: 1, s: i*3, m: i, l: i+1, xl: i+3, xxl: 0)
+  c4.products.create(title: "Jean #{i.to_s}", description: "El jean perfecto para ti", price: i*1230, img_url: "https://drive.google.com/uc?export=view&id=1Mg1MjDFd_eI-keigJdmr8vsEiHMYlEnC" ).sizes.create(xs: 1, s: i*3, m: i, l: i+1, xl: i+3, xxl: 0)
 
 end
 

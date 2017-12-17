@@ -1,3 +1,17 @@
-<h1>Lista de productos</h1>
+<div class="product-page">
+  <h1><%=@products.first.category.title%> </h1>
 
-<%= @products %>
+  <div class="products">
+    <%=@products.length%>
+    <% @products.each do |product| %>
+      <div class="product-container">
+        <%=link_to [product.category, product] do%>
+          <h5><%=product.title%></h5>
+          <!-- <%=product.description%>
+          <%=product.price%> -->
+          <img src="<%=product.img_url%>" >
+        <%end%>
+      </div>
+    <%end%>
+  </div>
+</div>
