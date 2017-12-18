@@ -1,1 +1,17 @@
 <h1>Acá se editan los productos de una categoría</h1>
+
+<% if @product.errors.any? %>
+  <% @product.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>
+
+<%=@product%>
+<%=@product.category%>
+
+<%= form_for @product, url: edit_category_product_path do |f| %>
+  <%= f.text_field :title%> <br> <br>
+  <%= f.text_field :description%> <br> <br>
+  <%= f.text_field :img_url%> <br> <br>
+  <%= f.number_field :price%> <br> <br>
+<%end%>
