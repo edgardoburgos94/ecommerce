@@ -7,6 +7,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def edit
+  end
+
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
