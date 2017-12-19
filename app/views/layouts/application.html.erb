@@ -41,10 +41,22 @@
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i> Ver carrito
               <%end%></strong>
             </li>
+
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <strong><%= link_to "Cerrar sesión u", destroy_user_session_path, method: :delete, :class=>"nav-link", id: "u-signout"  %></strong>
+              </li>
+
+            <% elsif supplier_signed_in? %>
+            <li class="nav-item">
+              <strong><%= link_to "Cerrar cesión p", destroy_supplier_session_path, method: :delete, :class=>"nav-link", id: "p-signout"%></strong>
+            </li>
+            <% else %>
             <!-- Button trigger modal -->
             <li class="nav-item" data-toggle="modal" data-target="#exampleModal">
               <a><strong>Ingresar/Registrarme</strong></a>
             </li>
+            <% end %>
           </ul>
 
         </div>
