@@ -18,5 +18,5 @@
 
 class Product < ApplicationRecord
   belongs_to :category
-  has_one :size, dependent: :destroy
+  has_many :sizes, dependent: :destroy
 end
