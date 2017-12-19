@@ -41,17 +41,30 @@
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i> Ver carrito
               <%end%></strong>
             </li>
-            <li class="nav-item">
-              <strong><%= link_to "Ingresar como usuario", user_session_path, :class=>"nav-link", id: "user"%></strong>
-            </li>
-            <li class="nav-item">
-              <strong><%= link_to "Ingresar como proveedor", supplier_session_path, :class=>"nav-link", id: "supplier"%></strong>
+            <!-- Button trigger modal -->
+            <li class="nav-item" data-toggle="modal" data-target="#exampleModal">
+              <a><strong>Ingresar/Registrarme</strong></a>
             </li>
           </ul>
 
         </div>
-      </nav>
       </div>
+      </nav>
+
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <strong><%= link_to "Ingresar como usuario", user_session_path, id: "m-user"%></strong>
+              <strong><%= link_to "Ingresar como proveedor", supplier_session_path, id: "m-supplier"%></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     <div class="container">
       <p class="notice"><%= notice %></p>
