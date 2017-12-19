@@ -41,6 +41,12 @@
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i> Ver carrito
               <%end%></strong>
             </li>
+            <li class="nav-item">
+              <strong><%= link_to "Ingresar como usuario", user_session_path, :class=>"nav-link", id: "user"%></strong>
+            </li>
+            <li class="nav-item">
+              <strong><%= link_to "Ingresar como proveedor", supplier_session_path, :class=>"nav-link", id: "supplier"%></strong>
+            </li>
           </ul>
 
         </div>
