@@ -6,12 +6,18 @@
   <% end %>
 <% end %>
 
-<%=@product%>
-<%=@product.category%>
+<% categories = Category.all %>
+<% categories_list = [] %>
+<% categories.each do |category| %>
+  <% selector = [category.title, category.id]%>
+  <% categories_list.push(selector) %>
+<%end%>
 
-<%= form_for @product, url: edit_category_product_path do |f| %>
+<%= form_for @product, url: category_product_path do |f| %>
   <%= f.text_field :title%> <br> <br>
   <%= f.text_field :description%> <br> <br>
   <%= f.text_field :img_url%> <br> <br>
   <%= f.number_field :price%> <br> <br>
+  <%= f.select(:category_id, options_for_select(categories_list, [@product.category.title, @product.category.id]), {}, class: 'category-selector') %>
+  <%= f.submit "Editar producto" %>
 <%end%>
