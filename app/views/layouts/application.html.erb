@@ -28,6 +28,9 @@
               <strong><%= link_to "Administrador", admin_path, :class=>"nav-link", id: "admin"%></strong>
             </li>
             <li class="nav-item">
+              <strong><%= link_to "Proveedor", suppli_path, :class=>"nav-link", id: "admin"%></strong>
+            </li>
+            <li class="nav-item">
               <strong><%= link_to "¿Quiénes somos?", about_path, :class=>"nav-link", id: "about"%></strong>
             </li>
             <li class="nav-item">
@@ -44,12 +47,12 @@
 
             <% if user_signed_in? %>
               <li class="nav-item">
-                <strong><%= link_to "Cerrar sesión u", destroy_user_session_path, method: :delete, :class=>"nav-link", id: "u-signout"  %></strong>
+                <strong><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class=>"nav-link", id: "u-signout"  %></strong>
               </li>
 
             <% elsif supplier_signed_in? %>
             <li class="nav-item">
-              <strong><%= link_to "Cerrar cesión p", destroy_supplier_session_path, method: :delete, :class=>"nav-link", id: "p-signout"%></strong>
+              <strong><%= link_to "Cerrar cesión", destroy_supplier_session_path, method: :delete, :class=>"nav-link", id: "p-signout"%></strong>
             </li>
             <% else %>
             <!-- Button trigger modal -->

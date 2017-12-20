@@ -1,0 +1,33 @@
+
+<h1>Usuarios registrados (<%=@users.length%>)</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Email</th>
+      <th scope="col">user.remember_created_at</th>
+      <th scope="col">current_sign_in_at</th>
+      <th scope="col">last_sign_in_at</th>
+      <th scope="col">current_sign_in_ip</th>
+      <th scope="col">last_sign_in_ip</th>
+      <th scope="col">last_created_at</th>
+      <th scope="col">updated_at</th>
+      <th scope="col">sign_in_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user|%>
+      <tr>
+        <th><%=user.email%></th>
+        <td><%=user.remember_created_at%></td>
+        <td><%=user.current_sign_in_at%></td>
+        <td><%=user.last_sign_in_at%></td>
+        <td><%=user.current_sign_in_ip%></td>
+        <td><%=user.last_sign_in_ip%></td>
+        <td><%=user.created_at%></td>
+        <td><%=user.updated_at%></td>
+        <td><%=user.sign_in_count%></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>

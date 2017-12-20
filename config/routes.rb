@@ -12,8 +12,11 @@ Rails.application.routes.draw do
   get '/contactanos', to: 'pages#contact', as: 'contact'
   get '/quienessomos', to: 'pages#about', as: 'about'
   get '/administrador', to: 'pages#admin', as: 'admin'
+  get '/supplier', to: 'pages#suppli', as: 'suppli'
   get '/cate_list', to: 'pages#cate_list', as: 'cate_list'
   get '/produ_list', to: 'pages#produ_list', as: 'produ_list'
+  get '/user_list', to: 'pages#user_list', as: 'user_list'
+  get '/suppli_list', to: 'pages#suppli_list', as: 'suppli_list'
 
   root 'categories#index'
 
