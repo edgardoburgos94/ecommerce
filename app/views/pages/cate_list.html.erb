@@ -12,21 +12,25 @@
   </thead>
   <tbody>
     <% @categories.each do |category|%>
-      <tr>
-        <th><img src="<%=category.img_url%>" class="mini-img"></th>
-        <td><%=category.title%></td>
-        <td><%=category.img_url%></td>
-        <td>
-          <%=link_to edit_category_path(category) do%>
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-          <%end%>
-        </td>
-        <td>
-          <%=link_to category_path(category), method: :delete, data:{ confirm: "¿Está seguro de eliminar esta categoría?"} do%>
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
-          <%end%>
-        </td>
-      </tr>
+
+    
+
+        <tr>
+          <th><img src="<%=category.img_url%>" class="mini-img"></th>
+          <td><%=category.title%></td>
+          <td><%=category.img_url%></td>
+          <td>
+            <%=link_to edit_category_path(category) do%>
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            <%end%>
+          </td>
+          <td>
+            <%=link_to category_path(category), method: :delete, data:{ confirm: "¿Está seguro de eliminar esta categoría?"} do%>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <%end%>
+          </td>
+        </tr>
+
     <%end%>
   </tbody>
 </table>

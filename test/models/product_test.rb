@@ -10,6 +10,12 @@
 #  img_url     :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  xs          :integer
+#  s           :integer
+#  m           :integer
+#  l           :integer
+#  xl          :integer
+#  xxl         :integer
 #
 # Indexes
 #
