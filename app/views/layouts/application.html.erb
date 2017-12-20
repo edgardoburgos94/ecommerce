@@ -13,56 +13,54 @@
 
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-md navbar-light ">
-      <div class="container">
-        <!-- <a class="navbar-brand" href="#"><h1>E-commerce</h1></a> -->
-        <%= link_to alfa_path, class: "navbar-brand", id: "title" do%>
-          <strong>Alfa</strong>
-        <%end%>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-bars fa-inverse" aria-hidden="true"></i>
-        </button>
+      <!-- <a class="navbar-brand" href="#"><h1>E-commerce</h1></a> -->
+      <%= link_to alfa_path, class: "navbar-brand", id: "title" do%>
+        <strong>Alfa</strong>
+      <%end%>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars fa-inverse" aria-hidden="true"></i>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav   ml-auto" id="links">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav   ml-auto" id="links">
+          <li class="nav-item">
+            <strong><%= link_to "Administrador", admin_path, :class=>"nav-link", id: "admin"%></strong>
+          </li>
+          <li class="nav-item">
+            <strong><%= link_to "Proveedor", suppli_path, :class=>"nav-link", id: "admin"%></strong>
+          </li>
+          <li class="nav-item">
+            <strong><%= link_to "¿Quiénes somos?", about_path, :class=>"nav-link", id: "about"%></strong>
+          </li>
+          <li class="nav-item">
+            <strong><%= link_to "Tienda", categories_path, :class=>"nav-link", id: "tienda"%></strong>
+          </li>
+          <li class="nav-item">
+            <strong><%= link_to "Contáctanos", contact_path, :class=>"nav-link", id: "contact"%></strong>
+          </li>
+          <li class="nav-item">
+            <strong><%= link_to  about_path, :class=>"nav-link", id: "carrito" do%>
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i> Ver carrito
+            <%end%></strong>
+          </li>
+
+          <% if user_signed_in? %>
             <li class="nav-item">
-              <strong><%= link_to "Administrador", admin_path, :class=>"nav-link", id: "admin"%></strong>
-            </li>
-            <li class="nav-item">
-              <strong><%= link_to "Proveedor", suppli_path, :class=>"nav-link", id: "admin"%></strong>
-            </li>
-            <li class="nav-item">
-              <strong><%= link_to "¿Quiénes somos?", about_path, :class=>"nav-link", id: "about"%></strong>
-            </li>
-            <li class="nav-item">
-              <strong><%= link_to "Tienda", categories_path, :class=>"nav-link", id: "tienda"%></strong>
-            </li>
-            <li class="nav-item">
-              <strong><%= link_to "Contáctanos", contact_path, :class=>"nav-link", id: "contact"%></strong>
-            </li>
-            <li class="nav-item">
-              <strong><%= link_to  about_path, :class=>"nav-link", id: "carrito" do%>
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Ver carrito
-              <%end%></strong>
+              <strong><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class=>"nav-link", id: "u-signout"  %></strong>
             </li>
 
-            <% if user_signed_in? %>
-              <li class="nav-item">
-                <strong><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class=>"nav-link", id: "u-signout"  %></strong>
-              </li>
+          <% elsif supplier_signed_in? %>
+          <li class="nav-item">
+            <strong><%= link_to "Cerrar cesión", destroy_supplier_session_path, method: :delete, :class=>"nav-link", id: "p-signout"%></strong>
+          </li>
+          <% else %>
+          <!-- Button trigger modal -->
+          <li class="nav-item" data-toggle="modal" data-target="#exampleModal">
+            <a><strong>Ingresar/Registrarme</strong></a>
+          </li>
+          <% end %>
+        </ul>
 
-            <% elsif supplier_signed_in? %>
-            <li class="nav-item">
-              <strong><%= link_to "Cerrar cesión", destroy_supplier_session_path, method: :delete, :class=>"nav-link", id: "p-signout"%></strong>
-            </li>
-            <% else %>
-            <!-- Button trigger modal -->
-            <li class="nav-item" data-toggle="modal" data-target="#exampleModal">
-              <a><strong>Ingresar/Registrarme</strong></a>
-            </li>
-            <% end %>
-          </ul>
-
-        </div>
       </div>
       </nav>
 
