@@ -9,5 +9,6 @@
 <%= form_for @category, class: "category_form" do |f| %>
   <%= f.text_field :title, placeholder: "Nombre categoría"%> <br> <br>
   <%= f.text_field :img_url, value: "https://drive.google.com/uc?export=view&id=" %> <br> <br>
+  <%= f.hidden_field :supplier_id, :value => current_supplier.id %>
   <%= f.submit "Crear categoría" %>
 <% end %>
