@@ -5,6 +5,7 @@
   <thead>
     <tr>
       <th scope="col">Email</th>
+      <th scope="col">Eliminar usuario</th>
       <th scope="col">user.remember_created_at</th>
       <th scope="col">current_sign_in_at</th>
       <th scope="col">last_sign_in_at</th>
@@ -18,7 +19,9 @@
   <tbody>
     <% @users.each do |user|%>
       <tr>
-        <th><%=user.email%></th>
+        <td><%=user.email%></td>
+        <td><%= link_to "Eliminar usuario", admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" } %></td>
+
         <td><%=user.remember_created_at%></td>
         <td><%=user.current_sign_in_at%></td>
         <td><%=user.last_sign_in_at%></td>

@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :suppliers
   devise_for :users
+  match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
+  match 'suppliers/:id' => 'suppliers#destroy', :via => :delete, :as => :admin_destroy_supplier
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :categories do
     resources :products
@@ -17,6 +20,8 @@ Rails.application.routes.draw do
   get '/produ_list', to: 'pages#produ_list', as: 'produ_list'
   get '/user_list', to: 'pages#user_list', as: 'user_list'
   get '/suppli_list', to: 'pages#suppli_list', as: 'suppli_list'
+
+
 
   root 'categories#index'
 
