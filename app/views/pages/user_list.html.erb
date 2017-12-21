@@ -20,7 +20,10 @@
     <% @users.each do |user|%>
       <tr>
         <td><%=user.email%></td>
-        <td><%= link_to "Eliminar usuario", admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" } %></td>
+        <td><%= link_to admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" } do%>
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <%end%>
+        </td>
 
         <td><%=user.remember_created_at%></td>
         <td><%=user.current_sign_in_at%></td>

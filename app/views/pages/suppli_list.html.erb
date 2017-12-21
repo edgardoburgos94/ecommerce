@@ -19,7 +19,10 @@
     <% @suppliers.each do |supplier|%>
       <tr>
         <th><%=supplier.email%></th>
-        <td><%= link_to "Eliminar proveedor", admin_destroy_supplier_path(supplier), method: :delete, data: { confirm: "You sure?" } %></td>
+        <td><%= link_to admin_destroy_supplier_path(supplier), method: :delete, data: { confirm: "You sure?" } do%>
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <%end%>
+        </td>
         <td><%=supplier.remember_created_at%></td>
         <td><%=supplier.current_sign_in_at%></td>
         <td><%=supplier.last_sign_in_at%></td>
