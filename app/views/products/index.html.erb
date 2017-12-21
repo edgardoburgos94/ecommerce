@@ -1,15 +1,19 @@
 <div class="product-page">
-  <h1><%=@products.first.category.title%> </h1>
+  <% if @products.length > 0 %>
+    <h1><%=@products.first.category.title%> </h1>
 
-  <div class="products">
-    <%=@products.length%>
-    <% @products.each do |product| %>
-      <div class="product-container">
-        <%=link_to [product.category, product] do%>
-          <h5><%=product.title%></h5>
-          <img src="<%=product.img_url%>" >
-        <%end%>
-      </div>
-    <%end%>
-  </div>
+    <div class="products">
+      <%=@products.length%>
+      <% @products.each do |product| %>
+        <div class="product-container">
+          <%=link_to [product.category, product] do%>
+            <h5><%=product.title%></h5>
+            <img src="<%=product.img_url%>" >
+          <%end%>
+        </div>
+      <%end%>
+    </div>
+  <%else%>
+    <h2 id="no-products">No hay productos registrados</h2>
+  <% end%>
 </div>
