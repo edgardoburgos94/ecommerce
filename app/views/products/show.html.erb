@@ -9,26 +9,26 @@
   <input type="number" step="any" value="0" placeholder="Cantidad" class="amount">
 
   <select name="sizes">
-    <% @product.sizes.each do |size|%>
-      <%if size.xs > 0 %>
-        <option value="<%=size.xs%>">Talla XS </option>
+
+      <%if @product.xs > 0 %>
+        <option value="<%=@product.xs%>">Talla XS </option>
       <%end%>
-      <%if size.s > 0 %>
-        <option value="<%=size.s%>">Talla S</option>
+      <%if @product.s > 0 %>
+        <option value="<%=@product.s%>">Talla S</option>
       <%end%>
-      <%if size.m > 0 %>
-        <option value="<%=size.m%>">Talla M</option>
+      <%if @product.m > 0 %>
+        <option value="<%=@product.m%>">Talla M</option>
       <%end%>
-      <%if size.l > 0 %>
-        <option value="<%=size.l%>">Talla L</option>
+      <%if @product.l > 0 %>
+        <option value="<%=@product.l%>">Talla L</option>
       <%end%>
-      <%if size.xl > 0 %>
-        <option value="<%=size.l%>">Talla XL </option>
+      <%if @product.xl > 0 %>
+        <option value="<%=@product.l%>">Talla XL </option>
       <%end%>
-      <%if size.xxl > 0 %>
-        <option value="<%=size.l%>">Talla XXL </option>
+      <%if @product.xxl > 0 %>
+        <option value="<%=@product.l%>">Talla XXL </option>
       <%end%>
-    <%end%>
+
   </select>
   <br><br>
   <button type="submit">Enviar a carrito</button>
