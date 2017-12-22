@@ -1,21 +1,7 @@
-<% if resource_name.to_s == "supplier"%>
-  <%name = "Proveedor"%>
-<%end%>
-<% if resource_name.to_s == "user"%>
-  <%name = "Usuario"%>
-<%end%>
-
-
-
-<h2>Registrarme como <%=name%></h2>
+<h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :Nombre  %><br />
-    <%= f.text_field :full_name, autofocus: true %>
-  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -36,8 +22,8 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Registrarme" %>
+    <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "suppliers/shared/links" %>
