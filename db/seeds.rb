@@ -9,10 +9,10 @@
   User.create(email: "test#{i}@gmail.com", password:"123456", password_confirmation:"123456")
 end
 
-p1 = Supplier.create(email: "proveedor1@gmail.com", password:"123456", password_confirmation:"123456")
-p2 = Supplier.create(email: "proveedor2@gmail.com", password:"123456", password_confirmation:"123456")
-p3 = Supplier.create(email: "proveedor3@gmail.com", password:"123456", password_confirmation:"123456")
-p4 = Supplier.create(email: "proveedor4@gmail.com", password:"123456", password_confirmation:"123456")
+p1 = Supplier.create(email: "prove1@gmail.com", password:"123456", password_confirmation:"123456")
+p2 = Supplier.create(email: "prove2@gmail.com", password:"123456", password_confirmation:"123456")
+p3 = Supplier.create(email: "prove3@gmail.com", password:"123456", password_confirmation:"123456")
+p4 = Supplier.create(email: "prove4@gmail.com", password:"123456", password_confirmation:"123456")
 
 c1 = p1.categories.create(title:"Camisas manga corta", img_url: "https://drive.google.com/uc?export=view&id=1-_cH8noaVPRyvbGRhsTSVWxomHShmC7H")
 c2 = p1.categories.create(title:"Camisas manga larga", img_url: "https://drive.google.com/uc?export=view&id=1eL8-ynqPq2a-25k9J6woyw9L_E3hxzEJ")

@@ -55,8 +55,8 @@
           </li>
           <% else %>
           <!-- Button trigger modal -->
-          <li class="nav-item" data-toggle="modal" data-target="#exampleModal">
-            <a><strong>Ingresar/Registrarme</strong></a>
+          <li class="nav-item i-r-link" data-toggle="modal" data-target="#exampleModal">
+            <strong>Ingresar/Registrarme</strong>
           </li>
           <% end %>
         </ul>
@@ -71,8 +71,13 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-body">
-              <strong><%= link_to "Ingresar como usuario", user_session_path, id: "m-user"%></strong>
-              <strong><%= link_to "Ingresar como proveedor", supplier_session_path, id: "m-supplier"%></strong>
+              <div class="l-user">
+                <strong><%= link_to "Ingresar como usuario", user_session_path, id: "m-user"%></strong>
+              </div>
+              <div class="l-suppli">
+                <strong><%= link_to "Ingresar como proveedor", supplier_session_path, id: "m-supplier"%></strong>
+              </div>
+
             </div>
           </div>
         </div>
