@@ -1,0 +1,41 @@
+<h1>Crear nuevo producto</h1>
+
+<% if @product.errors.any? %>
+  <% @product.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>
+
+<% categories = Category.all %>
+<% categories_list = [] %>
+<% categories.each do |category| %>
+  <% selector = [category.title, category.id]%>
+  <% categories_list.push(selector) %>
+<%end%>
+
+<%= form_for @product, url: category_products_path do |f| %>
+  <%= f.label "Categoría:"%> <br>
+  <%= f.select(:category_id, options_for_select(categories_list, [@product.category.title, @product.category.id]), {}, class: 'category-selector') %> <br> <br>
+  <%= f.label "Título:"%> <br>
+  <%= f.text_field :title, autocomplete: "off"%> <br> <br>
+  <%= f.label "Descripción:"%> <br>
+  <%= f.text_area :description, autocomplete: "off"%> <br> <br>
+  <%= f.label "Link de la imagen:"%> <br>
+  <%= f.text_field :img_url, autocomplete: "off"%> <br> <br>
+  <%= f.label "Precio:"%> <br>
+  <%= f.number_field :price, autocomplete: "off"%> <br> <br>
+  <%= f.label "Tallas:"%> <br> <br>
+  <%= f.label "Talla xs:"%> <br>
+  <%= f.number_field :xs, value: 0%> <br> <br>
+  <%= f.label "Talla s:"%> <br>
+  <%= f.number_field :s, value: 0%> <br> <br>
+  <%= f.label "Talla m:"%> <br>
+  <%= f.number_field :m, value: 0%> <br> <br>
+  <%= f.label "Talla l:"%> <br>
+  <%= f.number_field :l, value: 0%> <br> <br>
+  <%= f.label "Talla xl:"%> <br>
+  <%= f.number_field :xl, value: 0%> <br> <br>
+  <%= f.label "Talla xxl:"%> <br>
+  <%= f.number_field :xxl, value: 0%> <br> <br>
+  <%= f.submit "Crear producto" %>
+<%end%>

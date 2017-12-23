@@ -3,6 +3,20 @@ class ProductsController < ApplicationController
     @products = Category.find(params[:category_id]).products
   end
 
+  def new
+    @product = Category.find(params[:category_id]).products.new
+  end
+
+  def create
+    @product = Product.new(product_params)
+    if @product.save
+      flash[:notice] = 'Se creó la categoría exitosamente'
+      redirect_to cate_list_url
+    else
+      render :new
+    end
+  end
+
   def show
     @product = Product.find(params[:id])
   end
