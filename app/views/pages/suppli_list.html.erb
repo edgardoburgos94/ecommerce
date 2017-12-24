@@ -3,28 +3,32 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th scope="col">Nombre</th>
       <th scope="col">Email</th>
+      <th scope="col"># de categorías</th>
+      <th scope="col"># de productos</th>
+      <th scope="col">Fecha de registro</th>
       <th scope="col">Eliminar proveedor</th>
-      <th scope="col">current_sign_in_at</th>
-      <th scope="col">last_sign_in_at</th>
-      <th scope="col">last_created_at</th>
-      <th scope="col">updated_at</th>
-      <th scope="col">sign_in_count</th>
     </tr>
   </thead>
   <tbody>
     <% @suppliers.each do |supplier|%>
       <tr>
+        <th><%=supplier.full_name%></th>
         <th><%=supplier.email%></th>
+        <th><%=supplier.categories.length%></th>
+        <th>
+          <%produ=0%>
+          <%supplier.categories.each do |cate|%>
+            <%produ = produ + cate.products.length%>
+          <%end%>
+          <%=produ%>
+        </th>
+        <td><%=supplier.created_at%></td>
         <td><%= link_to admin_destroy_supplier_path(supplier), method: :delete, data: { confirm: "You sure?" } do%>
           <i class="fa fa-trash-o" aria-hidden="true"></i>
         <%end%>
         </td>
-        <td><%=supplier.current_sign_in_at%></td>
-        <td><%=supplier.last_sign_in_at%></td>
-        <td><%=supplier.created_at%></td>
-        <td><%=supplier.updated_at%></td>
-        <td><%=supplier.sign_in_count%></td>
       </tr>
     <%end%>
   </tbody>
