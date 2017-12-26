@@ -1,14 +1,18 @@
+<% if supplier_signed_in? %>
 <h1>Crear categoría</h1>
 
-<% if @category.errors.any? %>
-  <% @category.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
+  <% if @category.errors.any? %>
+    <% @category.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
   <% end %>
-<% end %>
 
-<%= form_for @category, class: "category_form" do |f| %>
-  <%= f.text_field :title, placeholder: "Nombre categoría"%> <br> <br>
-  <%= f.text_field :img_url, value: "https://drive.google.com/uc?export=view&id=" %> <br> <br>
-  <%= f.hidden_field :supplier_id, :value => current_supplier.id %>
-  <%= f.submit "Crear categoría" %>
+  <%= form_for @category, class: "category_form" do |f| %>
+    <%= f.text_field :title, placeholder: "Nombre categoría"%> <br> <br>
+    <%= f.text_field :img_url, value: "https://drive.google.com/uc?export=view&id=" %> <br> <br>
+    <%= f.hidden_field :supplier_id, :value => current_supplier.id %>
+    <%= f.submit "Crear categoría" %>
+  <% end %>
+<% else %>
+  <h1>No tiene permitido el acceso a esta página</h1>
 <% end %>
