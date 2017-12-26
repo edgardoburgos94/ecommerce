@@ -5,6 +5,8 @@
     <tr>
       <th scope="col">Imagen</th>
       <th scope="col">Nombre</th>
+      <th scope="col">Propietario</th>
+      <th scope="col">Productos disponibles</th>
       <th scope="col">Agregar producto</th>
       <th scope="col">Editar</th>
       <th scope="col">Eliminar</th>
@@ -12,28 +14,32 @@
   </thead>
   <tbody>
     <% @categories.each do |category|%>
-
-
-
-        <tr>
-          <th><img src="<%=category.img_url%>" class="mini-img"></th>
-          <td><%=category.title%></td>
-          <td><%= link_to new_category_product_path(category) do%>
-            <i class="fa fa-plus-square" aria-hidden="true"></i>
+      <tr>
+        <th><img src="<%=category.img_url%>" class="mini-img"></th>
+        <td><%=category.title%></td>
+        <td><%=category.supplier.email%></td>
+        <td>
+          <%produ=0%>
+          <%category.products.each do |product|%>
+            <%produ = produ + product.xs + product.s + product.m + product.l + product.xl + product.xxl%>
           <%end%>
-          </td>
-          <td>
-            <%=link_to edit_category_path(category) do%>
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-            <%end%>
-          </td>
-          <td>
-            <%=link_to category_path(category), method: :delete, data:{ confirm: "¿Está seguro de eliminar esta categoría?"} do%>
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-            <%end%>
-          </td>
-        </tr>
-
+          <%=produ%>
+        </td>
+        <td><%= link_to new_category_product_path(category) do%>
+          <i class="fa fa-plus-square" aria-hidden="true"></i>
+        <%end%>
+        </td>
+        <td>
+          <%=link_to edit_category_path(category) do%>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          <%end%>
+        </td>
+        <td>
+          <%=link_to category_path(category), method: :delete, data:{ confirm: "¿Está seguro de eliminar esta categoría?"} do%>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          <%end%>
+        </td>
+      </tr>
     <%end%>
   </tbody>
 </table>
