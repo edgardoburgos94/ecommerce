@@ -26,3 +26,24 @@
   height: 270px;
   width: 270px;
 }
+
+.amount {
+  width: 45px;
+}
+
+.p-show-img {
+  float: left;
+  width: 350px;
+  border: dashed blue 1px;
+}
+
+.p-show-img img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.p-show-specifi {
+  float: left;
+  margin: 30px;
+  padding: 20px;
+}

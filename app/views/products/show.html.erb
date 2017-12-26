@@ -1,38 +1,37 @@
-<h1>Detalles del producto</h1>
+<img src="<%= @product.img_url %>", class="p-show-img" >
 
-<h4><%= @product.title %></h4>
-<p><%= @product.description %></p>
-<h5>$<%= number_with_delimiter(@product.price, :delimiter => '.') %></h5>
+<div class="p-show-specifi">
+  <h4><%= @product.title %></h4>
+  <p><%= @product.description %></p>
+  <h5> Precio: $<%= number_with_delimiter(@product.price, :delimiter => '.') %></h5>
 
-<form action="/action_page">
+  <form action="/action_page">
 
-  <input type="number" step="any" value="0" placeholder="Cantidad" class="amount">
+    <h5>Cantidad: <input type="number" step="any" value="0" placeholder="Cantidad" class="amount"></h5>
 
-  <select name="sizes">
+    <h5>Talla: <select name="sizes">
 
-      <%if @product.xs > 0 %>
-        <option value="<%=@product.xs%>">Talla XS </option>
-      <%end%>
-      <%if @product.s > 0 %>
-        <option value="<%=@product.s%>">Talla S</option>
-      <%end%>
-      <%if @product.m > 0 %>
-        <option value="<%=@product.m%>">Talla M</option>
-      <%end%>
-      <%if @product.l > 0 %>
-        <option value="<%=@product.l%>">Talla L</option>
-      <%end%>
-      <%if @product.xl > 0 %>
-        <option value="<%=@product.l%>">Talla XL </option>
-      <%end%>
-      <%if @product.xxl > 0 %>
-        <option value="<%=@product.l%>">Talla XXL </option>
-      <%end%>
+        <%if @product.xs > 0 %>
+          <option value="<%=@product.xs%>">Talla XS </option>
+        <%end%>
+        <%if @product.s > 0 %>
+          <option value="<%=@product.s%>">Talla S</option>
+        <%end%>
+        <%if @product.m > 0 %>
+          <option value="<%=@product.m%>">Talla M</option>
+        <%end%>
+        <%if @product.l > 0 %>
+          <option value="<%=@product.l%>">Talla L</option>
+        <%end%>
+        <%if @product.xl > 0 %>
+          <option value="<%=@product.l%>">Talla XL </option>
+        <%end%>
+        <%if @product.xxl > 0 %>
+          <option value="<%=@product.l%>">Talla XXL </option>
+        <%end%>
 
-  </select>
-  <br><br>
-  <button type="submit">Enviar a carrito</button>
-</form>
-
-
-<img src="<%= @product.img_url %>" >
+    </select></h5>
+    <br><br>
+    <button type="submit">Enviar a carrito</button>
+  </form>
+</div>
