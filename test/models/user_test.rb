@@ -15,6 +15,12 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  full_name              :string
+#  cel                    :string
+#  dir                    :string
+#  country                :string
+#  city                   :string
+#  purchases              :integer
 #
 # Indexes
 #

@@ -4,11 +4,14 @@ Rails.application.routes.draw do
   devise_for :users
   match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
   match 'suppliers/:id' => 'suppliers#destroy', :via => :delete, :as => :admin_destroy_supplier
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :categories do
     resources :products
   end
+
+  resources :order_items
+  resource :carts, only: [:show]
 
 
   get '/alfa', to: 'pages#alfa', as: 'alfa'

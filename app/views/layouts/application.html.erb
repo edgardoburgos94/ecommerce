@@ -40,10 +40,8 @@
           </li>
 
           <% if not supplier_signed_in?%>
-            <li class="nav-item">
-              <strong><%= link_to  about_path, :class=>"nav-link", id: "carrito" do%>
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Ver carrito
-              <%end%></strong>
+            <li class="cart nav-item">
+              <%= render 'layouts/cart' %>
             </li>
           <%end%>
 
