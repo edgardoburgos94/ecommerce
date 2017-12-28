@@ -1,58 +1,40 @@
 <img src="<%= @product.img_url %>", class="p-show-img" >
 
 <div class="p-show-specifi">
-  <h4><%= @product.title %></h4>
-  <p><%= @product.description %></p>
-  <h5> Precio: $<%= number_with_delimiter(@product.price, :delimiter => '.') %></h5>
-
-  <form>
-
-    <h5>Cantidad: <input type="number" step="any" value="0" placeholder="Cantidad" class="amount"></h5>
-
-    <h5>Talla: <select name="sizes">
-
-        <%if @product.xs > 0 %>
-          <option value="<%=@product.xs%>">Talla XS </option>
-        <%end%>
-        <%if @product.s > 0 %>
-          <option value="<%=@product.s%>">Talla S</option>
-        <%end%>
-        <%if @product.m > 0 %>
-          <option value="<%=@product.m%>">Talla M</option>
-        <%end%>
-        <%if @product.l > 0 %>
-          <option value="<%=@product.l%>">Talla L</option>
-        <%end%>
-        <%if @product.xl > 0 %>
-          <option value="<%=@product.l%>">Talla XL </option>
-        <%end%>
-        <%if @product.xxl > 0 %>
-          <option value="<%=@product.l%>">Talla XXL </option>
-        <%end%>
-
-    </select></h5>
-    <br><br>
-    <button type="submit">Enviar a carrito</button>
-  </form>
 
 
-  	<div class="well">
-  		<div class="row">
-  			<div class="col-sm-8">
-  				<h3><%= @product.title %></h3>
-  			</div>
-  			<div class="col-sm-4">
-  				<div class="pull-right">
+
+
+  				<h3><%= @product.title %></h3> <br> <br>
+          <h5>Tallas disponibles: <select name="sizes">
+
+              <%if @product.xs > 0 %>
+                <option value="<%=@product.xs%>">Talla XS </option>
+              <%end%>
+              <%if @product.s > 0 %>
+                <option value="<%=@product.s%>">Talla S</option>
+              <%end%>
+              <%if @product.m > 0 %>
+                <option value="<%=@product.m%>">Talla M</option>
+              <%end%>
+              <%if @product.l > 0 %>
+                <option value="<%=@product.l%>">Talla L</option>
+              <%end%>
+              <%if @product.xl > 0 %>
+                <option value="<%=@product.l%>">Talla XL </option>
+              <%end%>
+              <%if @product.xxl > 0 %>
+                <option value="<%=@product.l%>">Talla XXL </option>
+              <%end%>
+
+          </select></h5> <br>
   				<%= form_for(@order_item) do |f| %>
   					<%= f.hidden_field :product_id, value: @product.id %>
-  					<h5><%= @product.price %></h5>
+  					<h5>Precio: $<%= @product.price %></h5> <br>
   					<div class="form-group">
-  						<%= f.text_field :quantity, value: 1, min: 1, class: 'form-control' %>
+  						<h5>Cantidad: <%= f.number_field :quantity, value: 1, min: 1, class: ' amount' %></h5>
   					</div>
-  					<%= f.submit "Add to cart", class: 'btn btn-primary btn-sm' %>
+  					<%= f.submit "Agregar al carrito", class: 'btn btn-primary btn-sm' %>
   				<% end %>
-  				</div>
-  			</div>
-  		</div>
-  	</div>
+
 </div>
