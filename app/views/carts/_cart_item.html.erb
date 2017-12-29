@@ -34,6 +34,11 @@
 		</div>
 	<% end %>
 	<h2>Valor total de la compra: <%=current_order.subtotal%></h2>
+	<button class="show-btn">Comprar</button>
+
+	<script>
+	  new ProductsView();
+	</script>
 <% else %>
 	<h1>No products in cart</h1>
 <% end %>
