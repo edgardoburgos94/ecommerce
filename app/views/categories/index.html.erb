@@ -2,6 +2,10 @@
   <h1>¡Bienvenido!</h1>
   <h2>Escoge una categoría</h2>
 
+  <form class="cate-search">
+    <input class="form-control " type="search" placeholder="Buscar categoría" aria-label="Search">
+  </form>
+
   <div class="categories">
     <% @categories.each do |category| %>
       <div class="category-container">
