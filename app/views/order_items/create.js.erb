@@ -2,4 +2,5 @@
 	alert("Invalid")
 <% else %>
 	$(".cart").html("<%= escape_javascript(render 'layouts/cart') %>")
+	alert("El producto se ha agregado correctamente")
 <% end %>
