@@ -40,6 +40,7 @@ end
 class Supplier::ParameterSanitizer < Devise::ParameterSanitizer
   def initialize(*)
     super
-    permit(:sign_up, keys: [:full_name, :email, :password, :password_confirmation, :country, :city, :dir, :cel])
+    permit(:sign_up, keys: [:full_name, :email, :password, :password_confirmation, :country, :city, :dir, :cel, :sales])
+    permit(:account_update, keys: [:full_name, :email, :password, :password_confirmation, :country, :city, :dir, :cel, :sales])
   end
 end
