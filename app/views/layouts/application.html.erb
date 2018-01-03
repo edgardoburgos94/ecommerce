@@ -73,14 +73,18 @@
           <div class="modal-content">
             <div class="modal-body">
               <div class="l-user">
-                <img src="https://drive.google.com/uc?export=view&id=1qc_kSPGM_LZ09CYYx8Yoz0yGjmP9lXAL">
-                <strong><%= link_to "Ingresar como usuario", user_session_path, id: "m-user"%></strong>
-                  <p>Obtén increibles descuentos</p>
+                <strong><%= link_to user_session_path, id: "m-user" do%>
+                  <img src="https://drive.google.com/uc?export=view&id=1qc_kSPGM_LZ09CYYx8Yoz0yGjmP9lXAL">
+                  <p>Ingresar como usuario</p>
+                <%end%></strong>
+                <p class="p-description">Obtén increibles descuentos</p>
               </div>
               <div class="l-suppli">
-                <img src="https://drive.google.com/uc?export=view&id=1H0LWdazuzXMPeweZdMn00eyssoyaleuq">
-                <strong><%= link_to "Ingresar como proveedor", supplier_session_path, id: "m-supplier"%></strong>
-                <p>Promociona tus productos</p>
+                <strong><%= link_to supplier_session_path, id: "m-supplier" do%>
+                  <img src="https://drive.google.com/uc?export=view&id=1H0LWdazuzXMPeweZdMn00eyssoyaleuq">
+                  <p>Ingresar como proveedor</p>
+                <%end%></strong>
+                <p class="p-description">Promociona tus productos</p>
               </div>
 
             </div>
