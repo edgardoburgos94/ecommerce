@@ -10,6 +10,7 @@
       <th scope="col">Fecha de registro</th>
       <th scope="col">Último ingreso</th>
       <th scope="col"># de visitas</th>
+      <th scope="col">Detalles usuario</th>
       <th scope="col">Eliminar usuario</th>
     </tr>
   </thead>
@@ -22,6 +23,9 @@
         <td><%=user.created_at%></td>
         <td><%=user.updated_at%></td>
         <td><%=user.sign_in_count%></td>
+        <td><%=link_to user_path(user) do%>
+          <i class="fa fa-info-circle" aria-hidden="true"></i>
+        <%end%>
         <td><%= link_to admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" } do%>
           <i class="fa fa-trash-o" aria-hidden="true"></i>
         <%end%>
