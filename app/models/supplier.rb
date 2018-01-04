@@ -21,6 +21,11 @@
 #  country                :string
 #  city                   :string
 #  sales                  :integer
+#  p_ure                  :float
+#  p_dia                  :float
+#  p_cmin                 :float
+#  p_cmay                 :float
+#  cant_may               :float
 #
 # Indexes
 #
@@ -40,7 +45,7 @@ end
 class Supplier::ParameterSanitizer < Devise::ParameterSanitizer
   def initialize(*)
     super
-    permit(:sign_up, keys: [:full_name, :email, :password, :password_confirmation, :country, :city, :dir, :cel, :sales])
-    permit(:account_update, keys: [:full_name, :email, :password, :password_confirmation, :country, :city, :dir, :cel, :sales])
+    permit(:sign_up, keys: [:full_name, :email, :password, :password_confirmation, :country, :city, :dir, :cel, :sales, :p_ure, :p_dia, :p_cmin, :p_cmay, :cant_may])
+    permit(:account_update, keys: [:full_name, :email, :password, :password_confirmation, :country, :city, :dir, :cel, :sales, :p_ure, :p_dia, :p_cmin, :p_cmay, :cant_may])
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171228195253) do
+ActiveRecord::Schema.define(version: 20180104171009) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -77,6 +77,11 @@ ActiveRecord::Schema.define(version: 20171228195253) do
     t.string "country"
     t.string "city"
     t.integer "sales"
+    t.float "p_ure"
+    t.float "p_dia"
+    t.float "p_cmin"
+    t.float "p_cmay"
+    t.float "cant_may"
     t.index ["email"], name: "index_suppliers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_suppliers_on_reset_password_token", unique: true
   end

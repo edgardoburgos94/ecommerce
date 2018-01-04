@@ -12,6 +12,15 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
+    <% if resource_name.to_s == "supplier"%>
+      <h5>Add hidden inputs</h5>
+      <%= f.hidden_field :p_ure, :value => 0 %>
+      <%= f.hidden_field :p_dia, :value => 0 %>
+      <%= f.hidden_field :p_cmin, :value => 0 %>
+      <%= f.hidden_field :p_cmay, :value => 0 %>
+      <%= f.hidden_field :cant_may, :value => 0 %>
+    <%end%>
+
     <div class="field">
       <%= f.label "Nombre completo"  %><br />
       <%= f.text_field :full_name, autofocus: true %>

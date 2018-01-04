@@ -21,6 +21,11 @@
 #  country                :string
 #  city                   :string
 #  sales                  :integer
+#  p_ure                  :float
+#  p_dia                  :float
+#  p_cmin                 :float
+#  p_cmay                 :float
+#  cant_may               :float
 #
 # Indexes
 #
