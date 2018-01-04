@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Editar perfil</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -43,7 +43,7 @@
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em>Mínimo <%= @minimum_password_length %> caracteres</em>
     <% end %>
   </div>
 
@@ -51,6 +51,29 @@
     <%= f.label "Confirmación de la nueva contraseña" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+  <h3>Editar promociones</h3>
+  <div class="field">
+    <%= f.label "Promoción por ser usuario registrado" %><br />
+    <%= f.number_field :p_ure, autocomplete: "off" %> %
+  </div>
+  <div class="field">
+    <%= f.label "Promoción por ser usuario registrado" %><br />
+    <%= f.number_field :p_dia, autocomplete: "off" %> %
+  </div>
+  <div class="field">
+    <%= f.label "Promoción por ser usuario minorista" %><br />
+    <%= f.number_field :p_cmin, autocomplete: "off" %> %
+  </div>
+  <div class="field">
+    <%= f.label "Promoción por ser usuario mayorista" %><br />
+    <%= f.number_field :p_cmay, autocomplete: "off" %> %
+  </div>
+  <div class="field">
+    <%= f.label "Cantidad por compra para ser usuario mayorista" %><br />
+    <%= f.number_field :cant_may, autocomplete: "off" %>
+  </div>
+
   <h3>Guardar cambios</h3>
   <div class="field">
     <%= f.label "Contraseña actual" %> <i>(Necesitamos tu contraseña actual para guardar los cambios)</i><br />
