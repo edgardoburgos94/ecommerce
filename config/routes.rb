@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 
   resources :order_items
   resource :carts, only: [:show]
-  resource :users, only: [:show]
-  resource :suppliers, only: [:show]
+  resources :users, only: [:show]
+  resources :suppliers, only: [:show]
 
 
   get '/alfa', to: 'pages#alfa', as: 'alfa'
