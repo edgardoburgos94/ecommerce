@@ -1,0 +1,4 @@
+<% if user_signed_in? %>
+  <%= link_to "Editar pefil usuario", edit_user_registration_path %>
+  <%=link_to "Detalles", user_path(current_user)%>
+<%end%>

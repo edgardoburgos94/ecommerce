@@ -29,6 +29,11 @@
           <li class="nav-item text-center">
             <strong><%= link_to "Proveedor", suppli_path, :class=>"nav-link text-center", id: "admin"%></strong>
           </li>
+          <% if user_signed_in? %>
+            <li class="nav-item text-center">
+              <strong><%= link_to "Mi perfil", my_profile_path, :class=>"nav-link text-center", id: "admin"  %></strong>
+            </li>
+          <%end%>
           <li class="nav-item text-center">
             <strong><%= link_to "¿Quiénes somos?", about_path, :class=>"nav-link text-center", id: "about"%></strong>
           </li>

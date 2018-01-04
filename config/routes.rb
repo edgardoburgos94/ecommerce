@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get '/produ_list', to: 'pages#produ_list', as: 'produ_list'
   get '/user_list', to: 'pages#user_list', as: 'user_list'
   get '/suppli_list', to: 'pages#suppli_list', as: 'suppli_list'
+  get '/mi_perfil', to: 'pages#my_profile', as: 'my_profile'
 
 
 
