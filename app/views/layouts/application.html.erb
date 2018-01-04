@@ -52,7 +52,7 @@
 
           <% elsif supplier_signed_in? %>
           <li class="nav-item text-center">
-            <strong><%= link_to "Cerrar cesión", destroy_supplier_session_path, method: :delete, :class=>"nav-link", id: "p-signout"%></strong>
+            <strong><%= link_to "Cerrar sesión", destroy_supplier_session_path, method: :delete, :class=>"nav-link", id: "p-signout"%></strong>
           </li>
           <% else %>
           <!-- Button trigger modal -->
