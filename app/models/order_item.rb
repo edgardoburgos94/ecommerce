@@ -11,6 +11,7 @@
 #  size        :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  discount    :float
 #
 
 class OrderItem < ApplicationRecord
@@ -28,8 +29,12 @@ class OrderItem < ApplicationRecord
 		end
 	end
 
+  def promotion
+    self[:discount]
+  end
+
 	def total_price
-		unit_price * quantity
+		unit_price * quantity - (unit_price * quantity)*self[:discount]
 	end
 
 	private

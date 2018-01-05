@@ -18,7 +18,11 @@
 					<div class="pull-right">
 					<%= form_for(item, remote: true) do |f| %>
 						<%= f.hidden_field :product_id, value: item.product.id %>
-						<h5><%= item.product.price %></h5>
+						<h6>Precio unitario: $<%= item.product.price %></h6>
+						<h6>Usuario registrado: -$<%= item.product.price * item.product.category.supplier.p_ure/100 %></h6>
+						<h6>Usuario mayorista: -$<%= item.product.price * item.product.category.supplier.p_cmay/100 %></h6>
+						<h6>Usuario recurrente: -$<%= item.product.price * item.product.category.supplier.p_cmin/100 %></h6>
+						<h6>Promoción especial proveedor: -$<%= item.product.price * item.product.category.supplier.p_dia/100 %></h6>
 						<div class="form-group">
 							<%= f.text_field :quantity, value: item.quantity.to_i, min: 1, class: 'form-control' %>
 						</div>
