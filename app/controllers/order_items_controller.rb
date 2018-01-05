@@ -5,7 +5,7 @@ class OrderItemsController < ApplicationController
     if user_signed_in?
       promo1 = @order_item.product.category.supplier.p_ure/100
       promo2 = [@order_item.product.category.supplier.p_cmay/100, @order_item.product.category.supplier.p_cmin/100, @order_item.product.category.supplier.p_dia/100]
-      promotion = promo1
+      promotion = promo1 + promo2.max
     else
       promotion = 0
     end
