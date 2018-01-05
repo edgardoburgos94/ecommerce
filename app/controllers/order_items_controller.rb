@@ -11,9 +11,6 @@ class OrderItemsController < ApplicationController
     end
     @order_item.discount = promotion
 		@order.save
-    puts(@order_item.discount)
-    puts("Descuento <-------------------------------------------")
-    puts(@order_item.product)
 		session[:order_id] = @order.id
 
 	end
