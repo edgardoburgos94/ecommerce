@@ -14,3 +14,16 @@
 <%=@supplier.city%>
 <h4>Número de ventas:</h4>
 <%=@supplier.sales%>
+<h4>Número de categorías</h4>
+<%=@supplier.categories.length%>
+<h4>Número de productos</h4>
+<%produ=0%>
+<%@supplier.categories.each do |cate|%>
+  <%produ = produ + cate.products.length%>
+<%end%>
+<%=produ%>
+<h4>Descuento por usuario registrado: <%=@supplier.p_ure%>%</h4>
+<h4>Descuento especial del día: <%=@supplier.p_dia%>%</h4>
+<h4>Descuento por usuario frecuente: <%=@supplier.p_cmin%>%</h4>
+<h4>Descuento por usuario mayorista: <%=@supplier.p_cmay%>%</h4>
+<h4>Número de productos comprados para ser usuario mayorista: <%=@supplier.cant_may%> productos</h4>
