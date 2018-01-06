@@ -51,7 +51,7 @@
     <%= f.label "Confirmación de la nueva contraseña" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
+  <%if supplier_signed_in?%>
   <h3>Editar promociones</h3>
   <div class="field">
     <%= f.label "Promoción por ser usuario registrado" %><br />
@@ -73,6 +73,7 @@
     <%= f.label "Cantidad por compra para ser usuario mayorista" %><br />
     <%= f.number_field :cant_may, autocomplete: "off" %>
   </div>
+  <%end%>
 
   <h3>Guardar cambios</h3>
   <div class="field">
