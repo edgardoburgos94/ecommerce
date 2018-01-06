@@ -1,29 +1,70 @@
 <h1>Detalles del proveedor</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre:</th>
+      <th><%=@supplier.full_name%></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="col">Email:</th>
+      <th><%=@supplier.email%></th>
+    </tr>
+    <tr>
+      <th scope="col">Celular:</th>
+      <th><%=@supplier.cel%></th>
+    </tr>
+    <tr>
+      <th scope="col">Dirección:</th>
+      <th><%=@supplier.dir%></th>
+    </tr>
+    <tr>
+      <th scope="col">Pais:</th>
+      <th><%=@supplier.country%></th>
+    </tr>
+    <tr>
+      <th scope="col">Ciudad:</th>
+      <th><%=@supplier.city%></th>
+    </tr>
+    <tr>
+      <th scope="col">Número de ventas:</th>
+      <th><%=@supplier.sales%></th>
+    </tr>
+    <tr>
+      <th scope="col">Número de categorías:</th>
+      <th><%=@supplier.categories.length%></th>
+    </tr>
+    <tr>
+      <th scope="col">Número de productos:</th>
+      <th>
+        <%produ=0%>
+        <%@supplier.categories.each do |cate|%>
+          <%produ = produ + cate.products.length%>
+        <%end%>
+        <%=produ%>
+      </th>
+    </tr>
+    <tr>
+      <th scope="col">Descuento por usuario registrado:</th>
+      <th><%=@supplier.p_ure%>%</th>
+    </tr>
+    <tr>
+      <th scope="col">Descuento especial del día:</th>
+      <th><%=@supplier.p_dia%>%</th>
+    </tr>
+    <tr>
+      <th scope="col">Descuento por usuario frecuente:</th>
+      <th><%=@supplier.p_cmin%>%</th>
+    </tr>
+    <tr>
+      <th scope="col">Descuento por usuario mayorista:</th>
+      <th><%=@supplier.p_cmay%>%</th>
+    </tr>
+    <tr>
+      <th scope="col">Número de productos comprados para ser usuario mayorista:</th>
+      <th><%=@supplier.cant_may%> productos</th>
+    </tr>
 
-<h4>Nombre:</h4>
-<%=@supplier.full_name%>
-<h4>Email:</h4>
-<%=@supplier.email%>
-<h4>Celular:</h4>
-<%=@supplier.cel%>
-<h4>Dirección:</h4>
-<%=@supplier.dir%>
-<h4>Pais:</h4>
-<%=@supplier.country%>
-<h4>Ciudad:</h4>
-<%=@supplier.city%>
-<h4>Número de ventas:</h4>
-<%=@supplier.sales%>
-<h4>Número de categorías</h4>
-<%=@supplier.categories.length%>
-<h4>Número de productos</h4>
-<%produ=0%>
-<%@supplier.categories.each do |cate|%>
-  <%produ = produ + cate.products.length%>
-<%end%>
-<%=produ%>
-<h4>Descuento por usuario registrado: <%=@supplier.p_ure%>%</h4>
-<h4>Descuento especial del día: <%=@supplier.p_dia%>%</h4>
-<h4>Descuento por usuario frecuente: <%=@supplier.p_cmin%>%</h4>
-<h4>Descuento por usuario mayorista: <%=@supplier.p_cmay%>%</h4>
-<h4>Número de productos comprados para ser usuario mayorista: <%=@supplier.cant_may%> productos</h4>
+  </tbody>
+</table>

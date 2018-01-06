@@ -12,7 +12,10 @@ class PagesController < ApplicationController
   def admin
   end
 
-  def admin
+  def suppli
+    if supplier_signed_in?
+      @supplier = current_supplier
+    end
   end
 
   def cate_list

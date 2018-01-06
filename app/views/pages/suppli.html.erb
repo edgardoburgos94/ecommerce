@@ -18,3 +18,78 @@
 <%= link_to new_category_path, class: "admin-link" do%>
   <button type="button" name="button">Editar promoción</button>
 <%end%>
+<% if supplier_signed_in?%>
+  <div class="supplier-details">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Nombre:</th>
+          <td><%=@supplier.full_name%></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="col">Email:</th>
+          <td><%=@supplier.email%></td>
+        </tr>
+        <tr>
+          <th scope="col">Celular:</th>
+          <td><%=@supplier.cel%></td>
+        </tr>
+        <tr>
+          <th scope="col">Dirección:</th>
+          <td><%=@supplier.dir%></td>
+        </tr>
+        <tr>
+          <th scope="col">Pais:</th>
+          <td><%=@supplier.country%></td>
+        </tr>
+        <tr>
+          <th scope="col">Ciudad:</th>
+          <td><%=@supplier.city%></td>
+        </tr>
+        <tr>
+          <th scope="col">Número de ventas:</th>
+          <td><%=@supplier.sales%></td>
+        </tr>
+        <tr>
+          <th scope="col">Número de categorías:</th>
+          <td><%=@supplier.categories.length%></td>
+        </tr>
+        <tr>
+          <th scope="col">Número de productos:</th>
+          <td>
+            <%produ=0%>
+            <%@supplier.categories.each do |cate|%>
+              <%produ = produ + cate.products.length%>
+            <%end%>
+            <%=produ%>
+          </td>
+        </tr>
+        <tr>
+          <th scope="col">Descuento por usuario registrado:</th>
+          <td><%=@supplier.p_ure%>%</td>
+        </tr>
+        <tr>
+          <th scope="col">Descuento especial del día:</th>
+          <td><%=@supplier.p_dia%>%</td>
+        </tr>
+        <tr>
+          <th scope="col">Descuento por usuario frecuente:</th>
+          <td><%=@supplier.p_cmin%>%</td>
+        </tr>
+        <tr>
+          <th scope="col">Descuento por usuario mayorista:</th>
+          <td><%=@supplier.p_cmay%>%</td>
+        </tr>
+        <tr>
+          <th scope="col">Número de productos comprados para ser usuario mayorista:</th>
+          <td><%=@supplier.cant_may%> productos</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <%else%>
+  <h2>No tiene acceso a esta información</h2>
+<%end%>
