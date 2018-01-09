@@ -3,7 +3,6 @@
     <h1><%=@products.first.category.title%> </h1>
 
     <div class="products">
-      <%=@products.length%>
       <% @products.each do |product| %>
         <div class="product-container">
           <%=link_to [product.category, product] do%>
