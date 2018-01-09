@@ -54,6 +54,7 @@ gem 'jquery-rails'
 gem 'annotate', '~> 2.7', '>= 2.7.1'
 gem 'devise'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+gem 'faker', '~> 1.6', '>= 1.6.6'
 
 
 
