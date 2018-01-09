@@ -4,8 +4,24 @@ class OrderItemsController < ApplicationController
 		@order_item = @order.order_items.new(order_item_params)
     if user_signed_in?
       promo1 = @order_item.product.category.supplier.p_ure/100
-      promo2 = [@order_item.product.category.supplier.p_cmay/100, @order_item.product.category.supplier.p_cmin/100, @order_item.product.category.supplier.p_dia/100]
-      promotion = promo1 + promo2.max
+      promo2 = []
+      if @order_item.quantity >= @order_item.product.category.supplier.cant_may
+        puts("Descuento por usuario mayorista <-----------------------------------------")
+        promo2.push(@order_item.product.category.supplier.p_cmay/100)
+      end
+      if @order_item.product.category.supplier.p_dia/100 > 0
+        puts("Descuento por promoción del día <-----------------------------------------")
+        promo2.push(@order_item.product.category.supplier.p_dia/100)
+      end
+      if current_user.sign_in_count > 50
+        puts("Descuento por usuario frecuente <-----------------------------------------")
+        promo2.push(@order_item.product.category.supplier.p_cmin/100)
+      end
+      if promo2.length > 0
+        promotion = promo1 + promo2.max
+      else
+        promotion = promo1
+      end
     else
       promotion = 0
     end
