@@ -1,8 +1,6 @@
 <h1>Opciones del proveedor</h1>
 
 
-<%= link_to "Editar pefil proveedor", edit_supplier_registration_path %>
-
 <%= link_to new_category_path, class: "admin-link" do%>
   <button type="button" name="button">Crear categoría</button>
 <%end%>
@@ -15,8 +13,8 @@
   <button type="button" name="button">Mostrar productos</button>
 <%end%>
 
-<%= link_to new_category_path, class: "admin-link" do%>
-  <button type="button" name="button">Editar promoción</button>
+<%= link_to edit_supplier_registration_path, class: "admin-link" do%>
+  <button type="button" name="button">Editar pefil proveedor</button>
 <%end%>
 <% if supplier_signed_in?%>
   <div class="supplier-details">
