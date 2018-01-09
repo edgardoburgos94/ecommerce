@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.all.delete_all
-Supplier.all.delete_all
-Category.all.delete_all
-Product.all.delete_all
+# User.all.delete_all
+# Supplier.all.delete_all
+# Category.all.delete_all
+# Product.all.delete_all
 OrderItem.all.delete_all
 
   dir = Faker::Address.street_address + Faker::Address.secondary_address
