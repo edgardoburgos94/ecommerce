@@ -2,12 +2,7 @@
   <h1>¡Bienvenido!</h1>
   <h2>Escoge una categoría</h2>
 
-  <%= form_tag(categories_path, method: :get, class:"cate-search" ) do %>
-    <div class="form-group">
-      <%= text_field_tag :concept, params[:concept], class: "form-control", placeholder: "Buscar categoría" %>
-    </div>
 
-  <% end %>
 
   <div class="categories">
     <% @categories.each do |category| %>

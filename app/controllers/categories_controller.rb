@@ -1,9 +1,7 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
-    if params[:concept].present?
-      @categories = @categories.where("title LIKE ?", "%#{params[:concept]}%")
-    end
+
   end
 
   def new
