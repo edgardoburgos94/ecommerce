@@ -60,5 +60,5 @@ gem 'faker', '~> 1.6', '>= 1.6.6'
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg'
+  gem 'pg', '0.15.1'
 end
