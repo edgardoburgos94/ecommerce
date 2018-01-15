@@ -24,7 +24,7 @@
     <%end%>
   </select></h5> <br>
 
-  <% sizes_list = [] %>
+  <% sizes_list = [["Seleccionar talla", "0"]] %>
   <% selector = [] %>
   <%if @product.xs > 0 %>
     <%selector = ["Talla Xs",@product.xs.to_s]%>
@@ -58,12 +58,15 @@
 		<%= f.hidden_field :product_id, value: @product.id %>
 		<h5>Precio: $<%= @product.price %></h5> <br>
     <div class="form-group">
-			<h5>Tallas form for: <%= f.select(:size, options_for_select(sizes_list), {}, class: 'category-selector') %> <br> <br>
+			<h5>Tallas form for: <%= f.select(:size, options_for_select(sizes_list), {}, class: 'size-selector') %> <br> <br>
     </div>
 		<div class="form-group">
-			<h5>Cantidad: <%= f.number_field :quantity, value: 1, min: 1, class: ' amount' %></h5>
+			<h5>Cantidad: <%= f.number_field :quantity, value: 1, min: 1, class: 'amount' %></h5>
 		</div>
 		<%= f.submit "Agregar al carrito", class: 'btn btn-primary btn-sm' %>
 	<% end %>
 
 </div>
+<script>
+  new SizeQuantity();
+</script>
