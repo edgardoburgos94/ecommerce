@@ -47,3 +47,21 @@
   <h1>Producto agotado</h1>
 <% end %>
 </div>
+<div class="recomended-products">
+	<%all_products = [] %>
+	<h4>Otros productos de este proveedor</h4>
+	<% @product.category.supplier.categories.all.each do |category| %>
+		<%category.products.all.each do |product|%>
+			<%all_products.push(product)%>
+		<%end%>
+	<%end%>
+	<%if all_products.length > 5%>
+		<%random_n = (0..all_products.length-1).to_a.shuffle%>
+		<%4.times do |i|%>
+			<div class="recomended-product">
+				<%=all_products[random_n[i]].title%>
+				<img src="<%=all_products[random_n[i]].img_url%>">
+			</div>
+		<%end%>
+	<%end%>
+</div>
