@@ -9,27 +9,27 @@
     <% sizes_list = [] %>
     <% selector = [] %>
     <%if @product.xs > 0 %>
-      <%selector = ["Talla XS",@product.xs.to_s]%>
+      <%selector = ["Talla XS",@product.xs.to_s+"|xs"]%>
       <% sizes_list.push(selector) %>
     <%end%>
     <%if @product.s > 0 %>
-      <%selector = ["Talla S",@product.s.to_s ]%>
+      <%selector = ["Talla S",@product.s.to_s+"|s" ]%>
       <% sizes_list.push(selector) %>
     <%end%>
     <%if @product.m > 0 %>
-      <%selector = ["Talla M",@product.m.to_s]%>
+      <%selector = ["Talla M",@product.m.to_s+"|m"]%>
       <% sizes_list.push(selector) %>
     <%end%>
     <%if @product.l > 0 %>
-      <%selector = ["Talla L",@product.l.to_s]%>
+      <%selector = ["Talla L",@product.l.to_s+"|l"]%>
       <% sizes_list.push(selector) %>
     <%end%>
     <%if @product.xl > 0 %>
-      <%selector = ["Talla XL",@product.xl.to_s]%>
+      <%selector = ["Talla XL",@product.xl.to_s+"|xl"]%>
       <% sizes_list.push(selector) %>
     <%end%>
     <%if @product.xxl > 0 %>
-      <%selector = ["Talla XXL",@product.xxl.to_s]%>
+      <%selector = ["Talla XXL",@product.xxl.to_s+"|xxl"]%>
       <% sizes_list.push(selector) %>
     <%end%>
 
