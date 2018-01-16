@@ -26,16 +26,16 @@
   <%= f.number_field :price, autocomplete: "off"%> <br> <br>
   <%= f.label "Tallas:"%> <br> <br>
   <%= f.label "Talla xs:"%> <br>
-  <%= f.number_field :xs, value: 0%> <br> <br>
+  <%= f.number_field :xs, value: 0, min: 0%> <br> <br>
   <%= f.label "Talla s:"%> <br>
-  <%= f.number_field :s, value: 0%> <br> <br>
+  <%= f.number_field :s, value: 0, min: 0%> <br> <br>
   <%= f.label "Talla m:"%> <br>
-  <%= f.number_field :m, value: 0%> <br> <br>
+  <%= f.number_field :m, value: 0, min: 0%> <br> <br>
   <%= f.label "Talla l:"%> <br>
-  <%= f.number_field :l, value: 0%> <br> <br>
+  <%= f.number_field :l, value: 0, min: 0%> <br> <br>
   <%= f.label "Talla xl:"%> <br>
-  <%= f.number_field :xl, value: 0%> <br> <br>
+  <%= f.number_field :xl, value: 0, min: 0%> <br> <br>
   <%= f.label "Talla xxl:"%> <br>
-  <%= f.number_field :xxl, value: 0%> <br> <br>
+  <%= f.number_field :xxl, value: 0, min: 0%> <br> <br>
   <%= f.submit "Crear producto" %>
 <%end%>
