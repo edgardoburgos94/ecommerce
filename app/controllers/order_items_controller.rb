@@ -26,11 +26,16 @@ class OrderItemsController < ApplicationController
       promotion = 0
     end
     @order_item.discount = promotion
-    puts(@order_item.size)
-    puts(@order_item.size.to_i.class)
     # OrderItem.validate_order_item(@order_item.size.to_i)
-		@order.save
-		session[:order_id] = @order.id
+    if @order_item.quantity <= @order_item.size.split('|')[0].to_i
+  		@order.save
+  		session[:order_id] = @order.id
+      flash[:alert] = "El producto se a agregado a su carrito"
+      redirect_to request.referrer
+    else
+      flash[:alert] = "La cantidad máxima para el producto seleccionado es de #{@order_item.size.split('|')[0].to_i}"
+      redirect_to request.referrer
+    end
 
 	end
 
