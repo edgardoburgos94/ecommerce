@@ -26,6 +26,9 @@ class OrderItemsController < ApplicationController
       promotion = 0
     end
     @order_item.discount = promotion
+    puts(@order_item.size)
+    puts(@order_item.size.to_i.class)
+    # OrderItem.validate_order_item(@order_item.size.to_i)
 		@order.save
 		session[:order_id] = @order.id
 

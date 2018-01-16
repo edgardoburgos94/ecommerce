@@ -17,9 +17,20 @@
 class OrderItem < ApplicationRecord
   belongs_to :product
   belongs_to :order
+  cant_max = 20
+
+
 
   before_save :set_unit_price
 	before_save :set_total_price
+
+  # def self.validate_order_item(ava_quanti)
+  #   puts("Entrooooooooo")
+  #   puts(ava_quanti)
+  #   puts(self.last.quantity)
+  #   validates :quantity, numericality: {  less_than_or_equal_to: ava_quanti, message: "La cantidad debe contener un número y no debe superar la cantidad disponible" }
+  # end
+
 
 	def unit_price
 		if persisted?

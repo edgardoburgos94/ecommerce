@@ -33,7 +33,7 @@
 						<%end%>
 						<%end%>
 						<div class="form-group">
-							<%= f.text_field :quantity, value: item.quantity.to_i, min: 1, class: 'form-control' %>
+							<%= f.number_field :quantity, value: item.quantity.to_i, min: 1,max: item.size.to_i, class: 'form-control', autocomplete: "off" %>
 						</div>
 						<div class="btn-group">
 							<%= f.submit "Editar cantidad", class: 'btn btn-primary' %>
