@@ -1,11 +1,13 @@
 Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'floating-everglades-40234.herokuapp.com' }
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
         address: "smtp.gmail.com",
         port: 587,
         authentication: "plain",
+        domain: 'edgardo.burgos94.com',
         enable_starttls_auto: true,
         user_name: "edgardo.burgos94@gmail.com",
         password: "e1d9b9a4"
