@@ -13,6 +13,10 @@ Rails.application.configure do
         password: "e1d9b9a4"
 
     }
+    # Link para acceder a las cuentas de gmail
+    # http://www.google.com/accounts/DisplayUnlockCaptcha
+
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
