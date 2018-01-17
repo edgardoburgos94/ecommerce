@@ -30,7 +30,7 @@ class OrderItemsController < ApplicationController
     if @order_item.quantity <= @order_item.size.split('|')[0].to_i
   		@order.save
   		session[:order_id] = @order.id
-      flash[:alert] = "El producto se a agregado a su carrito"
+      flash[:notice] = "El producto se a agregado a tu carrito"
       redirect_to request.referrer
     else
       flash[:alert] = "La cantidad máxima para el producto seleccionado es de #{@order_item.size.split('|')[0].to_i}"
