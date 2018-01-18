@@ -28,6 +28,11 @@ Rails.application.routes.draw do
   get '/mi_perfil', to: 'pages#my_profile', as: 'my_profile'
   get '/blog', to: 'pages#blog', as: 'blog'
 
+  get '/blog1', to: 'blogs#blog1', as: 'blog1'
+  get '/blog2', to: 'blogs#blog2', as: 'blog2'
+  get '/blog3', to: 'blogs#blog3', as: 'blog3'
+  get '/blog4', to: 'blogs#blog4', as: 'blog4'
+
 
 
   root 'categories#index'
