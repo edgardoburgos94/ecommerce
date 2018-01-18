@@ -1,6 +1,9 @@
 <% if user_signed_in? %>
-  <%= link_to "Editar pefil usuario", edit_user_registration_path %>
+  <div class="user-image">
+    <img src="https://d1p028xxwfk58l.cloudfront.net/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png">
+  </div>
   <div class="supplier-details">
+    <%= link_to "Editar mi pefil", edit_user_registration_path %>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -29,12 +32,6 @@
         <th scope="col">Ciudad:</th>
         <td><%=@user.city%></td>
       </tr>
-      <tr>
-        <th scope="col">Número de productos comprados:</th>
-        <td><%=@user.purchases%></td>
-      </tr>
-
-
     </tbody>
   </table>
 </div>
