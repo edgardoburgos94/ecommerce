@@ -1,5 +1,7 @@
 <div class="category-page">
-  <h1>¡Bienvenido!</h1>
+  <%if user_signed_in?%>
+  <h1>¡Bienvenido <%=current_user.full_name%>!</h1>
+  <%end%>
   <h2>Escoge una categoría</h2>
 
   <%= form_tag categories_path, method: :get, class:"cate-search" do %>
