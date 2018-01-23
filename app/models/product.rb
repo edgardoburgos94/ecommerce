@@ -16,6 +16,7 @@
 #  l           :integer
 #  xl          :integer
 #  xxl         :integer
+#  supplier_id :integer
 #
 # Indexes
 #
@@ -23,6 +24,7 @@
 #
 
 class Product < ApplicationRecord
+  belongs_to :supplier
   belongs_to :category
   has_many :order_items
 end

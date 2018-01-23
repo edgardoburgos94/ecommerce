@@ -5,7 +5,6 @@
     <tr>
       <th scope="col">Imagen</th>
       <th scope="col">Nombre</th>
-      <th scope="col">Propietario</th>
       <th scope="col">Productos disponibles</th>
       <th scope="col">Agregar producto</th>
       <th scope="col">Editar</th>
@@ -17,7 +16,6 @@
       <tr>
         <th><img src="<%=category.img_url%>" class="mini-img"></th>
         <td><%=category.title%></td>
-        <td><%=category.supplier.email%></td>
         <td>
           <%produ=0%>
           <%category.products.each do |product|%>

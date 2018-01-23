@@ -42,7 +42,7 @@
   		<h5>Cantidad: <%= f.number_field :quantity, value: 1, min: 1, class: 'amount', autocomplete: "off" %></h5>
   	</div>
   	<%= f.submit "Agregar al carrito", class: 'btn btn-primary btn-sm' %>
-		<%=link_to "Perfil proveedor", supplier_path(@product.category.supplier)%>
+		<%=link_to "Perfil proveedor", supplier_path(@product.supplier)%>
   <% end %>
 <% else %>
   <h1>Producto agotado</h1>
@@ -51,10 +51,8 @@
 <div class="recomended-products">
 	<%all_products = [] %>
 	<h4>Otros productos de este proveedor</h4>
-	<% @product.category.supplier.categories.all.each do |category| %>
-		<%category.products.all.each do |product|%>
-			<%all_products.push(product)%>
-		<%end%>
+	<% @product.supplier.products.all.each do |product| %>
+		<%all_products.push(product)%>
 	<%end%>
 	<%if all_products.length > 5%>
 		<%random_n = (0..all_products.length-1).to_a.shuffle%>

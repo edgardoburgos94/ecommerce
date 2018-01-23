@@ -28,17 +28,9 @@
       <th><%=@supplier.city%></th>
     </tr>
     <tr>
-      <th scope="col">Número de categorías:</th>
-      <th><%=@supplier.categories.length%></th>
-    </tr>
-    <tr>
       <th scope="col">Número de productos:</th>
       <th>
-        <%produ=0%>
-        <%@supplier.categories.each do |cate|%>
-          <%produ = produ + cate.products.length%>
-        <%end%>
-        <%=produ%>
+        <%=@supplier.products.length%>
       </th>
     </tr>
     <tr>
@@ -66,11 +58,6 @@
 </table>
 
 <h1>Opciones del proveedor</h1>
-
-
-<%= link_to new_category_path, class: "admin-link" do%>
-  <button type="button" name="button">Crear categoría</button>
-<%end%>
 
 <%= link_to cate_list_path, class: "admin-link" do%>
   <button type="button" name="button">Mostrar categorías</button>

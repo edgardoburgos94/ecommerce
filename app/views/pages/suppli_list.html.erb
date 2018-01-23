@@ -5,7 +5,6 @@
     <tr>
       <th scope="col">Nombre</th>
       <th scope="col">Email</th>
-      <th scope="col"># de categorías</th>
       <th scope="col"># de productos</th>
       <th scope="col">Fecha de registro</th>
       <th scope="col">Detalles proveedor</th>
@@ -17,13 +16,8 @@
       <tr>
         <th><%=supplier.full_name%></th>
         <th><%=supplier.email%></th>
-        <th><%=supplier.categories.length%></th>
         <th>
-          <%produ=0%>
-          <%supplier.categories.each do |cate|%>
-            <%produ = produ + cate.products.length%>
-          <%end%>
-          <%=produ%>
+          <%=supplier.products.length%>
         </th>
         <td><%=supplier.created_at%></td>
         <td><%=link_to supplier_path(supplier) do%>

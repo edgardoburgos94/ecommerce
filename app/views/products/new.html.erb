@@ -14,6 +14,7 @@
 <%end%>
 
 <%= form_for @product, url: category_products_path do |f| %>
+  <%= f.hidden_field :supplier_id, :value => current_supplier.id %>
   <%= f.label "Categoría:"%> <br>
   <%= f.select(:category_id, options_for_select(categories_list, [@product.category.title, @product.category.id]), {}, class: 'category-selector') %> <br> <br>
   <%= f.label "Título:"%> <br>

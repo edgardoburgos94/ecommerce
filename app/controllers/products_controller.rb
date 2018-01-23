@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      flash[:notice] = 'Se creó la categoría exitosamente'
+      flash[:notice] = 'Se creó el producto exitosamente'
       redirect_to cate_list_url
     else
       render :new
@@ -45,7 +45,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:title, :description, :img_url, :price, :category_id, :xs, :s, :m, :l, :xl, :xxl)
+    params.require(:product).permit(:title, :description, :img_url, :price, :category_id, :xs, :s, :m, :l, :xl, :xxl, :supplier_id)
   end
 
 end

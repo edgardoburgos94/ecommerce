@@ -16,6 +16,7 @@
 #  l           :integer
 #  xl          :integer
 #  xxl         :integer
+#  supplier_id :integer
 #
 # Indexes
 #
