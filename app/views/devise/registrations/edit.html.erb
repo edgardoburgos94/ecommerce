@@ -4,7 +4,17 @@
   <%= devise_error_messages! %>
 
   <h3>Editar información básica</h3>
+  <%if supplier_signed_in?%>
+    <div class="field">
+      <%= f.label "Link foto de perfil"  %><br />
+      <%= f.text_field :profile_img, autofocus: true %>
+    </div>
 
+    <div class="field">
+      <%= f.label "Link foto de portada"  %><br />
+      <%= f.text_field :cover_img, autofocus: true %>
+    </div>
+  <%end%>
   <div class="field">
     <%= f.label "Nombre completo"  %><br />
     <%= f.text_field :full_name, autofocus: true %>
