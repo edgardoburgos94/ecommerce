@@ -12,12 +12,6 @@ class PagesController < ApplicationController
   def admin
   end
 
-  def suppli
-    if supplier_signed_in?
-      @supplier = current_supplier
-    end
-  end
-
   def my_profile
     if user_signed_in?
       @user = current_user

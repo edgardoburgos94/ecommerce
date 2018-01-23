@@ -26,12 +26,14 @@
           <li class="nav-item text-center">
             <strong><%= link_to "Administrador", admin_path, :class=>"nav-link text-center", id: "admin"%></strong>
           </li>
+          <% if supplier_signed_in? %>
           <li class="nav-item text-center">
-            <strong><%= link_to "Proveedor", suppli_path, :class=>"nav-link text-center", id: "admin"%></strong>
+            <strong><%= link_to "Mi perfil proveedor", supplier_path(current_supplier), :class=>"nav-link text-center", id: "admin"%></strong>
           </li>
+          <%end%>
           <% if user_signed_in? %>
             <li class="nav-item text-center">
-              <strong><%= link_to "Mi perfil", my_profile_path, :class=>"nav-link text-center", id: "admin"  %></strong>
+              <strong><%= link_to "Mi perfil usuario", my_profile_path, :class=>"nav-link text-center", id: "admin"  %></strong>
             </li>
           <%end%>
           <li class="nav-item text-center">
@@ -108,7 +110,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </p>
-      
+
       <%end%>
       <% if not alert== nil%>
       <p class="alert alert-danger alert-dismissible fade show"><%= alert %>
