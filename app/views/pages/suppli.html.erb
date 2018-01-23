@@ -1,3 +1,4 @@
+<% if supplier_signed_in?%>
 <h1>Opciones del proveedor</h1>
 
 
@@ -16,7 +17,7 @@
 <%= link_to edit_supplier_registration_path, class: "admin-link" do%>
   <button type="button" name="button">Editar pefil proveedor</button>
 <%end%>
-<% if supplier_signed_in?%>
+
   <div class="supplier-details">
     <table class="table table-striped">
       <thead>
