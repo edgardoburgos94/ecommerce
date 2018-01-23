@@ -26,6 +26,8 @@
 #  p_cmin                 :float
 #  p_cmay                 :float
 #  cant_may               :float
+#  profile_img            :string
+#  cover_img              :string
 #
 # Indexes
 #

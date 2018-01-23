@@ -26,6 +26,8 @@
 #  p_cmin                 :float
 #  p_cmay                 :float
 #  cant_may               :float
+#  profile_img            :string
+#  cover_img              :string
 #
 # Indexes
 #
@@ -46,6 +48,6 @@ class Supplier::ParameterSanitizer < Devise::ParameterSanitizer
   def initialize(*)
     super
     permit(:sign_up, keys: [:full_name, :email, :password, :password_confirmation, :country, :city, :dir, :cel, :p_ure, :p_dia, :p_cmin, :p_cmay, :cant_may])
-    permit(:account_update, keys: [:full_name, :email, :password, :password_confirmation, :country, :city, :dir, :cel, :p_ure, :p_dia, :p_cmin, :p_cmay, :cant_may])
+    permit(:account_update, keys: [:full_name, :email, :password, :password_confirmation, :country, :city, :dir, :cel, :p_ure, :p_dia, :p_cmin, :p_cmay, :cant_may, :profile_img, :cover_img])
   end
 end
