@@ -56,7 +56,7 @@
 	  </div>
 	<% end %>
 	<% if signed_in? %>
-  <%= form_for [@product.category, @product, @product.product_comments.build] do |f| %>
+  <%= form_for [@product.category, @product, @product.product_comments.build], remote: true do |f| %>
     <div >
       <%= f.text_area :body, placeholder: "Agregar comentario" %>
     </div>
