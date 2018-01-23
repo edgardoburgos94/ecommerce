@@ -48,6 +48,26 @@
   <h1>Producto agotado</h1>
 <% end %>
 </div>
+
+<div class="product_comments">
+	<% @product.product_comments.each do |comment| %>
+	  <div class="panel panel-default">
+	    <div class="panel-body"><%= comment.body %></div>
+	  </div>
+	<% end %>
+	<% if signed_in? %>
+  <%= form_for [@product.category, @product, @product.product_comments.build] do |f| %>
+    <div >
+      <%= f.text_area :body, placeholder: "Agregar comentario" %>
+    </div>
+
+    <div class="actions text-right">
+      <%= f.submit "Comentar", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+<% end %>
+</div>
+
 <div class="recomended-products">
 	<%all_products = [] %>
 	<h4>Otros productos de este proveedor</h4>

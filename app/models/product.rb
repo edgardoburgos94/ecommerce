@@ -27,4 +27,5 @@ class Product < ApplicationRecord
   belongs_to :supplier
   belongs_to :category
   has_many :order_items
+  has_many :product_comments
 end
