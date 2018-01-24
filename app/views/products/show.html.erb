@@ -49,24 +49,7 @@
 <% end %>
 </div>
 
-<div class="product_comments">
-	<% @product.product_comments.each do |comment| %>
-	  <div class="panel panel-default">
-	    <div class="panel-body"><%= comment.body %></div>
-	  </div>
-	<% end %>
-	<% if signed_in? %>
-  <%= form_for [@product.category, @product, @product.product_comments.build], remote: true do |f| %>
-    <div >
-      <%= f.text_area :body, placeholder: "Agregar comentario" %>
-    </div>
 
-    <div class="actions text-right">
-      <%= f.submit "Comentar", class: "btn btn-primary" %>
-    </div>
-  <% end %>
-<% end %>
-</div>
 
 <div class="recomended-products">
 	<%all_products = [] %>
@@ -85,4 +68,25 @@
 			</div>
 		<%end%>
 	<%end%>
+</div>
+
+<div class="product_comments">
+	<h3>Comentarios: </h3>
+	<% @product.product_comments.each do |comment| %>
+	  <div class="panel panel-default">
+			<header class="panel-heading"> <b><%= comment.user.full_name %> dice:</b></header>
+	    <div class="panel-body"><%= comment.body %></div>
+	  </div>
+	<% end %>
+	<% if signed_in? %>
+  <%= form_for [@product.category, @product, @product.product_comments.build], remote: true do |f| %>
+    <div >
+      <%= f.text_area :body, placeholder: "Agregar comentario" %>
+    </div>
+
+    <div class="actions text-left">
+      <%= f.submit "Comentar", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+<% end %>
 </div>

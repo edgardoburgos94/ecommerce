@@ -3,7 +3,7 @@ class ProductCommentsController < ApplicationController
     product = Product.find(params[:product_id])
     product.product_comments.create(product_comments_params)
 
-    redirect_to request.referrer
+    redirect_to request.referer
   end
 
   private

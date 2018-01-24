@@ -56,7 +56,26 @@
 
   </tbody>
 </table>
+<div class="product_comments">
+	<h3>Comentarios: </h3>
+	<% @supplier.supplier_comments.each do |comment| %>
+	  <div class="panel panel-default">
+			<header class="panel-heading"> <b><%= comment.user.full_name %> dice:</b></header>
+	    <div class="panel-body"><%= comment.body %></div>
+	  </div>
+	<% end %>
+	<% if signed_in? %>
+  <%= form_for [@supplier, @supplier.supplier_comments.build], remote: true do |f| %>
+    <div >
+      <%= f.text_area :body, placeholder: "Agregar comentario" %>
+    </div>
 
+    <div class="actions text-left">
+      <%= f.submit "Comentar", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+<% end %>
+</div>
 <% if supplier_signed_in? && current_supplier.id == @supplier.id%>
   <h1>Opciones del proveedor</h1>
 
