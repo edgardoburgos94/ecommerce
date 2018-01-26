@@ -7,7 +7,8 @@
 
 
 <div class="devise-form">
-  <h2>Registrarme como <%=name%></h2>
+
+  <h5>Registrarme como <%=name%></h5>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
@@ -26,7 +27,7 @@
       <%= f.text_field :full_name, autofocus: true %>
     </div>
 
-    
+
 
     <div class="field">
       <%= f.label :email %><br />

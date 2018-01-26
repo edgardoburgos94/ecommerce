@@ -15,39 +15,15 @@
  */
 @import "bootstrap";
 
-#m-supplier {
-  text-decoration: none;
-  display:block;
-  text-align: center;
-}
-#m-user {
-  text-decoration: none;
-  text-align: center;
-  display:block;
-}
-
-.modal-body img{
-  max-width: 90%;
-  display: block; /*for the img inside your div */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.p-description {
-  text-align: center;
-  display:block;
-}
-
 .devise-form {
-
+  background-color: white;
   width: 40%;
   min-width: 250px;
   padding: 30px;
   margin: auto;
-  border: 1px solid rgb(150, 150, 150);
+  margin-top: 5px;
   text-align: center;
-  border-radius: 20px;
-  box-shadow: 5px 5px 18px rgb(150, 150, 150);
+  border-bottom-right-radius: 40px;
 }
 
 .notifications {
@@ -180,8 +156,10 @@ footer {
   text-align: center;
   vertical-align: middle;
   line-height: normal;
+  position: fixed;
   margin: 0;
   padding: 15px;
+  left: 0px;
   bottom: 0px;
   width: 100%;
 }
