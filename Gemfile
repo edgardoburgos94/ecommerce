@@ -50,9 +50,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.0.0.beta2.1'
-gem 'jquery-rails'
+gem 'jquery-rails', '4.3.1'
 gem 'annotate', '~> 2.7', '>= 2.7.1'
-gem 'devise'
+gem 'devise', '4.4.1'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'faker', '~> 1.6', '>= 1.6.6'
 
