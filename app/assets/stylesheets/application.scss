@@ -14,28 +14,7 @@
  *= require_self
  */
 @import "bootstrap";
-#m-supplier {
-   text-decoration: none;
-   display:block;
-   text-align: center;
- }
- #m-user {
-   text-decoration: none;
-   text-align: center;
-   display:block;
- }
- 
- .modal-body img{
-   max-width: 90%;
-   display: block; /*for the img inside your div */
-   margin-left: auto;
-   margin-right: auto;
- }
- 
- .p-description {
-   text-align: center;
-   display:block;
- }
+
 .devise-form {
   background-color: white;
   width: 40%;
