@@ -17,6 +17,7 @@
 
 .devise-form {
   background-color: white;
+  color: #706F6F;
   width: 40%;
   min-width: 300px;
   padding: 30px;
@@ -24,6 +25,33 @@
   margin-top: 5px;
   text-align: center;
   border-bottom-right-radius: 40px;
+}
+
+.devise-form input{
+  background-color: white;
+  color: #706F6F;
+  border: 2px solid #F29100;
+  padding: 3px;
+}
+
+.devise-form a{
+  color: #F29100;
+}
+
+#sign-in-button, #log-in-button {
+  background-color: #F29100;
+  color: white;
+  padding-top: 0px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+#remember_me:checked {
+  background-color: #F29100;
+}
+
+.actions {
+  margin-top: 5px; 
 }
 
 .notifications {
