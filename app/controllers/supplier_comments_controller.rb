@@ -1,8 +1,6 @@
 class SupplierCommentsController < ApplicationController
   def create
     supplier = Supplier.find(params[:supplier_id])
-    puts("<---------------")
-    puts(params)
     supplier.supplier_comments.create(supplier_comments_params)
 
     redirect_to request.referer

@@ -15,35 +15,6 @@
  */
 @import "bootstrap";
 
-nav {
-  background: #000;
-  border-bottom: 2px solid #e00;
-  // height: 45px;
-}
-
-#prueba, #carrito,#contact, #about, #tienda,#blog, #title, #admin, #u-signout, #p-signout {
-  color: #fff;
-  margin: 0px 5px 0px 5px;
-}
-
-.i-r-link {
-  margin-top: 8px;
-  cursor: pointer;
-  color: white;
-}
-
-.l-user {
-  float: left;
-  width: 50%;
-
-}
-
-.l-suppli {
-  float: right;
-  width: 50%;
-
-}
-
 #m-supplier {
   text-decoration: none;
   display:block;
@@ -86,4 +57,320 @@ nav {
   height: auto;
   clear: both;
   color: white;
+}
+
+body {
+  background-color: #F6F6F6 !important;
+  height: 1000px;
+}
+
+nav {
+  background: linear-gradient(#F29100 98% , #706F6F);
+  min-height: 125px;
+}
+.nav-top {
+  width: 100%;
+  min-height: 100px;
+  text-align: center;
+  border-bottom: 1px solid #F29100; 
+}
+
+.logo {
+  width: 30%;
+  max-width: 355px;
+  height: 97%;
+  float: left;
+  margin-top: 0px;
+  margin-left: 2.5%;
+  display:inline-block;
+  /* border: 1px solid blue; */
+}
+
+.logo img {
+  width: 100%;
+}
+
+.search {
+  width: 30%;
+  min-width: 290px;
+  max-width: 350px;
+  margin: auto;
+  margin-top: 20px;
+  display:inline-block;
+  /* border: 1px solid blue; */
+}
+
+.search input {
+  border: none;
+  width: 85%;
+  padding: 10px;
+  margin: -5px;
+}
+
+.search button {
+  height: 35.25px;
+  border: 0.5px solid white;
+  padding: 0px 13px 0px 13px;
+  background-color: white;
+  border-top-right-radius: 29px;
+  border-bottom-right-radius: 29px;
+}
+
+.search button:hover {
+  background-color: #eee;
+}
+
+.buscador {
+  border-top-left-radius: 29px;
+  border-bottom-left-radius: 29px;
+  height: 35px;
+}
+
+.search p {
+  font-size: 14px;
+  color: white;
+  font-style: italic;
+}
+
+.login-signin {
+  background: #F28321;
+  float:right;
+  margin-top: 25px;
+  width: 30%;
+  max-width: 300px;
+  height: 75px;
+  border-bottom-left-radius: 15px;
+  display:inline-block;
+  padding: 1%;
+  color: white;
+  text-align: left;
+  /* border: 1px solid blue; */
+}
+
+.login-signin h6 {
+  margin-left: 9%;
+}
+
+.login-signin a {
+  background: #EA5B0C;
+  border-radius: 10px;
+  padding: 0px 12px 0px 12px;
+  margin: 0px 1% 0px 1%;
+  text-align: center;
+  max-height: 100%;
+  color: white;
+  font-style: italic;
+}
+
+.login-signin a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.login-signin a img {
+  height: 15px;
+  margin-top: -3px;
+}
+
+footer {
+  clear: both;
+  height: 58px;
+  background: #706F6F;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  line-height: normal;
+  position: fixed;
+  margin: 0;
+  padding: 15px;
+  bottom: 0px;
+  width: 100%;
+}
+
+footer a{
+  color: white;
+  margin: 25px 10px 0px 10px;
+  padding-top: 25px;
+}
+
+footer a:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.topnav {
+  min-height: 65px;
+  background-color: #000;
+  text-align: center;
+}
+
+.topnav a {
+  height: 65px;
+  margin: auto;
+  margin: 0px -3px 0px -2px;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 20px 2% 0px 2%;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #EA5B0C;
+  color: white;
+
+  text-decoration: none;
+
+}
+
+#dropdownMenuButton {
+  background-color: #000;
+  color: white;
+}
+
+#dropdownMenuButton:hover {
+  background-color: #EA5B0C;
+}
+
+#menu-products {
+  background-color: #DADADA;
+  border: 1px solid #706F6F;
+  width: 230px;
+  padding: 0px;
+  margin: 0px;
+}
+
+#menu-products a{
+  color: #706F6F;
+  margin-left: 0px;
+  border-bottom: 1px solid #706F6F;
+}
+
+#menu-products a:hover{
+  background-color: #9D9D9C;
+  color: white;
+  border-right: 1px solid #706F6F;
+
+  font-style: italic;
+}
+
+.active {
+  background-color: #F28321;
+  color: white;
+}
+
+#hamburger {
+  display: none;
+}
+
+#hamburger:hover {
+  background-color: #000;
+
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media screen and (max-width: 900px) {
+  .topnav {
+    min-height: 0px;
+  }
+  .topnav a {display: none;}
+  .active {
+    float: left;
+    width: 100%;
+    background: #000;
+  }
+  #hamburger {
+    display: inline-block;
+    float: right;
+    background-color: #F28321;
+    font-style: normal;
+  }
+  #hamburger:hover {
+    background-color: #F28321;
+  }
+  .login-signin {
+    float: left;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    padding-top: 15px;
+    height: 50px;
+  }
+  .login-signin h6 {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .search {
+    width: 45%;
+  }
+  .logo {
+    width: 45%
+  }
+
+
+  nav {
+    height: 175px;
+  }
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  @media screen and (max-width: 600px) {
+    nav {
+      height: 265px;
+    }
+    .logo {
+      width: 345px;
+    }
+    .search {
+      width: 100%;
+      max-width: 550px;
+    }
+    .login-signin {
+      width: 100%;
+      text-align: left;
+    }
+    .login-signin h6 {
+      margin-left: 1%;
+      margin-right: 1%;
+      font-size: 13px;
+    }
+    .login-signin a {
+      margin-left: 0px;
+      margin-right: 0px;
+      padding: 5px 5px 5px 5px;
+      font-size: 15px;
+    }
+}
 }

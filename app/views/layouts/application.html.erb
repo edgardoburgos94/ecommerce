@@ -12,8 +12,7 @@
   <body>
 
     <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-md navbar-light ">
-      <!-- <a class="navbar-brand" href="#"><h1>E-commerce</h1></a> -->
+    <!-- <nav class="navbar navbar-expand-md navbar-light ">
       <%= link_to alfa_path, class: "navbar-brand", id: "title" do%>
         <strong>Alfa</strong>
       <%end%>
@@ -65,7 +64,6 @@
             <strong><%= link_to "Cerrar sesión", destroy_supplier_session_path, method: :delete, :class=>"nav-link", id: "p-signout"%></strong>
           </li>
           <% else %>
-          <!-- Button trigger modal -->
           <li class="nav-item i-r-link text-center" data-toggle="modal" data-target="#exampleModal">
             <strong>Ingresar/Registrarme</strong>
           </li>
@@ -73,7 +71,46 @@
         </ul>
 
       </div>
-      </nav>
+      </nav> -->
+
+      <nav >
+      <div class="nav-top">
+        <a class=" logo" href="#"><img src="https://drive.google.com/uc?export=view&id=1dpUUX6C5hEK4gdfIfiF5DMXoYlCf7-Oz"></a>
+        <form class="search">
+          <p>"El lugar donde se hacen los buenos negocios"</p>
+          <input class="buscador" type="search" placeholder="Buscar productos o proveedores" aria-label="Search">
+            <button type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+        </form>
+        <div class="login-signin">
+          <h6>Ingresar / Registrarme</h6>
+          <a href="#">Proveedor <img src="https://drive.google.com/uc?export=view&id=1895SZvf-fhMmjJWIj0GB41ANYtASQHiy"></a>
+          <a href="#">Usuario <img src="https://drive.google.com/uc?export=view&id=1cj6j5DjBkl7JtrzDj6yvuqGXY8cfiMvv"></a>
+          <a href="javascript:void(0);" id="hamburger" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+      </div>
+
+
+
+
+    </nav>
+
+    <div class="topnav" id="myTopnav">
+        <a class=" dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Productos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="menu-products">
+          <a class="dropdown-item" href="#">Camisetas Polo</a>
+          <a class="dropdown-item" href="#">Camisas Manga larga</a>
+          <a class="dropdown-item" href="#">Jeans</a>
+        </div>
+      <a href="#news">Noticias</a>
+      <a href="#contact">Preguntas frecuentes</a>
+      <a href="#about">Carrito de compras <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+      <a href="#about">Mi perfil</a>
+      <a href="#about" class="active">Administrador</a>
+    </div>
 
 
 
