@@ -72,7 +72,7 @@ nav {
   width: 100%;
   min-height: 100px;
   text-align: center;
-  border-bottom: 1px solid #F29100; 
+  border-bottom: 1px solid #F29100;
 }
 
 .logo {
@@ -180,7 +180,6 @@ footer {
   text-align: center;
   vertical-align: middle;
   line-height: normal;
-  position: fixed;
   margin: 0;
   padding: 15px;
   bottom: 0px;
@@ -244,6 +243,8 @@ footer a:hover{
 #menu-products a{
   color: #706F6F;
   margin-left: 0px;
+  height: 50px;
+  padding-top: 12px;
   border-bottom: 1px solid #706F6F;
 }
 

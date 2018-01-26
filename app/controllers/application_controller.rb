@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  layout 'application'
+  before_action :set_layout_variables
+  def set_layout_variables
+    @categories = Category.all
+  end
 
   include ApplicationHelper
 

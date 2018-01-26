@@ -1,3 +1,3 @@
-<strong><%= link_to carts_path, :class=>"nav-link", id: "carrito" do%>
-  <i class="fa fa-shopping-cart" aria-hidden="true"></i> (<%=current_order.order_items.size%>) Ver carrito
-<%end%></strong>
+<%= link_to carts_path, :class=>"nav-link", id: "carrito" do%>
+  Carrito de compras (<%=current_order.order_items.size%>) <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+<%end%>

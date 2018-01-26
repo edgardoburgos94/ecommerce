@@ -75,7 +75,9 @@
 
       <nav >
       <div class="nav-top">
-        <a class=" logo" href="#"><img src="https://drive.google.com/uc?export=view&id=1dpUUX6C5hEK4gdfIfiF5DMXoYlCf7-Oz"></a>
+        <%= link_to categories_path, :class=>"logo" do%>
+        <img src="https://drive.google.com/uc?export=view&id=1dpUUX6C5hEK4gdfIfiF5DMXoYlCf7-Oz">
+        <%end%>
         <form class="search">
           <p>"El lugar donde se hacen los buenos negocios"</p>
           <input class="buscador" type="search" placeholder="Buscar productos o proveedores" aria-label="Search">
@@ -85,8 +87,12 @@
         </form>
         <div class="login-signin">
           <h6>Ingresar / Registrarme</h6>
-          <a href="#">Proveedor <img src="https://drive.google.com/uc?export=view&id=1895SZvf-fhMmjJWIj0GB41ANYtASQHiy"></a>
-          <a href="#">Usuario <img src="https://drive.google.com/uc?export=view&id=1cj6j5DjBkl7JtrzDj6yvuqGXY8cfiMvv"></a>
+          <%= link_to supplier_session_path do%>
+          Proveedor <img src="https://drive.google.com/uc?export=view&id=1895SZvf-fhMmjJWIj0GB41ANYtASQHiy">
+          <%end%>
+          <%= link_to user_session_path do%>
+          Cliente <img src="https://drive.google.com/uc?export=view&id=1cj6j5DjBkl7JtrzDj6yvuqGXY8cfiMvv">
+          <%end%>
           <a href="javascript:void(0);" id="hamburger" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
       </div>
@@ -97,47 +103,33 @@
     </nav>
 
     <div class="topnav" id="myTopnav">
-        <a class=" dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Productos
-        </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="menu-products">
-          <a class="dropdown-item" href="#">Camisetas Polo</a>
-          <a class="dropdown-item" href="#">Camisas Manga larga</a>
-          <a class="dropdown-item" href="#">Jeans</a>
-        </div>
-      <a href="#news">Noticias</a>
-      <a href="#contact">Preguntas frecuentes</a>
-      <a href="#about">Carrito de compras <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-      <a href="#about">Mi perfil</a>
-      <a href="#about" class="active">Administrador</a>
-    </div>
-
-
-
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-              <div class="l-user">
-                <strong><%= link_to user_session_path, id: "m-user" do%>
-                  <img src="https://drive.google.com/uc?export=view&id=1qc_kSPGM_LZ09CYYx8Yoz0yGjmP9lXAL">
-                  <p>Ingresar como usuario</p>
-                <%end%></strong>
-                <p class="p-description">Obtén increibles descuentos</p>
-              </div>
-              <div class="l-suppli">
-                <strong><%= link_to supplier_session_path, id: "m-supplier" do%>
-                  <img src="https://drive.google.com/uc?export=view&id=1H0LWdazuzXMPeweZdMn00eyssoyaleuq">
-                  <p>Ingresar como proveedor</p>
-                <%end%></strong>
-                <p class="p-description">Promociona tus productos</p>
-              </div>
-
-            </div>
-          </div>
-        </div>
+      <a class=" dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Productos
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="menu-products">
+        <% @categories.each do |catego|%>
+          <%=link_to catego.title, category_products_path(catego), class:"dropdown-item"%>
+        <%end%>
       </div>
+      <%= link_to "Noticias", blog_path%>
+      <a href="#contact">Preguntas frecuentes</a>
+      <% if not supplier_signed_in?%>
+        <%= render 'layouts/cart' %>
+      <%end%>
+      <% if user_signed_in? %>
+        <%= link_to "Mi perfil usuario", my_profile_path  %>
+      <%end%>
+      <% if supplier_signed_in? %>
+        <%= link_to "Mi perfil proveedor", supplier_path(current_supplier)%>
+      <%end%>
+      <%= link_to "Administrador", admin_path, class: "active"%>
+      <% if user_signed_in? %>
+          <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
+      <%end%>
+      <% if supplier_signed_in? %>
+        <%= link_to "Cerrar sesión", destroy_supplier_session_path, method: :delete%>
+      <% end %>
+    </div>
 
 
     <div class=" notifications">
@@ -161,7 +153,11 @@
       <%= yield %>
     </div>
 
-
+    <footer>
+      <a href="#">Terminos y condiciones</a>
+      <a href="#">Politicas de privacidad</a>
+      <%= link_to "Contáctanos", contact_path%>
+    </footer>
 
   </body>
 </html>
