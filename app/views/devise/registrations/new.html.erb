@@ -18,7 +18,6 @@
     <%= devise_error_messages! %>
 
     <% if resource_name.to_s == "supplier"%>
-      <h5>Add hidden inputs</h5>
       <%= f.hidden_field :p_ure, :value => 0 %>
       <%= f.hidden_field :p_dia, :value => 0 %>
       <%= f.hidden_field :p_cmin, :value => 0 %>
@@ -48,7 +47,7 @@
 
     <div class="field">
       <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %> 
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
 
     <div class="actions">
@@ -58,3 +57,18 @@
 
   <%= render "devise/shared/links" %>
 </div>
+
+<% if resource_name.to_s == "supplier"%>
+  <script>
+    new DeleteActiveClass();
+    new DeleteActiveLinkClass();
+    new AddSupplierActiveLinkClass();
+  </script>
+<%end%>
+<% if resource_name.to_s == "user"%>
+  <script>
+    new DeleteActiveClass();
+    new DeleteActiveLinkClass();
+    new AddUserActiveLinkClass();
+  </script>
+<%end%>

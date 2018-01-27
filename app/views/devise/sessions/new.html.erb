@@ -41,3 +41,18 @@
 
   <%= render "devise/shared/links" %>
 </div>
+
+<% if resource_name.to_s == "supplier"%>
+  <script>
+    new DeleteActiveClass();
+    new DeleteActiveLinkClass();
+    new AddSupplierActiveLinkClass();
+  </script>
+<%end%>
+<% if resource_name.to_s == "user"%>
+  <script>
+    new DeleteActiveClass();
+    new DeleteActiveLinkClass();
+    new AddUserActiveLinkClass();
+  </script>
+<%end%>

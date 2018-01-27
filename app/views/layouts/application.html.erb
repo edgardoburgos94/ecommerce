@@ -88,10 +88,10 @@
         </form>
         <div class="login-signin">
           <h6>Ingresar / Registrarme</h6>
-          <%= link_to supplier_session_path do%>
+          <%= link_to supplier_session_path, id:'supplier-link' do%>
           Proveedor <img src="https://drive.google.com/uc?export=view&id=1895SZvf-fhMmjJWIj0GB41ANYtASQHiy">
           <%end%>
-          <%= link_to user_session_path do%>
+          <%= link_to user_session_path, id:'user-link' do%>
           Cliente <img src="https://drive.google.com/uc?export=view&id=1cj6j5DjBkl7JtrzDj6yvuqGXY8cfiMvv">
           <%end%>
           <a href="javascript:void(0);" id="hamburger" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>

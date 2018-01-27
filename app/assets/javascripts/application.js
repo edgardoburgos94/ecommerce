@@ -27,10 +27,23 @@ function myFunction() {
     }
 }
 
+
 function AddEditUserActiveClass() {
   $("#u-profile").addClass( "active" )
 }
 
+function AddUserActiveLinkClass() {
+  $("#user-link").addClass( "active-link" )
+}
+
+function AddSupplierActiveLinkClass() {
+  $("#supplier-link").addClass( "active-link" )
+}
+
 function AddEditSupplierActiveClass() {
   $("#s-profile").addClass( "active" )
+}
+
+function DeleteActiveLinkClass() {
+  $(".active-link").removeClass( ".active-link" )
 }
