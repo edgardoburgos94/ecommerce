@@ -3,7 +3,7 @@
   <head>
     <title>Boomket</title>
     <%= csrf_meta_tags %>
-    
+
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <link rel="stylesheet" type="text/CSS" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -97,11 +97,7 @@
           <a href="javascript:void(0);" id="hamburger" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
       </div>
-
-
-
-
-    </nav>
+  </nav>
 
     <div class="topnav" id="myTopnav">
       <a class=" dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -112,18 +108,18 @@
           <%=link_to catego.title, category_products_path(catego), class:"dropdown-item"%>
         <%end%>
       </div>
-      <%= link_to "Noticias", blog_path%>
+      <%= link_to "Noticias", blog_path, id:'blog'%>
       <a href="#contact">Preguntas frecuentes</a>
       <% if not supplier_signed_in?%>
         <%= render 'layouts/cart' %>
       <%end%>
       <% if user_signed_in? %>
-        <%= link_to "Mi perfil usuario", my_profile_path  %>
+        <%= link_to "Mi perfil usuario", my_profile_path, id:'u-profile'  %>
       <%end%>
       <% if supplier_signed_in? %>
-        <%= link_to "Mi perfil proveedor", supplier_path(current_supplier)%>
+        <%= link_to "Mi perfil proveedor", supplier_path(current_supplier), id:'s-profile'%>
       <%end%>
-      <%= link_to "Administrador", admin_path, class: "active"%>
+      <%= link_to "Administrador", admin_path, id:'admin'%>
       <% if user_signed_in? %>
           <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
       <%end%>
