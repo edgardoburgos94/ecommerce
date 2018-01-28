@@ -60,11 +60,16 @@
 
 .notifications {
   margin: auto;
-  width: 80%;
-  min-height: 60px;
+  width: 100%;
+  max-height: 50px;
   height: auto;
+  margin-bottom: auto !important;
   clear: both;
   color: white;
+}
+
+.notifications p {
+  margin-bottom: 0px !important;
 }
 
 body {
@@ -388,4 +393,10 @@ footer a:hover{
 
 .active-link {
   background-color: #706F6F !important;
+}
+
+
+
+.carousel {
+  margin-top: 0px;
 }

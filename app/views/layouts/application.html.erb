@@ -128,23 +128,25 @@
       <% end %>
     </div>
 
-    <div class=" notifications">
-      <% if  not notice== nil%>
-      <p class="alert alert-info alert-dismissible fade show"><%= notice %>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </p>
+    <% if (not notice == nil) || (not alert== nil)%>
+      <div class=" notifications">
+        <% if  not notice== nil%>
+        <p class="alert alert-info alert-dismissible fade show"><%= notice %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </p>
 
-      <%end%>
-      <% if not alert== nil%>
-      <p class="alert alert-danger alert-dismissible fade show"><%= alert %>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </p>
-      <%end%>
-    </div>
+        <%end%>
+        <% if not alert== nil%>
+        <p class="alert alert-danger alert-dismissible fade show"><%= alert %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </p>
+        <%end%>
+      </div>
+    <%end%>
 
     <%= yield %>
 
