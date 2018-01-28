@@ -18,6 +18,7 @@
 //= require popper
 //= require bootstrap-sprockets
 
+
 function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -26,7 +27,6 @@ function myFunction() {
         x.className = "topnav";
     }
 }
-
 
 function AddEditUserActiveClass() {
   $("#u-profile").addClass( "active" )

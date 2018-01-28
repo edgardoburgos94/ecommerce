@@ -128,7 +128,6 @@
       <% end %>
     </div>
 
-
     <div class=" notifications">
       <% if  not notice== nil%>
       <p class="alert alert-info alert-dismissible fade show"><%= notice %>
@@ -146,15 +145,14 @@
       </p>
       <%end%>
     </div>
-    <div class="container">
-      <%= yield %>
-    </div>
+
+    <%= yield %>
+
 
     <footer>
       <a href="#">Terminos y condiciones</a>
       <a href="#">Politicas de privacidad</a>
       <%= link_to "Contáctanos", contact_path%>
     </footer>
-
   </body>
 </html>
