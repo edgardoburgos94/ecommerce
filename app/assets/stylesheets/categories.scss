@@ -77,14 +77,23 @@
 }
 
 .products-publicity  {
-  margin-bottom: 20px;
-  margin-top: 10px;
+  margin-top: 25px;
+  padding-bottom: 40px;
+  height: auto;
+}
+
+.publicity-description {
+  background-color: white;
+  text-align: left;
+  padding: 5px 5px 5px 20px;
+  color: #706F6F;
 }
 
 
 .products-publicity img {
   margin: auto;
   width: 100%;
+  max-width: 400px;
   margin-right: 2.5%;
 }
 
@@ -93,6 +102,15 @@
   display: inline-block;
   margin: 0% 1.25% 0% 1.25%;
 }
+
+.products-publicity a:hover {
+  text-decoration: none;
+}
+
+.color-naranja {
+  color: #F29100;
+}
+
 
 .products-publicity a:hover {
   border-bottom: 4px solid #EA5B0C;
