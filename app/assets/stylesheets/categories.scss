@@ -84,6 +84,7 @@
 
 .publicity-description {
   background-color: white;
+  max-width: 400px;
   text-align: left;
   padding: 5px 5px 5px 20px;
   color: #706F6F;
@@ -99,6 +100,7 @@
 
 .products-publicity a {
   width: 25%;
+  max-width: 400px;
   display: inline-block;
   margin: 0% 1.25% 0% 1.25%;
 }
@@ -114,7 +116,20 @@
 
 .products-publicity a:hover {
   border-bottom: 4px solid #EA5B0C;
+}
 
+.medios-pago {
+  margin-top: 40px;
+}
+
+.medios-pago img{
+  width: 55%;
+}
+
+.medios-pago h4{
+  padding-left: 10%;
+  color: #B2B2B2;
+  background-color: #F6F6F6;
 }
 
 @media screen and (max-width: 600px) {
