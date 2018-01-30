@@ -27,35 +27,37 @@
 </div>
 
 <div class="publicity">
-  <div class="publicity-title">
-    <h4>Descuento del día</h4>
-  </div>
+  <%if @products_with_promotion.length >=3%>
+    <div class="publicity-title">
+      <h4>Descuento del día</h4>
+    </div>
 
-  <div class="products-publicity">
-    <%if @products_with_promotion.length >=3%>
+    <div class="products-publicity">
       <%random_n = (0..@products_with_promotion.length-1).to_a.shuffle%>
       <%3.times do |i|%>
           <%=link_to [@products_with_promotion[random_n[i]].category, @products_with_promotion[random_n[i]]] do%>
             <img src="<%=@products_with_promotion[random_n[i]].img_url%>" class="adjust-product-img">
-            <div class="publicity-description">Precios especiales <br> <span class="color-naranja">Desde $</span></div>
+            <div class="publicity-description">Precios especiales <br> <span class="color-naranja">Descuento del <%=@products_with_promotion[random_n[i]].supplier.p_dia + @products_with_promotion[random_n[i]].supplier.p_ure%>%</span></div>
           <%end%>
       <%end%>
-    <%end%>
-    <!-- <a href="#"><img src="https://definicion.de/wp-content/uploads/2015/05/zapato.jpg" class="adjust-product-img"><div class="publicity-description">Precios especiales <br> <span class="color-naranja">Desde $</span></div></a>
-    <a href="#"><img src="https://drive.google.com/uc?export=view&id=1hZsIUEE7HFfvPA6kDbQm-YBZMbsxEq9E" class="adjust-product-img"><div class="publicity-description">Precios especiales <br> <span class="color-naranja">Desde $</span></div></a>
-    <a href="#"><img src="https://drive.google.com/uc?export=view&id=1hZsIUEE7HFfvPA6kDbQm-YBZMbsxEq9E" class="adjust-product-img"><div class="publicity-description">Precios especiales <br> <span class="color-naranja">Desde $</span></div></a> -->
-  </div>
+    </div>
+  <%end%>
 
-  <div class="publicity-title">
-    <h4>Recomendado para ti</h4>
-  </div>
+  <%if @all_products.length >=3%>
+    <div class="publicity-title">
+      <h4>Recomendado para ti</h4>
+    </div>
 
-  <div class="products-publicity">
-    <a href="#"><img src="https://drive.google.com/uc?export=view&id=1hZsIUEE7HFfvPA6kDbQm-YBZMbsxEq9E" class="adjust-product-img"><div class="publicity-description">Descripción <br> <span class="color-naranja">Proveedor</span></div></a>
-    <a href="#"><img src="https://drive.google.com/uc?export=view&id=1hZsIUEE7HFfvPA6kDbQm-YBZMbsxEq9E" class="adjust-product-img"><div class="publicity-description">Descripción <br> <span class="color-naranja">Proveedor</span></div></a>
-    <a href="#"><img src="https://drive.google.com/uc?export=view&id=1hZsIUEE7HFfvPA6kDbQm-YBZMbsxEq9E" class="adjust-product-img"><div class="publicity-description">Descripción <br> <span class="color-naranja">Proveedor</span></div></a>
-  </div>
-
+    <div class="products-publicity">
+      <%random_n = (0..@all_products.length-1).to_a.shuffle%>
+      <%3.times do |i|%>
+        <%=link_to [@all_products[random_n[i]].category, @all_products[random_n[i]]] do%>
+          <img src="<%=@all_products[random_n[i]].img_url%>" class="adjust-product-img">
+          <div class="publicity-description">Precios especiales <br> <span class="color-naranja"><%=@all_products[random_n[i]].supplier.full_name%></span></div>
+        <%end%>
+      <%end%>
+    </div>
+  <%end%>
 </div>
 
 <div class="medios-pago">

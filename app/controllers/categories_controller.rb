@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
-
+    @all_products = Product.all
     products_in_promotion()
 
     if params[:concept].present?
