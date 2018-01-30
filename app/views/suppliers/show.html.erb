@@ -1,3 +1,12 @@
+<div class="cover-image">
+  <img src="<%=@supplier.cover_img%> " class="supplier-cover">
+</div>
+
+<div class="profile-image">
+  <img src="<%=@supplier.profile_img%>">
+</div>
+
+
 <h1>Detalles del proveedor</h1>
 <table class="table table-striped">
   <thead>
@@ -93,6 +102,7 @@
 <%end%>
 
 <script>
+  new ResizeSupplierCover();
   new DeleteActiveClass();
   new DeleteActiveLinkClass();
   new AddEditSupplierActiveClass();
