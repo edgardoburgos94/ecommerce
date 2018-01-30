@@ -1,6 +1,9 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
+
+    products_in_promotion()
+
     if params[:concept].present?
       @categories = @categories.where("title LIKE ?", "%#{params[:concept]}%")
     end
@@ -44,5 +47,13 @@ class CategoriesController < ApplicationController
   private
   def category_params
     params.require(:category).permit(:title, :img_url, :supplier_id)
+  end
+
+  def products_in_promotion
+    suppliers_with_promotion = Supplier.where("p_dia > ?",0)
+    @products_with_promotion = []
+    suppliers_with_promotion.each do |supplier|
+      @products_with_promotion = @products_with_promotion + supplier.products
+    end
   end
 end

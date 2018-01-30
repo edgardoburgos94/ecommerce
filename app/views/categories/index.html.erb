@@ -32,9 +32,18 @@
   </div>
 
   <div class="products-publicity">
+    <%if @products_with_promotion.length >=3%>
+      <%random_n = (0..@products_with_promotion.length-1).to_a.shuffle%>
+      <%3.times do |i|%>
+          <%=link_to [@products_with_promotion[random_n[i]].category, @products_with_promotion[random_n[i]]] do%>
+            <img src="<%=@products_with_promotion[random_n[i]].img_url%>" class="adjust-product-img">
+            <div class="publicity-description">Precios especiales <br> <span class="color-naranja">Desde $</span></div>
+          <%end%>
+      <%end%>
+    <%end%>
+    <!-- <a href="#"><img src="https://definicion.de/wp-content/uploads/2015/05/zapato.jpg" class="adjust-product-img"><div class="publicity-description">Precios especiales <br> <span class="color-naranja">Desde $</span></div></a>
     <a href="#"><img src="https://drive.google.com/uc?export=view&id=1hZsIUEE7HFfvPA6kDbQm-YBZMbsxEq9E" class="adjust-product-img"><div class="publicity-description">Precios especiales <br> <span class="color-naranja">Desde $</span></div></a>
-    <a href="#"><img src="https://drive.google.com/uc?export=view&id=1hZsIUEE7HFfvPA6kDbQm-YBZMbsxEq9E" class="adjust-product-img"><div class="publicity-description">Precios especiales <br> <span class="color-naranja">Desde $</span></div></a>
-    <a href="#"><img src="https://drive.google.com/uc?export=view&id=1hZsIUEE7HFfvPA6kDbQm-YBZMbsxEq9E" class="adjust-product-img"><div class="publicity-description">Precios especiales <br> <span class="color-naranja">Desde $</span></div></a>
+    <a href="#"><img src="https://drive.google.com/uc?export=view&id=1hZsIUEE7HFfvPA6kDbQm-YBZMbsxEq9E" class="adjust-product-img"><div class="publicity-description">Precios especiales <br> <span class="color-naranja">Desde $</span></div></a> -->
   </div>
 
   <div class="publicity-title">
