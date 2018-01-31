@@ -1,16 +1,34 @@
-<div class="cover-image">
-  <img src="<%=@supplier.cover_img%> " class="supplier-cover">
-  <div class="franja"></div>
+<div class="cover-image supplier-cover" style="background-image: url(<%=@supplier.cover_img%>);">
+  <!-- <img src="<%=@supplier.cover_img%> " class="supplier-cover"> -->
+  <div class="profile-image">
+    <img src="<%=@supplier.profile_img%>">
+  </div>
+</div>
+<div class="franja"></div>
+<div class="description-container">
   <div class="supplier-description">
     <h4>Descripción</h4>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
-  <div class="profile-image">
-    <img src="<%=@supplier.profile_img%>">
-  </div>
-
-
 </div>
+
+
+
+<% if supplier_signed_in? && current_supplier.id == @supplier.id%>
+  <h1>Opciones del proveedor</h1>
+
+  <%= link_to cate_list_path, class: "admin-link" do%>
+    <button type="button" name="button">Mostrar categorías</button>
+  <%end%>
+
+  <%= link_to produ_list_path, class: "admin-link" do%>
+    <button type="button" name="button">Mostrar productos</button>
+  <%end%>
+
+  <%= link_to edit_supplier_registration_path, class: "admin-link" do%>
+    <button type="button" name="button">Editar pefil proveedor</button>
+  <%end%>
+<%end%>
 
 <h1>Detalles del proveedor</h1>
 <table class="table table-striped">
@@ -90,24 +108,10 @@
   <% end %>
 <% end %>
 </div>
-<% if supplier_signed_in? && current_supplier.id == @supplier.id%>
-  <h1>Opciones del proveedor</h1>
 
-  <%= link_to cate_list_path, class: "admin-link" do%>
-    <button type="button" name="button">Mostrar categorías</button>
-  <%end%>
-
-  <%= link_to produ_list_path, class: "admin-link" do%>
-    <button type="button" name="button">Mostrar productos</button>
-  <%end%>
-
-  <%= link_to edit_supplier_registration_path, class: "admin-link" do%>
-    <button type="button" name="button">Editar pefil proveedor</button>
-  <%end%>
-<%end%>
 
 <script>
-  new ResizeSupplierCover();
+  // new ResizeSupplierCover();
   new DeleteActiveClass();
   new DeleteActiveLinkClass();
   new AddEditSupplierActiveClass();
