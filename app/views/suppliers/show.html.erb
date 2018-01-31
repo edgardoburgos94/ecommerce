@@ -34,8 +34,10 @@
   <%@supplier.products.each do |product|%>
     <div class="product-container">
       <%=link_to [product.category, product] do%>
+
+        <img src="<%=product.img_url%>" class="adjust-product-img">
         <h5><%=product.title%></h5>
-        <img src="<%=product.img_url%>" >
+        <h6>$<%=number_with_delimiter(product.price, :delimiter => '.')%></h6>
       <%end%>
     </div>
   <%end%>
@@ -123,6 +125,7 @@
 
 <script>
   // new ResizeSupplierCover();
+  new ResizeProductImg();
   new DeleteActiveClass();
   new DeleteActiveLinkClass();
   new AddEditSupplierActiveClass();

@@ -11,19 +11,22 @@
 .products {
   text-align: center;
   margin: 25px 0px 0px 0px;
+  border: 2px solid green;
 }
 
 .product-container {
-  // border: 2px solid black;
+  border: 2px solid black;
   width: auto;
   text-align: center;
   display: inline-block;
   margin: 5px;
+  width: 20%;
+  max-width: 700px;
 }
 
 .product-container  img{
-  height: 270px;
-  width: 270px;
+  width: 100%;
+  border: 2px solid red;
 }
 
 .amount {
