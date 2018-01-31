@@ -30,6 +30,17 @@
   <%end%>
 <%end%>
 
+<div class="products">
+  <%@supplier.products.each do |product|%>
+    <div class="product-container">
+      <%=link_to [product.category, product] do%>
+        <h5><%=product.title%></h5>
+        <img src="<%=product.img_url%>" >
+      <%end%>
+    </div>
+  <%end%>
+</div>
+
 <h1>Detalles del proveedor</h1>
 <table class="table table-striped">
   <thead>
