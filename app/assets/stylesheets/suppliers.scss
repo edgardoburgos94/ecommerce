@@ -36,3 +36,25 @@
   display: inline-block;
   width: 100%;
 }
+
+@media screen and (max-width: 600px) {
+  .profile-image img {
+    margin: auto;
+    margin-top: 60px;
+  }
+
+  .cover-image {
+    text-align: center;
+    height: 200px;
+  }
+  // .description-container {
+  //   display: none;
+  // }
+  #espaciadora {
+    margin-bottom: 140px;
+  }
+  .supplier-description {
+    width: 90%;
+  }
+
+}
