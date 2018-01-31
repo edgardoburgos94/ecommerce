@@ -82,3 +82,9 @@
   width: 200px;
   height: 200px;
 }
+
+@media screen and (max-width: 600px) {
+  .product-container {
+    width: 30%;
+  }
+}
