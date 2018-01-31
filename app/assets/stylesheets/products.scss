@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.product-page h1, h2 {
-  text-align: center;
+.product-page h1, h2, h4 {
+  text-align: left;
   margin: 0px;
   color: black;
 }
@@ -11,22 +11,43 @@
 .products {
   text-align: center;
   margin: 25px 0px 0px 0px;
-  border: 2px solid green;
+  padding-top: 20px;
+  background-color: #EDEDED;
+}
+
+.our-products {
+  margin-left: 8%;
+  color: #706F6F;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 .product-container {
-  border: 2px solid black;
   width: auto;
   text-align: center;
   display: inline-block;
   margin: 5px;
   width: 20%;
   max-width: 700px;
+  margin: 20px 7px 20px 7px;
+}
+
+.product-container:hover {
+  border-bottom: 6px solid #F28321;
+}
+
+.product-container a:hover {
+  text-decoration: none;
 }
 
 .product-container  img{
   width: 100%;
-  border: 2px solid red;
+}
+
+.product-info {
+  background-color: white;
+  color: #706F6F;
+  height: 100%;
 }
 
 .amount {
