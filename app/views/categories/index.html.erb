@@ -29,7 +29,7 @@
 <div class="publicity">
   <%if @products_with_promotion.length >=3%>
     <div class="publicity-title">
-      <h4>Descuento del día</h4>
+      <h4 class="century-gothic">Descuento del día</h4>
     </div>
 
     <div class="products-publicity">
@@ -37,7 +37,7 @@
       <%3.times do |i|%>
           <%=link_to [@products_with_promotion[random_n[i]].category, @products_with_promotion[random_n[i]]] do%>
             <img src="<%=@products_with_promotion[random_n[i]].img_url%>" class="adjust-product-img">
-            <div class="publicity-description">Precios especiales <br> <span class="color-naranja">Descuento del <%=@products_with_promotion[random_n[i]].supplier.p_dia + @products_with_promotion[random_n[i]].supplier.p_ure%>%</span></div>
+            <div class="publicity-description century-gothic">Precios especiales <br> <span class="color-naranja century-gothic-bold">Descuento del <%=@products_with_promotion[random_n[i]].supplier.p_dia + @products_with_promotion[random_n[i]].supplier.p_ure%>%</span></div>
           <%end%>
       <%end%>
     </div>
@@ -45,7 +45,7 @@
 
   <%if @all_products.length >=3%>
     <div class="publicity-title">
-      <h4>Recomendado para ti</h4>
+      <h4 class="century-gothic">Recomendado para ti</h4>
     </div>
 
     <div class="products-publicity">
@@ -53,7 +53,7 @@
       <%3.times do |i|%>
         <%=link_to [@all_products[random_n[i]].category, @all_products[random_n[i]]] do%>
           <img src="<%=@all_products[random_n[i]].img_url%>" class="adjust-product-img">
-          <div class="publicity-description">Precios especiales <br> <span class="color-naranja"><%=@all_products[random_n[i]].supplier.full_name%></span></div>
+          <div class="publicity-description century-gothic">Precios especiales <br> <span class="color-naranja century-gothic-bold"><%=@all_products[random_n[i]].supplier.full_name%></span></div>
         <%end%>
       <%end%>
     </div>
@@ -61,7 +61,7 @@
 </div>
 
 <div class="medios-pago">
-  <h4>Multiples medios de pago</h4>
+  <h4 class="century-gothic">Multiples medios de pago</h4>
   <img src="https://drive.google.com/uc?export=view&id=1UNGAyB5R0O9lQqnEXzE8lgzfMp0VhP-r">
 </div>
 
