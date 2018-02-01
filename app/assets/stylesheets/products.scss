@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .category-title-products {
   padding-left: 8%;
-  padding-top: 30px; 
+  padding-top: 30px;
   color: #706F6F;
 }
 .product-page h1, h2, h4 {
@@ -69,7 +69,6 @@
 }
 
 .p-show-specifi {
-  float: left;
   margin: 30px;
   padding: 20px;
 }
@@ -85,6 +84,16 @@
 .recomended-product img {
   width: 200px;
   height: 200px;
+}
+
+.product-to-buy {
+  background-color: white;
+  float: left;
+  width: 60%;
+}
+
+.product-to-buy > div {
+  display: inline-block;
 }
 
 @media screen and (max-width: 600px) {
