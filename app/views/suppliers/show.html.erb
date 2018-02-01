@@ -7,7 +7,7 @@
 <div class="franja" id="espaciadora"></div>
 <div class="description-container">
   <div class="supplier-description">
-    <h4>Descripción</h4>
+    <h4 class="arial-bold">Descripción</h4>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
 </div>
@@ -15,7 +15,7 @@
 
 
 <% if supplier_signed_in? && current_supplier.id == @supplier.id%>
-  <h1>Opciones del proveedor</h1>
+  <h1 class="century-gothic">Opciones del proveedor</h1>
 
   <%= link_to cate_list_path, class: "admin-link" do%>
     <button type="button" name="button">Mostrar categorías</button>
@@ -30,7 +30,7 @@
   <%end%>
 <%end%>
 
-<h4 class="our-products">Nuestros productos</h4>
+<h4 class="our-products century-gothic">Nuestros productos</h4>
 
 <div class="products">
   <%@supplier.products.each do |product|%>
@@ -39,15 +39,15 @@
 
         <img src="<%=product.img_url%>" class="adjust-product-img">
         <div class="product-info">
-          <h5><%=product.title%></h5>
-          <h6 class="color-naranja">$<%=number_with_delimiter(product.price, :delimiter => '.')%></h6>
+          <h5 class="century-gothic"><%=product.title%></h5>
+          <h6 class="color-naranja century-gothic-bold">$<%=number_with_delimiter(product.price, :delimiter => '.')%></h6>
         </div>
       <%end%>
     </div>
   <%end%>
 </div>
 
-<h1>Detalles del proveedor</h1>
+<!-- <h1>Detalles del proveedor</h1>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -104,9 +104,9 @@
     </tr>
 
   </tbody>
-</table>
+</table> -->
+<h4 class="our-products century-gothic">Comentarios</h4>
 <div class="product_comments">
-	<h3>Comentarios: </h3>
 	<% @supplier.supplier_comments.each do |comment| %>
 	  <div class="panel panel-default">
 			<header class="panel-heading"> <b><%= comment.user.full_name %> dice:</b></header>
@@ -114,17 +114,16 @@
 	  </div>
 	<% end %>
 	<% if signed_in? %>
-  <%= form_for [@supplier, @supplier.supplier_comments.build], remote: true do |f| %>
-    <div >
-      <%= f.text_area :body, placeholder: "Agregar comentario" %>
-    </div>
+    <%= form_for [@supplier, @supplier.supplier_comments.build], remote: true do |f| %>
+      <div >
+        <%= f.text_area :body, placeholder: "Agregar comentario", class:'comment-field' %>
+      </div>
 
-    <div class="actions text-left">
-      <%= f.submit "Comentar", class: "btn btn-primary" %>
-    </div>
+      <div>
+        <%= f.submit "Comentar", class: "btn submit-supplier-comment" %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
-</div>
 
 
 <script>

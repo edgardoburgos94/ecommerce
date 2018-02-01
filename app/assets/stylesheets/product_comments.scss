@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .product_comments {
-  float: left;
-  width: 70%;
+  width: 60%;
+  padding: 15px;
+  background-color: white;
+  border-bottom-right-radius: 50px;
+  min-height: 130px;
+  margin-bottom: 20%;
+
+}
+
+.panel-heading, .panel-body  {
+  margin-left: 15%;
+}
+.comment-field {
+  margin-top: 25px;
+  border-radius: 15px;
+  width: 50%;
+  max-width: 300px;
+  padding: 7px;
+}
+.submit-supplier-comment, .comment-field {
+  margin-left: 15%;
+
+  border: 2px solid #F29100;
 }
