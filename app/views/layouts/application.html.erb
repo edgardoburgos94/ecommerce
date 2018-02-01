@@ -11,120 +11,57 @@
   </head>
 
   <body>
-
-    <!-- Barra de navegación -->
-    <!-- <nav class="navbar navbar-expand-md navbar-light ">
-      <%= link_to alfa_path, class: "navbar-brand", id: "title" do%>
-        <strong>Alfa</strong>
+    <nav >
+    <div class="nav-top">
+      <%= link_to categories_path, :class=>"logo" do%>
+      <img src="https://drive.google.com/uc?export=view&id=1dpUUX6C5hEK4gdfIfiF5DMXoYlCf7-Oz">
       <%end%>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa fa-bars fa-inverse" aria-hidden="true"></i>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav   ml-auto" id="links">
-          <li class="nav-item text-center">
-            <strong><%= link_to "Administrador", admin_path, :class=>"nav-link text-center", id: "admin"%></strong>
-          </li>
-          <% if supplier_signed_in? %>
-          <li class="nav-item text-center">
-            <strong><%= link_to "Mi perfil proveedor", supplier_path(current_supplier), :class=>"nav-link text-center", id: "admin"%></strong>
-          </li>
-          <%end%>
-          <% if user_signed_in? %>
-            <li class="nav-item text-center">
-              <strong><%= link_to "Mi perfil usuario", my_profile_path, :class=>"nav-link text-center", id: "admin"  %></strong>
-            </li>
-          <%end%>
-          <li class="nav-item text-center">
-            <strong><%= link_to "¿Quiénes somos?", about_path, :class=>"nav-link text-center", id: "about"%></strong>
-          </li>
-          <li class="nav-item text-center">
-            <strong><%= link_to "Categorías", categories_path, :class=>"nav-link text-center", id: "tienda"%></strong>
-          </li>
-          <li class="nav-item text-center">
-            <strong><%= link_to "Contáctanos", contact_path, :class=>"nav-link", id: "contact"%></strong>
-          </li>
-          <li class="nav-item text-center">
-            <strong><%= link_to "Blog", blog_path, :class=>"nav-link", id: "blog"%></strong>
-          </li>
-
-          <% if not supplier_signed_in?%>
-            <li class="cart nav-item text-center">
-              <%= render 'layouts/cart' %>
-            </li>
-          <%end%>
-
-          <% if user_signed_in? %>
-            <li class="nav-item text-center">
-              <strong><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class=>"nav-link", id: "u-signout"  %></strong>
-            </li>
-
-          <% elsif supplier_signed_in? %>
-          <li class="nav-item text-center">
-            <strong><%= link_to "Cerrar sesión", destroy_supplier_session_path, method: :delete, :class=>"nav-link", id: "p-signout"%></strong>
-          </li>
-          <% else %>
-          <li class="nav-item i-r-link text-center" data-toggle="modal" data-target="#exampleModal">
-            <strong>Ingresar/Registrarme</strong>
-          </li>
-          <% end %>
-        </ul>
-
-      </div>
-      </nav> -->
-
-      <nav >
-      <div class="nav-top">
-        <%= link_to categories_path, :class=>"logo" do%>
-        <img src="https://drive.google.com/uc?export=view&id=1dpUUX6C5hEK4gdfIfiF5DMXoYlCf7-Oz">
+      <form class="search">
+        <p class="arial-italic">"El lugar donde se hacen los buenos negocios"</p>
+        <input class="buscador arial" type="search" placeholder="Buscar productos o proveedores" aria-label="Search">
+          <button type="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+      </form>
+      <div class="login-signin">
+        <h6 class:"arial-bold">Ingresar / Registrarme</h6>
+        <%= link_to supplier_session_path, class:"arial-italic", id:'supplier-link' do%>
+        Proveedor <img src="https://drive.google.com/uc?export=view&id=1895SZvf-fhMmjJWIj0GB41ANYtASQHiy">
         <%end%>
-        <form class="search">
-          <p>"El lugar donde se hacen los buenos negocios"</p>
-          <input class="buscador" type="search" placeholder="Buscar productos o proveedores" aria-label="Search">
-            <button type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </button>
-        </form>
-        <div class="login-signin">
-          <h6>Ingresar / Registrarme</h6>
-          <%= link_to supplier_session_path, id:'supplier-link' do%>
-          Proveedor <img src="https://drive.google.com/uc?export=view&id=1895SZvf-fhMmjJWIj0GB41ANYtASQHiy">
-          <%end%>
-          <%= link_to user_session_path, id:'user-link' do%>
-          Cliente <img src="https://drive.google.com/uc?export=view&id=1cj6j5DjBkl7JtrzDj6yvuqGXY8cfiMvv">
-          <%end%>
-          <a href="javascript:void(0);" id="hamburger" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-        </div>
+        <%= link_to user_session_path, class:"arial-italic", id:'user-link' do%>
+        Cliente <img src="https://drive.google.com/uc?export=view&id=1cj6j5DjBkl7JtrzDj6yvuqGXY8cfiMvv">
+        <%end%>
+        <a href="javascript:void(0);" id="hamburger" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
       </div>
+    </div>
   </nav>
 
     <div class="topnav" id="myTopnav">
       <a class=" dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Productos
+        <span class="arial-bold">Productos</span>
       </a>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="menu-products">
         <% @categories.each do |catego|%>
           <%=link_to catego.title, category_products_path(catego), class:"dropdown-item"%>
         <%end%>
       </div>
-      <%= link_to "Noticias", blog_path, id:'blog'%>
-      <a href="#contact">Preguntas frecuentes</a>
+      <%= link_to "Noticias", blog_path, class:"arial-bold", id:'blog'%>
+      <a href="#contact" ><span class="arial-bold">Preguntas frecuentes</span></a>
       <% if not supplier_signed_in?%>
         <%= render 'layouts/cart' %>
       <%end%>
       <% if user_signed_in? %>
-        <%= link_to "Mi perfil usuario", my_profile_path, id:'u-profile'  %>
+        <%= link_to "Mi perfil usuario", my_profile_path, class:"arial-bold", id:'u-profile'  %>
       <%end%>
       <% if supplier_signed_in? %>
-        <%= link_to "Mi perfil proveedor", supplier_path(current_supplier), id:'s-profile'%>
+        <%= link_to "Mi perfil proveedor", supplier_path(current_supplier), class:"arial-bold", id:'s-profile'%>
       <%end%>
-      <%= link_to "Administrador", admin_path, id:'admin'%>
+      <%= link_to "Administrador", admin_path, id:'admin', class:"arial-bold"%>
       <% if user_signed_in? %>
-          <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
+          <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"arial-bold" %>
       <%end%>
       <% if supplier_signed_in? %>
-        <%= link_to "Cerrar sesión", destroy_supplier_session_path, method: :delete%>
+        <%= link_to "Cerrar sesión", destroy_supplier_session_path, method: :delete, class:"arial-bold"%>
       <% end %>
     </div>
 

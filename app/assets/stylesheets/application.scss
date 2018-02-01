@@ -13,7 +13,24 @@
  *= require_self
  */
 @import "bootstrap";
-
+  .arial {
+    font-family: 'Arial';
+  }
+  .arial-italic {
+    font-family: 'Arial';
+    font-style: italic;
+  }
+  .arial-bold {
+    font-family: 'Arial' ;
+    font-weight: bold ;
+  }
+  .century-gothic {
+    font-family: "Century Gothic";
+  }
+  .century-gothic-bold{
+    font-family: 'Century Gothic';
+    font-weight: bold;
+  }
 .devise-form {
   background-color: white;
   color: #706F6F;
