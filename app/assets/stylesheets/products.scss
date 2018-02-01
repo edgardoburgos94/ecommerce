@@ -1,7 +1,11 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.category-title-products {
+  padding-left: 8%;
+  padding-top: 30px; 
+  color: #706F6F;
+}
 .product-page h1, h2, h4 {
   text-align: left;
   margin: 0px;

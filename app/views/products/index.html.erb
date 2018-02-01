@@ -1,14 +1,16 @@
 <div class="product-page">
   <% if @products.length > 0 %>
-    <h1><%=@products.first.category.title%> </h1>
+    <h1 class="category-title-products century-gothic"><%=@products.first.category.title%> </h1>
 
     <div class="products">
       <% @products.each do |product| %>
         <div class="product-container">
           <%=link_to [product.category, product] do%>
             <img src="<%=product.img_url%>" >
-            <h5><%=product.title%></h5>
-            <h6>$<%= number_with_delimiter(product.price, :delimiter => '.') %></h6>
+            <div class="product-info">
+              <h5class="century-gothic"><%=product.title%></h5>
+              <h6 class="color-naranja century-gothic-bold">$<%= number_with_delimiter(product.price, :delimiter => '.') %></h6>
+            </div>
           <%end%>
         </div>
       <%end%>
