@@ -75,7 +75,8 @@
 }
 .recomended-products {
   float: right;
-  width: 310px;
+  width: 25%;
+  margin-top: 40px;
 }
 
 .recomended-product {
@@ -123,6 +124,10 @@
 
 #product-comments-title {
   display: inline-block;
+}
+
+#recomended-product {
+  width: 80%;
 }
 
 @media screen and (max-width: 600px) {

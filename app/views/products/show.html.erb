@@ -61,17 +61,20 @@
 
 	<div class="recomended-products">
 		<%all_products = [] %>
-		<h4>Otros productos de este proveedor</h4>
+		<h4 class="century-gothic">Otros productos de este proveedor</h4>
 		<% @product.supplier.products.all.each do |product| %>
 			<%all_products.push(product)%>
 		<%end%>
 		<%if all_products.length > 5%>
 			<%random_n = (0..all_products.length-1).to_a.shuffle%>
 			<%4.times do |i|%>
-				<div class="recomended-product">
+				<div class="product-container" id="recomended-product">
 					<%=link_to [all_products[random_n[i]].category, all_products[random_n[i]]] do%>
-						<%=all_products[random_n[i]].title%>
-						<img src="<%=all_products[random_n[i]].img_url%>">
+						<img src="<%=all_products[random_n[i]].img_url%>" >
+						<div class="product-info">
+							<h5class="century-gothic"><%=all_products[random_n[i]].title%></h5>
+							<h6 class="color-naranja century-gothic-bold">$<%= number_with_delimiter(all_products[random_n[i]].price, :delimiter => '.') %></h6>
+						</div>
 					<%end%>
 				</div>
 			<%end%>
