@@ -12,7 +12,7 @@
 }
 
 .panel-heading, .panel-body  {
-  margin-left: 15%;
+  margin-left: 10%;
 }
 .comment-field {
   margin-top: 25px;
@@ -21,8 +21,13 @@
   max-width: 300px;
   padding: 7px;
 }
+
+.submit-supplier-comment {
+  background-color: #F29100;
+  color: white;
+}
 .submit-supplier-comment, .comment-field {
-  margin-left: 15%;
+  margin-left: 10%;
 
   border: 2px solid #F29100;
 }

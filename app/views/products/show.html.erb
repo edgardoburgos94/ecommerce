@@ -25,60 +25,62 @@
 	<% sizes_list.push(selector) %>
 <%end%>
 
-<div class="product-to-buy">
-	<div>
-		<img src="<%= @product.img_url %>", class="p-show-img" >
-	</div>
-
-	<div class="p-show-specifi">
-		<h3><%= @product.title %></h3> <br> <br>
-
-	  <h5>Precio: $<%= @product.price %></h5> <br>
-	  <%if @product.xs + @product.s + @product.m + @product.l + @product.xl + @product.xxl > 0 %>
-
-		<div>
-			<%= form_for(@order_item, remote: true) do |f| %>
-		  	<%= f.hidden_field :product_id, value: @product.id %>
-		    <div class="form-group">
-		  		<h5>Tallas disponibles: <%= f.select(:size, options_for_select(sizes_list), {}, class: 'size-selector') %> <br> <br>
-		    </div>
-		  	<div class="form-group">
-		  		<h5>Cantidad: <%= f.number_field :quantity, value: 1, min: 1, class: 'amount', autocomplete: "off" %></h5>
-		  	</div>
-		  	<%= f.submit "Agregar al carrito", class: 'btn btn-primary btn-sm' %>
-				<%=link_to "Perfil proveedor", supplier_path(@product.supplier)%>
-		  <% end %>
+<div>
+	<div class="product-to-buy">
+		<div class="p-image-specify">
+			<img src="<%= @product.img_url %>", class="p-show-img" >
 		</div>
-	<% else %>
-	  <h1>Producto agotado</h1>
-	<% end %>
+
+		<div class="p-show-specifi">
+			<h3 class="arial-bold"><%= @product.title %></h3>
+
+		  <h5 class="arial-bold color-naranja">$<%= @product.price %></h5> <br>
+		  <%if @product.xs + @product.s + @product.m + @product.l + @product.xl + @product.xxl > 0 %>
+
+			<div>
+				<%= form_for(@order_item, remote: true) do |f| %>
+			  	<%= f.hidden_field :product_id, value: @product.id %>
+			    <div class="form-group">
+			  		<h5 class="arial">Tallas disponibles: <%= f.select(:size, options_for_select(sizes_list), {}, class: 'size-selector') %> <br> <br>
+			    </div>
+			  	<div class="form-group">
+			  		<h5 class="arial">Cantidad: <%= f.number_field :quantity, value: 1, min: 1, class: 'amount', autocomplete: "off" %></h5>
+			  	</div>
+			  	<%= f.submit "Agregar al carrito", class: 'btn add-to-cart' %>
+					<%=link_to "Perfil proveedor", supplier_path(@product.supplier)%>
+			  <% end %>
+			</div>
+		<% else %>
+		  <h1 class="arial">Producto agotado</h1>
+		<% end %>
+		</div>
+	</div>
+
+
+
+
+	<div class="recomended-products">
+		<%all_products = [] %>
+		<h4>Otros productos de este proveedor</h4>
+		<% @product.supplier.products.all.each do |product| %>
+			<%all_products.push(product)%>
+		<%end%>
+		<%if all_products.length > 5%>
+			<%random_n = (0..all_products.length-1).to_a.shuffle%>
+			<%4.times do |i|%>
+				<div class="recomended-product">
+					<%=link_to [all_products[random_n[i]].category, all_products[random_n[i]]] do%>
+						<%=all_products[random_n[i]].title%>
+						<img src="<%=all_products[random_n[i]].img_url%>">
+					<%end%>
+				</div>
+			<%end%>
+		<%end%>
 	</div>
 </div>
 
-
-
-
-<div class="recomended-products">
-	<%all_products = [] %>
-	<h4>Otros productos de este proveedor</h4>
-	<% @product.supplier.products.all.each do |product| %>
-		<%all_products.push(product)%>
-	<%end%>
-	<%if all_products.length > 5%>
-		<%random_n = (0..all_products.length-1).to_a.shuffle%>
-		<%4.times do |i|%>
-			<div class="recomended-product">
-				<%=link_to [all_products[random_n[i]].category, all_products[random_n[i]]] do%>
-					<%=all_products[random_n[i]].title%>
-					<img src="<%=all_products[random_n[i]].img_url%>">
-				<%end%>
-			</div>
-		<%end%>
-	<%end%>
-</div>
-
+<h4 class="our-products century-gothic" id="product-comments-title">Comentarios del producto</h4>
 <div class="show-product-comments">
-	<h3>Comentarios: </h3>
 	<% @product.product_comments.each do |comment| %>
 	  <div class="panel panel-default">
 			<header class="panel-heading"> <b><%= comment.user.full_name %> dice:</b></header>
@@ -88,11 +90,11 @@
 	<% if signed_in? %>
   <%= form_for [@product.category, @product, @product.product_comments.build], remote: true do |f| %>
     <div >
-      <%= f.text_area :body, placeholder: "Agregar comentario" %>
+      <%= f.text_area :body, placeholder: "Agregar comentario", class:'comment-field' %>
     </div>
 
     <div class="actions text-left">
-      <%= f.submit "Comentar", class: "btn btn-primary" %>
+      <%= f.submit "Comentar", class: "btn submit-supplier-comment"  %>
     </div>
   <% end %>
 <% end %>
