@@ -26,6 +26,25 @@
   <img src="https://drive.google.com/uc?export=view&id=1dxrgm5ga4RacM9aE5RBALxCncSqTa16N">
 </div>
 
+<%if user_signed_in?%>
+<h1 class="century-gothic-bold">¡Bienvenido <%=current_user.full_name%>!</h1>
+<%end%>
+
+<div class="category-page">
+  <div class="categories">
+    <% @categories.each do |category| %>
+      <div class="category-container">
+        <%=link_to category_products_path(category) do%>
+          <img src= "<%= category.img_url %>">
+          <h5 class= "category-title"><%= category.title %></h5>
+        <%end%>
+      </div>
+    <%end%>
+  </div>
+
+  </div>
+
+
 <div class="publicity">
   <%if @products_with_promotion.length >=3%>
     <div class="publicity-title">
@@ -65,31 +84,7 @@
   <img src="https://drive.google.com/uc?export=view&id=1UNGAyB5R0O9lQqnEXzE8lgzfMp0VhP-r">
 </div>
 
-<!-- <div class="category-page">
-  <%if user_signed_in?%>
-  <h1>¡Bienvenido <%=current_user.full_name%>!</h1>
-  <%end%>
-  <h2>Escoge una categoría</h2>
 
-  <%= form_tag categories_path, method: :get, class:"cate-search" do %>
-    <div class="form-group">
-      <%= text_field_tag :concept, params[:concept], class: "form-control", placeholder: "Buscar categoría" %>
-    </div>
-  <% end %>
-
-  <div class="categories">
-    <% @categories.each do |category| %>
-      <div class="category-container">
-        <%=link_to category_products_path(category) do%>
-          <img src= "<%= category.img_url %>">
-          <h5 class= "category-title"><%= category.title %></h5>
-        <%end%>
-      </div>
-    <%end%>
-  </div> -->
-
-  </div>
-</div>
 
 <footer>
   <a href="#">Terminos y condiciones</a>
