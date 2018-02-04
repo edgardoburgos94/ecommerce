@@ -10,5 +10,6 @@
 #
 
 class Category < ApplicationRecord
-  has_many :sub_categories, dependent: :destroy
+  has_many :sub_categories, dependent: :delete_all
+  has_many :products, dependent: :delete_all
 end

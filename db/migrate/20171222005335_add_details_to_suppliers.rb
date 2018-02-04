@@ -1,6 +1,7 @@
 class AddDetailsToSuppliers < ActiveRecord::Migration[5.1]
   def change
     add_column :suppliers, :full_name, :string
+    add_column :suppliers, :description, :string
     add_column :suppliers, :cel, :string
     add_column :suppliers, :dir, :string
     add_column :suppliers, :country, :string

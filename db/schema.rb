@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124003238) do
+ActiveRecord::Schema.define(version: 20180203201321) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -51,11 +51,14 @@ ActiveRecord::Schema.define(version: 20180124003238) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer "category_id"
     t.string "title"
     t.text "description"
     t.integer "price"
     t.string "img_url"
+    t.string "img_url2"
+    t.string "img_url3"
+    t.integer "sub_category_id"
+    t.integer "supplier_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "xs"
@@ -64,8 +67,28 @@ ActiveRecord::Schema.define(version: 20180124003238) do
     t.integer "l"
     t.integer "xl"
     t.integer "xxl"
-    t.integer "supplier_id"
-    t.index ["category_id"], name: "index_products_on_category_id"
+    t.integer "unique"
+    t.float "p_registered_user"
+    t.float "p_day"
+    t.float "p_q1"
+    t.float "p_q2"
+    t.float "p_q3"
+    t.float "p_q4"
+    t.integer "q1"
+    t.integer "q2"
+    t.integer "q3"
+    t.integer "q4"
+    t.index ["sub_category_id"], name: "index_products_on_sub_category_id"
+    t.index ["supplier_id"], name: "index_products_on_supplier_id"
+  end
+
+  create_table "sub_categories", force: :cascade do |t|
+    t.string "title"
+    t.string "img_url"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_sub_categories_on_category_id"
   end
 
   create_table "supplier_comments", force: :cascade do |t|
@@ -92,16 +115,12 @@ ActiveRecord::Schema.define(version: 20180124003238) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "full_name"
+    t.string "description"
     t.string "cel"
     t.string "dir"
     t.string "country"
     t.string "city"
     t.integer "sales"
-    t.float "p_ure"
-    t.float "p_dia"
-    t.float "p_cmin"
-    t.float "p_cmay"
-    t.float "cant_may"
     t.string "profile_img"
     t.string "cover_img"
     t.index ["email"], name: "index_suppliers_on_email", unique: true

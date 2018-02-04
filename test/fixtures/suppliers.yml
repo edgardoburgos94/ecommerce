@@ -16,16 +16,12 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  full_name              :string
+#  description            :string
 #  cel                    :string
 #  dir                    :string
 #  country                :string
 #  city                   :string
 #  sales                  :integer
-#  p_ure                  :float
-#  p_dia                  :float
-#  p_cmin                 :float
-#  p_cmay                 :float
-#  cant_may               :float
 #  profile_img            :string
 #  cover_img              :string
 #

@@ -6,5 +6,6 @@ class AddSizesToProducts < ActiveRecord::Migration[5.1]
     add_column :products, :l, :integer
     add_column :products, :xl, :integer
     add_column :products, :xxl, :integer
+    add_column :products, :unique, :integer
   end
 end

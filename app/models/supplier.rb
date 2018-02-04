@@ -16,16 +16,12 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  full_name              :string
+#  description            :string
 #  cel                    :string
 #  dir                    :string
 #  country                :string
 #  city                   :string
 #  sales                  :integer
-#  p_ure                  :float
-#  p_dia                  :float
-#  p_cmin                 :float
-#  p_cmay                 :float
-#  cant_may               :float
 #  profile_img            :string
 #  cover_img              :string
 #
@@ -38,8 +34,8 @@
 class Supplier < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_many :products, dependent: :destroy
-  has_many :supplier_comments
+  has_many :products, dependent: :delete_all
+  has_many :supplier_comments, dependent: :delete_all
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
