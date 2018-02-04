@@ -36,7 +36,7 @@ country = Faker::Address.country
 city = Faker::Address.state
 email = Faker::Internet.email
 name = Faker::Name.name
-p1 = Supplier.create(email: "prove1@gmail.com", password:"123456", password_confirmation:"123456", full_name: "Alfa", description: "Somos una empresa bla bla bla bla..."dir: dir, cel:cel, country: "Colombia", city: city)
+p1 = Supplier.create(email: "prove1@gmail.com", password:"123456", password_confirmation:"123456", full_name: "Alfa", description: "Somos una empresa bla bla bla bla...", dir: dir, cel:cel, country: "Colombia", city: city)
 
 dir = Faker::Address.street_address + Faker::Address.secondary_address
 cel = Faker::PhoneNumber.cell_phone
