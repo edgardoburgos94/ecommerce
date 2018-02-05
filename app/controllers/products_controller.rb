@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Category.find(params[:category_id]).products
+    @products = Category.find(params[:category_id]).sub_categories.find(params[:sub_category_id]).products
   end
 
   def new

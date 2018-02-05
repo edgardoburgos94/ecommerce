@@ -1,11 +1,11 @@
 <div class="product-page">
   <% if @products.length > 0 %>
-    <h1 class="category-title-products century-gothic"><%=@products.first.category.title%> </h1>
+    <h1 class="category-title-products century-gothic"><%=@products.first.sub_category.title%> </h1>
 
     <div class="products">
       <% @products.each do |product| %>
         <div class="product-container">
-          <%=link_to [product.category, product] do%>
+          <%=link_to [product.sub_category.category, product.sub_category, product] do%>
             <img src="<%=product.img_url%>" >
             <div class="product-info">
               <h5class="century-gothic"><%=product.title%></h5>

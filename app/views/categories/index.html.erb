@@ -53,7 +53,7 @@
 
     <div class="products-publicity">
       <%random_n = (0..@products_with_promotion.length-1).to_a.shuffle%>
-      <%3.times do |i|%>
+      <%4.times do |i|%>
           <%puts(random_n[i].class)%>
           <%=link_to [@products_with_promotion[random_n[i].to_i].sub_category.category, @products_with_promotion[random_n[i].to_i].sub_category, @products_with_promotion[random_n[i].to_i]] do%>
             <img src="<%=@products_with_promotion[random_n[i].to_i].img_url%>" class="adjust-product-img">
@@ -70,7 +70,7 @@
 
     <div class="products-publicity">
       <%random_n = (0..@all_products.length-1).to_a.shuffle%>
-      <%3.times do |i|%>
+      <%4.times do |i|%>
         <%=link_to [@all_products[random_n[i].to_i].sub_category.category,@all_products[random_n[i].to_i].sub_category, @all_products[random_n[i].to_i]] do%>
           <img src="<%=@all_products[random_n[i].to_i].img_url%>" class="adjust-product-img">
           <div class="publicity-description century-gothic">Precios especiales <br> <span class="color-naranja century-gothic-bold"><%=@all_products[random_n[i].to_i].supplier.full_name%></span></div>
