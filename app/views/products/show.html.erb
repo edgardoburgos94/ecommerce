@@ -69,7 +69,7 @@
 			<%random_n = (0..all_products.length-1).to_a.shuffle%>
 			<%4.times do |i|%>
 				<div class="product-container" id="recomended-product">
-					<%=link_to [all_products[random_n[i]].category, all_products[random_n[i]]] do%>
+					<%=link_to [all_products[random_n[i]].sub_category.category, all_products[random_n[i]].sub_category, all_products[random_n[i]]] do%>
 						<img src="<%=all_products[random_n[i]].img_url%>" >
 						<div class="product-info">
 							<h5class="century-gothic"><%=all_products[random_n[i]].title%></h5>

@@ -52,12 +52,5 @@ class CategoriesController < ApplicationController
 
   def products_in_promotion
     @products_with_promotion = Product.where("p_day > ?",0)
-    # puts("<---------------------")
-    # puts(suppliers_with_promotion.length)
-    # puts("<---------------------")
-    # @products_with_promotion = []
-    # suppliers_with_promotion.each do |supplier|
-    #   @products_with_promotion = @products_with_promotion.push(supplier)
-    # end
   end
 end
