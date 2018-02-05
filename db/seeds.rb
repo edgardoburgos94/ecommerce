@@ -63,10 +63,10 @@ name = Faker::Name.name
 p4 = Supplier.create(email: "prove4@gmail.com", password:"123456", password_confirmation:"123456", full_name: "Gef", dir: dir, cel:cel, country: "Colombia", city: city)
 
 c1 = Category.create(title:"Ropa hombre", img_url: "https://seeklogo.com/images/P/puma-logo-B8E03BAABF-seeklogo.com.png")
-c1 = Category.create(title:"Ropa mujer", img_url: "https://seeklogo.com/images/P/puma-logo-B8E03BAABF-seeklogo.com.png")
-c1 = Category.create(title:"Joyas y relojes", img_url: "https://seeklogo.com/images/P/puma-logo-B8E03BAABF-seeklogo.com.png")
-c1 = Category.create(title:"Hogar", img_url: "https://seeklogo.com/images/P/puma-logo-B8E03BAABF-seeklogo.com.png")
-c1 = Category.create(title:"Salud y belleza", img_url: "https://seeklogo.com/images/P/puma-logo-B8E03BAABF-seeklogo.com.png")
+c2 = Category.create(title:"Ropa mujer", img_url: "https://seeklogo.com/images/P/puma-logo-B8E03BAABF-seeklogo.com.png")
+c3 = Category.create(title:"Joyas y relojes", img_url: "https://seeklogo.com/images/P/puma-logo-B8E03BAABF-seeklogo.com.png")
+c4 = Category.create(title:"Hogar", img_url: "https://seeklogo.com/images/P/puma-logo-B8E03BAABF-seeklogo.com.png")
+c5 = Category.create(title:"Salud y belleza", img_url: "https://seeklogo.com/images/P/puma-logo-B8E03BAABF-seeklogo.com.png")
 
 sc1 = SubCategory.create(title:"Camisas manga corta", img_url: "https://drive.google.com/uc?export=view&id=1-_cH8noaVPRyvbGRhsTSVWxomHShmC7H", category_id: c1.id )
 sc2 = SubCategory.create(title:"Camisas manga larga", img_url: "https://drive.google.com/uc?export=view&id=1eL8-ynqPq2a-25k9J6woyw9L_E3hxzEJ", category_id: c1.id )

@@ -1,0 +1,13 @@
+<%if @sub_categories.length > 0%>
+<h1><%=@sub_categories.first.category.title%></h1>
+
+<% @sub_categories.each do |sub_category|%>
+  <%=link_to category_sub_category_products_path(sub_category.category, sub_category) do%>
+    <%=sub_category.title%>
+  <%end%>
+
+<%end%>
+
+<%else%>
+<h1>No existen subcategorías para la categoría seleccionada</h1>
+<%end%>

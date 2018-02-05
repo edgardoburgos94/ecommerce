@@ -8,7 +8,7 @@
 <div class="description-container">
   <div class="supplier-description">
     <h4 class="arial-bold">Descripción</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p><%=@supplier.description%></p>
   </div>
 </div>
 
@@ -35,7 +35,7 @@
 <div class="products">
   <%@supplier.products.each do |product|%>
     <div class="product-container">
-      <%=link_to [product.category, product] do%>
+      <%=link_to [product.sub_category.category,product.sub_category, product] do%>
 
         <img src="<%=product.img_url%>" class="adjust-product-img">
         <div class="product-info">
@@ -81,26 +81,6 @@
       <th>
         <%=@supplier.products.length%>
       </th>
-    </tr>
-    <tr>
-      <th scope="col">Descuento por usuario registrado:</th>
-      <th><%=@supplier.p_ure%>%</th>
-    </tr>
-    <tr>
-      <th scope="col">Descuento especial del día:</th>
-      <th><%=@supplier.p_dia%>%</th>
-    </tr>
-    <tr>
-      <th scope="col">Descuento por usuario frecuente:</th>
-      <th><%=@supplier.p_cmin%>%</th>
-    </tr>
-    <tr>
-      <th scope="col">Descuento por usuario mayorista:</th>
-      <th><%=@supplier.p_cmay%>%</th>
-    </tr>
-    <tr>
-      <th scope="col">Número de productos comprados para ser usuario mayorista:</th>
-      <th><%=@supplier.cant_may%> productos</th>
     </tr>
 
   </tbody>
