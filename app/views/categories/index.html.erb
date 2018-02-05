@@ -46,7 +46,7 @@
 
 
 <div class="publicity">
-  <%if @products_with_promotion.length >=3%>
+  <%if @products_with_promotion.length >=0%>
     <div class="publicity-title">
       <h4 class="century-gothic">Descuento del día</h4>
     </div>
@@ -54,9 +54,10 @@
     <div class="products-publicity">
       <%random_n = (0..@products_with_promotion.length-1).to_a.shuffle%>
       <%3.times do |i|%>
-          <%=link_to [@products_with_promotion[random_n[i]].category, @products_with_promotion[random_n[i]]] do%>
-            <img src="<%=@products_with_promotion[random_n[i]].img_url%>" class="adjust-product-img">
-            <div class="publicity-description century-gothic">Precios especiales <br> <span class="color-naranja century-gothic-bold">Descuento del <%=@products_with_promotion[random_n[i]].supplier.p_dia + @products_with_promotion[random_n[i]].supplier.p_ure%>%</span></div>
+          <%puts(random_n[i].class)%>
+          <%=link_to [@products_with_promotion[random_n[i].to_i].sub_category.category, @products_with_promotion[random_n[i].to_i].sub_category, @products_with_promotion[random_n[i].to_i]] do%>
+            <img src="<%=@products_with_promotion[random_n[i].to_i].img_url%>" class="adjust-product-img">
+            <div class="publicity-description century-gothic">Precios especiales <br> <span class="color-naranja century-gothic-bold">Descuento del <%=@products_with_promotion[random_n[i].to_i].p_day + @products_with_promotion[random_n[i].to_i].p_registered_user%>%</span></div>
           <%end%>
       <%end%>
     </div>
@@ -70,9 +71,9 @@
     <div class="products-publicity">
       <%random_n = (0..@all_products.length-1).to_a.shuffle%>
       <%3.times do |i|%>
-        <%=link_to [@all_products[random_n[i]].sub_category.category,@all_products[random_n[i]].sub_category, @all_products[random_n[i]]] do%>
-          <img src="<%=@all_products[random_n[i]].img_url%>" class="adjust-product-img">
-          <div class="publicity-description century-gothic">Precios especiales <br> <span class="color-naranja century-gothic-bold"><%=@all_products[random_n[i]].supplier.full_name%></span></div>
+        <%=link_to [@all_products[random_n[i].to_i].sub_category.category,@all_products[random_n[i].to_i].sub_category, @all_products[random_n[i].to_i]] do%>
+          <img src="<%=@all_products[random_n[i].to_i].img_url%>" class="adjust-product-img">
+          <div class="publicity-description century-gothic">Precios especiales <br> <span class="color-naranja century-gothic-bold"><%=@all_products[random_n[i].to_i].supplier.full_name%></span></div>
         <%end%>
       <%end%>
     </div>
