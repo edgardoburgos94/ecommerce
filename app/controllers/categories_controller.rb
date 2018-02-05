@@ -3,14 +3,7 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     @all_products = Product.all
 
-    suppliers_with_promotion = Product.where("p_day > ?",0)
-    puts("<---------------------")
-    puts(suppliers_with_promotion.first.class)
-    puts("<---------------------")
-    @products_with_promotion = []
-    suppliers_with_promotion.each do |supplier|
-      @products_with_promotion = @products_with_promotion + supplier.products
-    end
+    products_in_promotion()
 
     if params[:concept].present?
       @categories = @categories.where("title LIKE ?", "%#{params[:concept]}%")
@@ -60,7 +53,8 @@ class CategoriesController < ApplicationController
   def products_in_promotion
     suppliers_with_promotion = Product.where("p_day > ?",0)
     puts("<---------------------")
-    puts(suppliers_with_promotion)
+    puts(suppliers_with_promotion.first.class)
+    puts("<---------------------")
     @products_with_promotion = []
     suppliers_with_promotion.each do |supplier|
       @products_with_promotion = @products_with_promotion + supplier.products

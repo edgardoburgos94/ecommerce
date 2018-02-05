@@ -51,7 +51,7 @@
       </a>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="menu-products">
         <% @categories.each do |catego|%>
-          <%=link_to catego.title, category_products_path(catego), class:"dropdown-item"%>
+          <%=link_to catego.title, category_sub_categories_path(catego), class:"dropdown-item"%>
         <%end%>
       </div>
       <%= link_to "Noticias", blog_path, class:"arial-bold", id:'blog'%>

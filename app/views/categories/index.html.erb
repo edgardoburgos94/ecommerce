@@ -34,7 +34,7 @@
   <div class="categories">
     <% @categories.each do |category| %>
       <div class="category-container">
-        <%=link_to category_products_path(category) do%>
+        <%=link_to category_sub_categories_path(category) do%>
           <img src= "<%= category.img_url %>">
           <h5 class= "category-title"><%= category.title %></h5>
         <%end%>
@@ -70,7 +70,7 @@
     <div class="products-publicity">
       <%random_n = (0..@all_products.length-1).to_a.shuffle%>
       <%3.times do |i|%>
-        <%=link_to [@all_products[random_n[i]].category, @all_products[random_n[i]]] do%>
+        <%=link_to [@all_products[random_n[i]].sub_category.category,@all_products[random_n[i]].sub_category, @all_products[random_n[i]]] do%>
           <img src="<%=@all_products[random_n[i]].img_url%>" class="adjust-product-img">
           <div class="publicity-description century-gothic">Precios especiales <br> <span class="color-naranja century-gothic-bold"><%=@all_products[random_n[i]].supplier.full_name%></span></div>
         <%end%>
