@@ -30,6 +30,12 @@
 <h1 class="century-gothic-bold">¡Bienvenido <%=current_user.full_name%>!</h1>
 <%end%>
 
+<%if @categories_search != nil || @sub_categories_search != nil || @products_search != nil %>
+  <h4>Sí hay busqueda</h4>
+<%else%>
+  <h4>No hay busqueda</h4>
+<%end%>
+
 <div class="category-page">
   <div class="categories">
     <% @categories.each do |category| %>

@@ -1,15 +1,15 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
-    @sub_categories = SubCategories.all
+    @sub_categories = SubCategory.all
     @all_products = Product.all
 
     products_in_promotion()
 
     if params[:concept].present?
-      @categories = @categories.where("title LIKE ?", "%#{params[:concept]}%")
-      @sub_categories = @sub_categories.where("title LIKE ?", "%#{params[:concept]}%")
-      @products = @all_products.where("title LIKE ?", "%#{params[:concept]}%")
+      @categories_search = @categories.where("title LIKE ?", "%#{params[:concept]}%")
+      @sub_categories_search = @sub_categories.where("title LIKE ?", "%#{params[:concept]}%")
+      @products_search = @all_products.where("title LIKE ?", "%#{params[:concept]}%")
     end
   end
 
