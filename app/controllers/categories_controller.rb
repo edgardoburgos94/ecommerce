@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
       @categories_search = @categories.where("title LIKE ?", "%#{params[:concept]}%")
       @sub_categories_search = @sub_categories.where("title LIKE ?", "%#{params[:concept]}%")
       @products_search = @all_products.where("title LIKE ?", "%#{params[:concept]}%")
+      @supplier_search = Supplier.all.where("full_name LIKE ?", "%#{params[:concept]}%")
     end
   end
 
