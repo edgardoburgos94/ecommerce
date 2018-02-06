@@ -7,10 +7,10 @@ class CategoriesController < ApplicationController
     products_in_promotion()
 
     if params[:concept].present?
-      @categories_search = @categories.where("title like lower(?)", "%#{params[:concept]}%")
-      @sub_categories_search = @sub_categories.where("title like lower(?)", "%#{params[:concept]}%")
-      @products_search = @all_products.where("title like lower(?)", "%#{params[:concept]}%")
-      @supplier_search = Supplier.all.where("full_name like lower(?)", "%#{params[:concept]}%")
+      @categories_search = @categories.where("lower(title) like lower(?)", "%#{params[:concept]}%")
+      @sub_categories_search = @sub_categories.where("lower(title) like lower(?)", "%#{params[:concept]}%")
+      @products_search = @all_products.where("lower(title) like lower(?)", "%#{params[:concept]}%")
+      @supplier_search = Supplier.all.where("lower(full_name) like lower(?)", "%#{params[:concept]}%")
     end
   end
 
