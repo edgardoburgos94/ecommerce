@@ -7,8 +7,6 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.string :img_url
       t.string :img_url2
       t.string :img_url3
-      t.references :sub_category, foreign_key: {on_delete: :cascade}
-      t.references :supplier, foreign_key: {on_delete: :cascade}
 
 
       t.timestamps
