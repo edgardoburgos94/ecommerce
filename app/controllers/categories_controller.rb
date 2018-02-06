@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
     if params[:concept].present?
       @categories_search = @categories.where("lower(title) like lower(?)", "%#{params[:concept]}%")
       @sub_categories_search = @sub_categories.where("lower(title) like lower(?)", "%#{params[:concept]}%")
-      @products_search = @all_products.where("lower(title) like lower(?)", "%#{params[:concept]}%")
+      @products_search = @all_products.where("lower(title) like lower(?)", "%#{params[:concept]}%").order("RANDOM()")
       @supplier_search = Supplier.all.where("lower(full_name) like lower(?)", "%#{params[:concept]}%")
     end
   end
