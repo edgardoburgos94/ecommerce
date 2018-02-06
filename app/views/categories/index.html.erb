@@ -46,7 +46,7 @@
 
 
 <div class="publicity">
-  <%if @products_with_promotion.length >=0%>
+  <%if @products_with_promotion.length >0%>
     <div class="publicity-title">
       <h4 class="century-gothic">Descuento del día</h4>
     </div>
@@ -63,7 +63,7 @@
     </div>
   <%end%>
 
-  <%if @all_products.length >=3%>
+  <%if @all_products.length >0%>
     <div class="publicity-title">
       <h4 class="century-gothic">Recomendado para ti</h4>
     </div>
