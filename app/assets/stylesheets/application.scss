@@ -121,7 +121,7 @@ nav {
 }
 
 .search {
-  width: 40%;
+  width: 35%;
   min-width: 290px;
   max-width: 800px;
   margin: auto;
@@ -157,21 +157,22 @@ nav {
 }
 
 .search p {
-  font-size: 14px;
+  font-size: 1em;
   color: white;
   font-style: italic;
 }
 
 .login-signin {
-  background: #F28321;
+  background: #EA5B0C;
   float:right;
-  margin-top: 25px;
+  margin-top: 0px;
   width: 30%;
-  max-width: 300px;
-  height: 75px;
+  max-width: 400px;
+  height: 110px;
   border-bottom-left-radius: 15px;
   display:inline-block;
   padding: 1%;
+  padding-top: 36px;
   color: white;
   text-align: left;
   /* border: 1px solid blue; */
@@ -179,17 +180,19 @@ nav {
 
 .login-signin h6 {
   margin-left: 9%;
+  font-size: 1.2em;
 }
 
 .login-signin a {
-  background: #EA5B0C;
+  background: #CB3B29;
   border-radius: 10px;
-  padding: 0px 12px 0px 12px;
+  padding: 3px 15px 3px 15px;
   margin: 0px 1% 0px 1%;
   text-align: center;
   max-height: 100%;
   color: white;
   font-style: italic;
+  font-size: 1.1em;
 }
 
 .login-signin a:hover {
@@ -384,9 +387,12 @@ footer a:hover{
     width: 45%
   }
 
+  .search p {
+    font-size: 0.86em;
+  }
 
   nav {
-    height: 175px;
+    height: 158px;
   }
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -401,8 +407,12 @@ footer a:hover{
   }
 
   @media screen and (max-width: 600px) {
+    .search p {
+      font-size: 0.9em;
+    }
+
     nav {
-      height: 265px;
+      height: 253px;
     }
     .logo {
       width: 345px;
