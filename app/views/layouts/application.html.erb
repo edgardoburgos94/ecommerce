@@ -43,11 +43,65 @@
     <a class=" dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <span class="arial-bold">Productos</span>
     </a>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="menu-products">
+
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="drop-down-menu">
+          <li><a class="dropdown-item dropdown-toggle">Ropa hombre</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Submenu action</a></li>
+              <li><a class="dropdown-item" href="#">Another submenu action</a>
+              <li><a class="dropdown-item" href="#">Subsubmenu</a></li>
+              <li><a class="dropdown-item" href="#">Second subsubmenu</a>  </li>
+            </ul>
+          </li>
+          <li><a class="dropdown-item dropdown-toggle">Ropa mujer</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Submenu action</a></li>
+              <li><a class="dropdown-item" href="#">Another submenu action</a>
+              <li><a class="dropdown-item" href="#">Subsubmenu</a></li>
+              <li><a class="dropdown-item" href="#">Second subsubmenu</a>  </li>
+          </ul>
+        </li>
+          <li><a class="dropdown-item dropdown-toggle">Niños y bebés</a>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Submenu action</a></li>
+                  <li><a class="dropdown-item" href="#">Another submenu action</a></l
+                  <li><a class="dropdown-item" href="#">Subsubmenu</a></li>
+                  <li><a class="dropdown-item" href="#">Second subsubmenu</a>  </li>
+              </ul>
+          </li>
+
+          <li><a class="dropdown-item dropdown-toggle">Calzado y bolsos</a>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Submenu action 2</a></li>
+                  <li><a class="dropdown-item" href="#">Another submenu action 2</a></li>
+                  <li><a class="dropdown-item" href="#">Subsubmenu</a></li>
+                  <li><a class="dropdown-item" href="#">Second subsubmenu 3</a></li>
+              </ul>
+          </li>
+
+          <li><a class="dropdown-item dropdown-toggle">Calzado y bolsos</a>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Submenu action 2</a></li>
+                  <li><a class="dropdown-item" href="#">Another submenu action 2</a></li>
+                  <li><a class="dropdown-item" href="#">Subsubmenu</a></li>
+                  <li><a class="dropdown-item" href="#">Second subsubmenu 3</a></li>
+                  <li><a class="dropdown-item" href="#">Submenu action 2</a></li>
+                  <li><a class="dropdown-item" href="#">Another submenu action 2</a></li>
+                  <li><a class="dropdown-item" href="#">Subsubmenu</a></li>
+                  <li><a class="dropdown-item" href="#">Second subsubmenu 3</a></li>
+              </ul>
+          </li>
+
+      </ul>
+
+
+    <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="menu-products">
       <% @categories.each do |catego|%>
       <%=link_to catego.title, category_sub_categories_path(catego), class:"dropdown-item"%>
       <%end%>
-    </div>
+    </div> -->
+
+
     <%= link_to "Noticias", blog_path, class:"arial-bold", id:'blog'%>
     <a href="#contact" ><span class="arial-bold">Preguntas frecuentes</span></a>
     <% if not supplier_signed_in?%>
@@ -97,20 +151,29 @@
   <%= link_to "Contáctanos", contact_path%>
 </footer> -->
 <script type="text/javascript">
+  $( document ).ready( function () {
+     $( '.dropdown-menu a.dropdown-toggle' ).on( 'click', function ( e ) {
+         var $el = $( this );
+         var $parent = $( this ).offsetParent( ".dropdown-menu" );
+         if ( !$( this ).next().hasClass( 'show' ) ) {
+             $( this ).parents( '.dropdown-menu' ).first().find( '.show' ).removeClass( "show" );
+         }
+         var $subMenu = $( this ).next( ".dropdown-menu" );
+         $subMenu.toggleClass( 'show' );
 
-$('#dropdownMenuButton').hover(function(){
-  // $('.dropdown-menu').fadeIn(300)
-  // $('.dropdown-menu').addClass('show')
-  // $('#myTopnav').addClass('show')
-}, function(){
-  // $('#myTopnav').removeClass('show')
-  // $('.dropdown-menu').removeClass('show')
-  // $('.dropdown-menu').fadeOut(300)
-})
-$('.dropdown-menu').hover(function(){
-}, function(){
-   // $('.dropdown-menu').fadeOut(300)
-})
+         $( this ).parent( "li" ).toggleClass( 'show' );
+
+         $( this ).parents( 'li.nav-item.dropdown.show' ).on( 'hidden.bs.dropdown', function ( e ) {
+             $( '.dropdown-menu .show' ).removeClass( "show" );
+         } );
+
+          if ( !$parent.parent().hasClass( 'navbar-nav' ) ) {
+             $el.next().css( { "top": -2, "left": $parent.outerWidth() - 0 } );
+         }
+
+         return false;
+     } );
+   } );
 </script>
 </body>
 </html>
