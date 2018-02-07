@@ -2,6 +2,11 @@
 	<%= render "carts/cart_item" %>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+<script>
+    var passhash = CryptoJS.MD5("Y8CMLPs4X1AQQ6IIu1E9R1v25p~614265~001~1000~COP").toString();
+		console.log(passhash)
+</script>
 <script>
   new DeleteActiveClass();
 	new DeleteActiveLinkClass();

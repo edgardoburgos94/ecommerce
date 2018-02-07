@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Boomket</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Boomket</title>
+  <%= csrf_meta_tags %>
 
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
-    <link rel="stylesheet" type="text/CSS" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="stylesheet" type="text/CSS" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <nav >
+<body>
+  <nav >
     <div class="nav-top">
       <%= link_to categories_path, :class=>"logo" do%>
       <img src="https://drive.google.com/uc?export=view&id=1dpUUX6C5hEK4gdfIfiF5DMXoYlCf7-Oz">
       <%end%>
       <%= form_tag categories_path, method: :get, class:"search" do %>
-        <div class="form-group">
-          <p class="arial-italic">"El lugar donde se hacen los buenos negocios"</p>
-          <%= text_field_tag :concept, params[:concept], class: "buscador arial", placeholder: "Buscar productos o proveedores" %>
-          <button type="submit">
-              <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </div>
+      <div class="form-group">
+        <p class="arial-italic">"El lugar donde se hacen los buenos negocios"</p>
+        <%= text_field_tag :concept, params[:concept], class: "buscador arial", placeholder: "Buscar productos o proveedores" %>
+        <button type="submit">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
       <% end %>
 
       <div class="login-signin">
@@ -39,62 +39,78 @@
     </div>
   </nav>
 
-    <div class="topnav" id="myTopnav">
-      <a class=" dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="arial-bold">Productos</span>
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="menu-products">
-        <% @categories.each do |catego|%>
-          <%=link_to catego.title, category_sub_categories_path(catego), class:"dropdown-item"%>
-        <%end%>
-      </div>
-      <%= link_to "Noticias", blog_path, class:"arial-bold", id:'blog'%>
-      <a href="#contact" ><span class="arial-bold">Preguntas frecuentes</span></a>
-      <% if not supplier_signed_in?%>
-        <%= render 'layouts/cart' %>
+  <div class="topnav" id="myTopnav">
+    <a class=" dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="arial-bold">Productos</span>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="menu-products">
+      <% @categories.each do |catego|%>
+      <%=link_to catego.title, category_sub_categories_path(catego), class:"dropdown-item"%>
       <%end%>
-      <% if user_signed_in? %>
-        <%= link_to "Mi perfil usuario", my_profile_path, class:"arial-bold", id:'u-profile'  %>
-      <%end%>
-      <% if supplier_signed_in? %>
-        <%= link_to "Mi perfil proveedor", supplier_path(current_supplier), class:"arial-bold", id:'s-profile'%>
-      <%end%>
-      <%= link_to "Administrador", admin_path, id:'admin', class:"arial-bold"%>
-      <% if user_signed_in? %>
-          <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"arial-bold" %>
-      <%end%>
-      <% if supplier_signed_in? %>
-        <%= link_to "Cerrar sesión", destroy_supplier_session_path, method: :delete, class:"arial-bold"%>
-      <% end %>
     </div>
-
-    <% if (not notice == nil) || (not alert== nil)%>
-      <div class=" notifications">
-        <% if  not notice== nil%>
-        <p class="alert alert-info alert-dismissible fade show"><%= notice %>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </p>
-
-        <%end%>
-        <% if not alert== nil%>
-        <p class="alert alert-danger alert-dismissible fade show"><%= alert %>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </p>
-        <%end%>
-      </div>
+    <%= link_to "Noticias", blog_path, class:"arial-bold", id:'blog'%>
+    <a href="#contact" ><span class="arial-bold">Preguntas frecuentes</span></a>
+    <% if not supplier_signed_in?%>
+      <%= render 'layouts/cart' %>
     <%end%>
+    <% if user_signed_in? %>
+      <%= link_to "Mi perfil usuario", my_profile_path, class:"arial-bold", id:'u-profile'  %>
+    <%end%>
+    <% if supplier_signed_in? %>
+      <%= link_to "Mi perfil proveedor", supplier_path(current_supplier), class:"arial-bold", id:'s-profile'%>
+    <%end%>
+    <%= link_to "Administrador", admin_path, id:'admin', class:"arial-bold"%>
+    <% if user_signed_in? %>
+      <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"arial-bold" %>
+    <%end%>
+    <% if supplier_signed_in? %>
+      <%= link_to "Cerrar sesión", destroy_supplier_session_path, method: :delete, class:"arial-bold"%>
+    <% end %>
+  </div>
 
-    <%= yield %>
+  <% if (not notice == nil) || (not alert== nil)%>
+  <div class=" notifications">
+    <% if  not notice== nil%>
+    <p class="alert alert-info alert-dismissible fade show"><%= notice %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </p>
+
+    <%end%>
+    <% if not alert== nil%>
+    <p class="alert alert-danger alert-dismissible fade show"><%= alert %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </p>
+    <%end%>
+  </div>
+  <%end%>
+
+  <%= yield %>
 
 
-    <!-- <footer>
-      <a href="#">Terminos y condiciones</a>
-      <a href="#">Politicas de privacidad</a>
-      <%= link_to "Contáctanos", contact_path%>
-    </footer> -->
-  </body>
+  <!-- <footer>
+  <a href="#">Terminos y condiciones</a>
+  <a href="#">Politicas de privacidad</a>
+  <%= link_to "Contáctanos", contact_path%>
+</footer> -->
+<script type="text/javascript">
+
+$('#dropdownMenuButton').hover(function(){
+  // $('.dropdown-menu').fadeIn(300)
+  // $('.dropdown-menu').addClass('show')
+  // $('#myTopnav').addClass('show')
+}, function(){
+  // $('#myTopnav').removeClass('show')
+  // $('.dropdown-menu').removeClass('show')
+  // $('.dropdown-menu').fadeOut(300)
+})
+$('.dropdown-menu').hover(function(){
+}, function(){
+   // $('.dropdown-menu').fadeOut(300)
+})
+</script>
+</body>
 </html>
