@@ -114,15 +114,15 @@ ActiveRecord::Schema.define(version: 20180206002521) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profile_img"
+    t.string "cover_img"
     t.string "full_name"
-    t.string "description"
+    t.text "description"
     t.string "cel"
     t.string "dir"
     t.string "country"
     t.string "city"
     t.integer "sales"
-    t.string "profile_img"
-    t.string "cover_img"
     t.index ["email"], name: "index_suppliers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_suppliers_on_reset_password_token", unique: true
   end

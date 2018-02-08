@@ -15,15 +15,15 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  profile_img            :string
+#  cover_img              :string
 #  full_name              :string
-#  description            :string
+#  description            :text
 #  cel                    :string
 #  dir                    :string
 #  country                :string
 #  city                   :string
 #  sales                  :integer
-#  profile_img            :string
-#  cover_img              :string
 #
 # Indexes
 #
