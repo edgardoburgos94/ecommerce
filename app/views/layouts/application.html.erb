@@ -45,23 +45,37 @@
     </a>
 
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="drop-down-menu">
-          <li><a class="dropdown-item dropdown-category dropdown-toggle">Ropa hombre</a>
+          <li><a class="dropdown-item dropdown-category dropdown-toggle">Hombre</a>
             <ul class="dropdown-menu menu-2">
               <div class="sub-category-left">
                 <h5 class="color-naranja sub-categories-title">Ropa</h5>
-                <a class="dropdown-item" href="#">Submenu action</a>
-                <a class="dropdown-item" href="#">Another submenu action</a>
-                <a class="dropdown-item" href="#">Subsubmenu</a>
-                <a class="dropdown-item" href="#">Second subsubmenu</a>
-                <a class="dropdown-item" href="#">Subsubmenu</a>
-                <a class="dropdown-item" href="#">Second subsubmenu</a>
+                <%=link_to @categories.all[0].sub_categories.all[0].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[0]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[1].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[1]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[2].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[2]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[3].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[3]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[4].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[4]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[5].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[5]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[6].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[6]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[7].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[7]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[8].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[8]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[9].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[9]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[10].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[10]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[11].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[11]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[12].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[12]), class:"dropdown-item"%>
               </div>
               <div class="sub-category-right">
                 <h5 class="color-naranja sub-categories-title">Accesorios</h5>
-                <a class="dropdown-item" href="#">Submenu action</a>
-                <a class="dropdown-item" href="#">Another submenu action</a>
-                <a class="dropdown-item" href="#">Subsubmenu</a>
-                <a class="dropdown-item" href="#">Second subsubmenu</a>
+                <%=link_to @categories.all[0].sub_categories.all[14].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[14]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[13].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[13]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[15].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[15]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[16].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[16]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[17].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[17]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[18].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[18]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[19].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[19]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[20].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[20]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[21].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[21]), class:"dropdown-item"%>
+                <%=link_to @categories.all[0].sub_categories.all[22].title, category_sub_category_products_path(@categories.all[0], @categories.all[0].sub_categories.all[22]), class:"dropdown-item"%>
+
               </div>
             </ul>
           </li>
