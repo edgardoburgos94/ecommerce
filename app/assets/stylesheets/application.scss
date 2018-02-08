@@ -274,10 +274,6 @@ footer a:hover{
   border-radius: 0px !important;
 }
 
-.dropdown-menu .show > .dropdown-toggle::after{
-    transform: rotate(-90deg);
-}
-
 .menu-2 {
   width: 500px;
   background-color: #EDEDED;
@@ -289,6 +285,7 @@ footer a:hover{
   margin-left: 0px;
   height: auto;
   padding-top: 6px;
+  text-align: left;
 }
 .menu-2 a:hover {
   background-color: #EDEDED;
@@ -297,15 +294,25 @@ footer a:hover{
   height: auto;
   padding-top: 6px;
 }
+
+.sub-categories-title {
+  border-bottom: 2px solid #F28321;
+  width: 200px;
+  padding-bottom: 10px;
+}
+
 .sub-category-right {
   float: right;
   width: 50%;
-  text-align: center;
+  text-align: left;
+  padding-left: 20px;
 }
 .sub-category-left {
   float: left;
   width: 50%;
-  text-align: center;
+  text-align: left;
+  padding-left: 20px;
+
 }
 
 .show > .dropdown-menu {
