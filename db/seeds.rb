@@ -133,7 +133,12 @@ sc6 = SubCategory.create(title:"Ropa bebé niño", img_url: "https://drive.googl
 sc6 = SubCategory.create(title:"Vestidos para niña", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
 sc6 = SubCategory.create(title:"Pijamas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
 sc6 = SubCategory.create(title:"Bolsos y mochilas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+sc6 = SubCategory.create(title:"Calzado", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+sc6 = SubCategory.create(title:"Peluches", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+sc6 = SubCategory.create(title:"Juguetes en general", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
 sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+
+
 
 # Categoría Calzado y bolsos
 sc6 = SubCategory.create(title:"Zapatos hombre", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
@@ -177,7 +182,7 @@ sc6 = SubCategory.create(title:"Albumes de fotos", img_url: "https://drive.googl
 sc6 = SubCategory.create(title:"Limpieza del hogar", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
 sc6 = SubCategory.create(title:"Jardinería", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
 sc6 = SubCategory.create(title:"Decoración", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-sc6 = SubCategory.create(title:"Acolchaos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Acolchados", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
 sc6 = SubCategory.create(title:"Cortinas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
 sc6 = SubCategory.create(title:"Toallas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
 sc6 = SubCategory.create(title:"Almohadas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
@@ -190,19 +195,11 @@ sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?ex
 # Categoría Cocina comedor y bar
 sc6 = SubCategory.create(title:"Vasos y copas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
 sc6 = SubCategory.create(title:"Para hornear", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
-sc6 = SubCategory.create(title:"Tacones", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
 sc6 = SubCategory.create(title:"De cocina", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
 sc6 = SubCategory.create(title:"De bar", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
 sc6 = SubCategory.create(title:"Vajillas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
 sc6 = SubCategory.create(title:"Decoración", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
 sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
-
-
-
-
-
-
-
 
 
 7.times do |i|
