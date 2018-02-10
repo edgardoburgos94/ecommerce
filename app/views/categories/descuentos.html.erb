@@ -1,0 +1,26 @@
+<div class="product-page">
+  <% if @products_with_promotion.length > 0 %>
+    <h1 class="category-title-products century-gothic">Productos con descuento del día</h1>
+
+    <div class="products">
+      <% @products_with_promotion.each do |product| %>
+        <div class="product-container">
+          <%=link_to [product.sub_category.category, product.sub_category, product] do%>
+            <img src="<%=product.img_url%>" >
+            <div class="product-info">
+              <h5class="century-gothic"><%=product.title%></h5>
+              <h6 class="color-naranja century-gothic-bold">$<%= number_with_delimiter(product.price, :delimiter => '.') %></h6>
+            </div>
+          <%end%>
+        </div>
+      <%end%>
+    </div>
+  <%else%>
+    <h2 id="no-products">No hay productos con descuentos</h2>
+  <% end%>
+</div>
+
+<script>
+  new DeleteActiveClass();
+  new DeleteActiveLinkClass();
+</script>

@@ -49,6 +49,10 @@ class CategoriesController < ApplicationController
     redirect_to cate_list_url
   end
 
+  def descuentos
+    products_in_promotion()
+  end
+
   private
   def category_params
     params.require(:category).permit(:title, :img_url, :supplier_id)

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :suppliers, only: [:show] do
     resources :supplier_comments, only: [:create]
   end
+  get '/descuentos', to: 'categories#descuentos', as: 'descuentos'
 
 
   get '/alfa', to: 'pages#alfa', as: 'alfa'
