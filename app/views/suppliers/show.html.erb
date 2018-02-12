@@ -6,29 +6,22 @@
 </div>
 <div class="franja" id="espaciadora"></div>
 <div class="description-container">
+  <div class="supplier-options">
+    <% if supplier_signed_in? && current_supplier.id == @supplier.id%>
+      <h1 class="century-gothic">Opciones del proveedor</h1>
+
+      <%= link_to edit_supplier_registration_path, class: "admin-link" do%>
+        <button type="button" name="button">Editar pefil proveedor</button>
+      <%end%>
+    <%end%>
+
+    <h4 class="arial-bold">Categorías <%=@supplier.full_name%></h4>
+  </div>
   <div class="supplier-description">
     <h4 class="arial-bold">Descripción</h4>
     <p><%=@supplier.description%></p>
   </div>
 </div>
-
-
-
-<% if supplier_signed_in? && current_supplier.id == @supplier.id%>
-  <h1 class="century-gothic">Opciones del proveedor</h1>
-
-  <%= link_to cate_list_path, class: "admin-link" do%>
-    <button type="button" name="button">Mostrar categorías</button>
-  <%end%>
-
-  <%= link_to produ_list_path, class: "admin-link" do%>
-    <button type="button" name="button">Mostrar productos</button>
-  <%end%>
-
-  <%= link_to edit_supplier_registration_path, class: "admin-link" do%>
-    <button type="button" name="button">Editar pefil proveedor</button>
-  <%end%>
-<%end%>
 
 <h4 class="our-products century-gothic">Nuestros productos</h4>
 

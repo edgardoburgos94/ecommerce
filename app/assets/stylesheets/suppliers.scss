@@ -19,10 +19,15 @@
   margin-left: 5%;
 }
 
+.supplier-options {
+  float: left;
+  margin: 140px 5%;
+  border: 1px solid green;
+  width: 25%;
+}
 .supplier-description {
   width: 60%;
   max-width: 900px;
-  height: 150px;
   background-color: white;
   color: #706F6F;
   float: right;
