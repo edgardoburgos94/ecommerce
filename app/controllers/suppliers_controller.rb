@@ -30,7 +30,7 @@ class SuppliersController < ApplicationController
       subcate = product.sub_category.title
       if not supplier_sucategories_title.include? subcate
         supplier_sucategories_title.push(subcate)
-        @supplier_subcategories.push(product)
+        @supplier_subcategories.push(product.sub_category)
       end
     end
     puts(supplier_sucategories_title)
