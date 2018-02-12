@@ -17,22 +17,20 @@
 
     <h4 class="arial-bold">Categorías <%=@supplier.full_name%></h4>
 
-    <%puts(params[:subcategory])%>
-    <%puts("<----------------------------2")%>
-    <%= form_tag supplier_path, method: :get do %>
+    |<%= form_tag supplier_path, method: :get do %>
       <div class="form-group">
-        <%=submit_tag "Todos los productos"%>
+        <%=submit_tag "Todos los productos", class:"supplier-product-selector"%>
       </div>
-    <% end %>
+    <% end %>|
     <% @supplier_subcategories.each do |subcategory| %>
 
       <%= form_tag supplier_path, method: :get do %>
       <div class="form-group">
 
         <%= hidden_field :subcategory, params[:subcategory], value: subcategory.id %>
-        <%=submit_tag subcategory.title%>
+        <%=submit_tag subcategory.title, class:"supplier-product-selector"%>
       </div>
-      <% end %>
+      <% end %>|
 
 
     <%end%>

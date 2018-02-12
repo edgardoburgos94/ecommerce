@@ -22,9 +22,21 @@
 .supplier-options {
   float: left;
   margin: 140px 5%;
-  border: 1px solid green;
   width: 25%;
+  max-width: 600px;
 }
+
+.supplier-options form {
+  display: inline-block;
+  margin: 0 -2px;
+}
+
+.supplier-product-selector {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
 .supplier-description {
   width: 60%;
   max-width: 900px;
