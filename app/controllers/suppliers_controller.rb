@@ -1,13 +1,16 @@
 class SuppliersController < ApplicationController
   def show
-    # if params[:concept].present?
-    #   @categories_search = @categories.where("lower(title) like lower(?)", "%#{params[:concept]}%")
-    #   @sub_categories_search = @sub_categories.where("lower(title) like lower(?)", "%#{params[:concept]}%")
-    #   @products_search = @all_products.where("lower(title) like lower(?)", "%#{params[:concept]}%").order("RANDOM()")
-    #   @supplier_search = Supplier.all.where("lower(full_name) like lower(?)", "%#{params[:concept]}%")
-    # end
     find_supplier_subcategories()
     @supplier = Supplier.find(params[:id])
+
+    if params[:subcategory].present?
+      puts(params[:subcategory])
+      puts("<----------------------------")
+      @product_search = @supplier.products.where(sub_category_id: params[:subcategory])
+    else
+      @product_search = @supplier.products.all
+    end
+    params.delete(:subcategory)
 
   end
 
@@ -33,8 +36,6 @@ class SuppliersController < ApplicationController
         @supplier_subcategories.push(product.sub_category)
       end
     end
-    puts(supplier_sucategories_title)
-    puts("<-------------------------------")
     @supplier_subcategories
   end
 end

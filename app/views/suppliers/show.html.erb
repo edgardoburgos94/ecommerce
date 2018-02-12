@@ -17,12 +17,11 @@
 
     <h4 class="arial-bold">Categorías <%=@supplier.full_name%></h4>
 
+    <%puts(params[:subcategory])%>
+    <%puts("<----------------------------2")%>
     <%= form_tag supplier_path, method: :get do %>
       <div class="form-group">
-      <%= hidden_field :concept, params[:subcategory], value: "all" %>
-      <button type="submit">
-        Todas las sub
-      </button>
+        <%=submit_tag "Todos los productos"%>
       </div>
     <% end %>
     <% @supplier_subcategories.each do |subcategory| %>
@@ -30,10 +29,8 @@
       <%= form_tag supplier_path, method: :get do %>
       <div class="form-group">
 
-        <%= hidden_field :concept, params[:subcategory], value: subcategory.title %>
-        <button type="submit">
-          <%=subcategory.title%>
-        </button>
+        <%= hidden_field :subcategory, params[:subcategory], value: subcategory.id %>
+        <%=submit_tag subcategory.title%>
       </div>
       <% end %>
 
@@ -49,7 +46,7 @@
 <h4 class="our-products century-gothic">Nuestros productos</h4>
 
 <div class="products">
-  <%@supplier.products.each do |product|%>
+  <%@product_search.each do |product|%>
     <div class="product-container">
       <%=link_to [product.sub_category.category,product.sub_category, product] do%>
 
