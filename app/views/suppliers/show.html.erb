@@ -15,14 +15,14 @@
 
     <h4 class="arial-bold">Categorías <%=@supplier.full_name%></h4>
 
-    |<%= form_tag supplier_path, method: :get do %>
+    |<%= form_tag supplier_path, method: :get, remote: true do%>
       <div class="form-group">
         <%=submit_tag "Todos los productos", class:"supplier-product-selector color-naranja"%>
       </div>
     <% end %>|
     <% @supplier_subcategories.each do |subcategory| %>
 
-      <%= form_tag supplier_path, method: :get do %>
+      <%= form_tag supplier_path, method: :get do%>
       <div class="form-group">
 
         <%= hidden_field :subcategory, params[:subcategory], value: subcategory.id %>
