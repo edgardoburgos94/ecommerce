@@ -201,6 +201,11 @@ sc6 = SubCategory.create(title:"Vajillas", img_url: "https://drive.google.com/uc
 sc6 = SubCategory.create(title:"Decoración", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
 sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
 
+# Categoría Deportes y ocio
+sc6 = SubCategory.create(title:"Ropa deportiva", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c9.id )
+sc6 = SubCategory.create(title:"Calzado deportivo", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c9.id )
+sc6 = SubCategory.create(title:"Accesorios", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c9.id )
+
 
 7.times do |i|
   sc1.products.create(title: "Camisa manga corta #{i.to_s}",
