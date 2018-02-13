@@ -14,7 +14,7 @@
   <nav >
     <div class="nav-top">
       <%= link_to categories_path, :class=>"logo" do%>
-      <img src="https://drive.google.com/uc?export=view&id=1dpUUX6C5hEK4gdfIfiF5DMXoYlCf7-Oz">
+      <%= image_tag "inicio/Boomket-logotipo.png" %>
       <%end%>
       <%= form_tag categories_path, method: :get, class:"search" do %>
       <div class="form-group">
@@ -275,7 +275,7 @@
     <%end%>
   </div>
   <%end%>
-  <%= image_tag "carousel/Portadadospng.png" %>
+
   <%= yield %>
 
 
