@@ -60,19 +60,18 @@ city = Faker::Address.state
 email = Faker::Internet.email
 name = Faker::Name.name
 p4 = Supplier.create(email: "prove4@gmail.com", password:"123456", password_confirmation:"123456", full_name: "Gef", dir: dir, cel:cel, country: "Colombia", city: city)
-
-c1 = Category.create(title:"Hombre", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy")
-c2 = Category.create(title:"Mujer", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy")
-c3 = Category.create(title:"Niños y bebés", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy")
-c4 = Category.create(title:"Calzado y bolsos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy")
-c5 = Category.create(title:"Tecnología y accesorios", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy")
-c6 = Category.create(title:"Bisutería", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy")
-c7 = Category.create(title:"Casa y jardín", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy")
-c8 = Category.create(title:"Cocina comedor y bar", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy")
-c9 = Category.create(title:"Deportes y ocio", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy")
-c10 = Category.create(title:"Salud y belleza", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy")
-c11 = Category.create(title:"Ferretería y herramientas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy")
-c12 = Category.create(title:"Maquinaria y accesorios", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy")
+c1 = Category.create(title:"Hombre", img_url: "https://drive.google.com/uc?export=view&id=1SyvRuI3p7tAd-KJmndjnNa60ErwxkODQ" )
+c2 = Category.create(title:"Mujer", img_url: "https://drive.google.com/uc?export=view&id=1b7oj1KF7UZLlOh3NzPWUo4DUvH0pbtog")
+c3 = Category.create(title:"Niños y bebés", img_url: "https://drive.google.com/uc?export=view&id=1MWwhUm5NUtnPk7LLD5A290MgsTg9umWB")
+c4 = Category.create(title:"Calzado y bolsos", img_url: "https://drive.google.com/uc?export=view&id=1jz_X8Wo1iUpcRHXDTQwqjOv8JWmyYH6X")
+c5 = Category.create(title:"Tecnología y accesorios", img_url: "https://drive.google.com/uc?export=view&id=1Z3_pVd9FN85qi4j5G_4s815Re3YirdqK")
+c6 = Category.create(title:"Bisutería", img_url: "https://drive.google.com/uc?export=view&id=1SuLxiBAJRWY6oYBpITLV-Oz9zu-6zlZ6")
+c7 = Category.create(title:"Casa y jardín", img_url: "https://drive.google.com/uc?export=view&id=1Rvbcqn09S8wi6iPGBuH_Q2dNzkZ65Cuz")
+c8 = Category.create(title:"Cocina comedor y bar", img_url: "https://drive.google.com/uc?export=view&id=1zZ1MLi10m8prZLcu7ewA6HtTErB1jPEg")
+c9 = Category.create(title:"Deportes y ocio", img_url: "https://drive.google.com/uc?export=view&id=1rS9PCIxTOnpG6ftLrz77X_-0tKLNpg8G")
+c10 = Category.create(title:"Salud y belleza", img_url: "https://drive.google.com/uc?export=view&id=1YUtSembfewCXm66nW8So26PO3SFl9kVW")
+c11 = Category.create(title:"Ferretería y herramientas", img_url: "https://drive.google.com/uc?export=view&id=1rMwHbUWkAe-_aHWDKIMc5N56sGNP-CRY")
+c12 = Category.create(title:"Maquinaria y accesorios", img_url: "https://drive.google.com/uc?export=view&id=10XBUOWgzqqocAfFHjFog2ytOISjvRQ4f")
 
 # Categoría hombres
 sc1 = SubCategory.create(title:"Camisas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
