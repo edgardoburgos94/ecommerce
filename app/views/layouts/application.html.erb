@@ -233,6 +233,29 @@
                 </div>
               </ul>
           </li>
+
+          <li><a class="dropdown-item dropdown-category dropdown-toggle"><%=image_tag "mini_categorias/Deportegris-27.svg",class: "category-icon-gris"%><%=image_tag "mini_categorias/Deportenaranja-28.svg",class: "category-icon-naranja"%>Deportes y ócio</a>
+              <ul class="dropdown-menu menu-2">
+                <div class="sub-category-left">
+                  <h5 class="color-naranja sub-categories-title">Deportes y ócio</h5>
+                  <%=link_to @categories.all[8].sub_categories.all[0].title, category_sub_category_products_path(@categories.all[8], @categories.all[8].sub_categories.all[0]), class:"dropdown-item"%>
+                  <%=link_to @categories.all[8].sub_categories.all[1].title, category_sub_category_products_path(@categories.all[8], @categories.all[8].sub_categories.all[1]), class:"dropdown-item"%>
+                  <%=link_to @categories.all[8].sub_categories.all[2].title, category_sub_category_products_path(@categories.all[8], @categories.all[8].sub_categories.all[2]), class:"dropdown-item"%>
+                </div>
+              </ul>
+          </li>
+
+          <li><a class="dropdown-item dropdown-category dropdown-toggle"><%=image_tag "mini_categorias/Saludgris.svg",class: "category-icon-gris"%><%=image_tag "mini_categorias/Saludnaranja-28.svg",class: "category-icon-naranja"%>Salud y belleza</a>
+
+          </li>
+
+          <li><a class="dropdown-item dropdown-category dropdown-toggle"><%=image_tag "mini_categorias/Herramientagris-27.svg",class: "category-icon-gris"%><%=image_tag "mini_categorias/Herramientanaranja-28.svg",class: "category-icon-naranja"%>Ferretería y herramientas</a>
+
+          </li>
+
+          <li><a class="dropdown-item dropdown-category dropdown-toggle"><%=image_tag "mini_categorias/Maquinariagris-27.svg",class: "category-icon-gris"%><%=image_tag "mini_categorias/Maquinarianaranja-28.svg",class: "category-icon-naranja"%>Maquinárias y accesorios</a>
+
+          </li>
       </ul>
 
 
