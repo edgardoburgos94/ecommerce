@@ -250,7 +250,7 @@ footer a:hover{
 }
 
 .topnav a:hover {
-  background-color: #EA5B0C;
+  background-color: #F29100;
   color: white;
 
   text-decoration: none;
@@ -272,15 +272,15 @@ footer a:hover{
 
 .dropdown-menu {
   border-radius: 0px !important;
+  background-color: white !important;
 }
 
 .menu-2 {
   width: 500px;
-  background-color: #EDEDED;
+  background-color: white;
 }
 
 .menu-2 a {
-  background-color: #EDEDED;
   color: #706F6F;
   margin-left: 0px;
   height: auto;
@@ -288,11 +288,8 @@ footer a:hover{
   text-align: left;
 }
 .menu-2 a:hover {
-  background-color: #EDEDED;
+  background-color: white;
   color: #F28321;
-  margin-left: 0px;
-  height: auto;
-  padding-top: 6px;
 }
 
 .sub-categories-title {
@@ -315,12 +312,36 @@ footer a:hover{
 
 }
 
+.dropdown-toggle::after {
+    display:none
+}
+
 .show > .dropdown-menu {
   border: 1px solid #EA5B0C;
 }
 
 li.show {
-  background-color: #F28321;
+  border: 1px solid #F28321;
+}
+
+li.show > a {
+  color: #EA5B0C !important;
+}
+
+.category-icon-naranja {
+  display: none;
+}
+
+.category-icon-gris {
+  display: inline-block;
+}
+
+li.show .category-icon-naranja{
+  display: inline-block;
+}
+
+li.show .category-icon-gris{
+  display: none;
 }
 
 #dropdownMenuButton {
@@ -348,10 +369,6 @@ a.dropdown-category{
   text-align: left;
   padding-left: 10px;
   border-bottom: 1px solid #706F6F;
-}
-
-.hide {
-  display: none;
 }
 
 #menu-products a:hover{
