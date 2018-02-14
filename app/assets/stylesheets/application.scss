@@ -293,7 +293,7 @@ footer a:hover{
 }
 
 .sub-categories-title {
-  border-bottom: 2px solid #F28321;
+  border-bottom: 0.7px solid #F28321;
   width: 200px;
   padding-bottom: 10px;
 }
@@ -370,6 +370,20 @@ a.dropdown-category{
   padding-left: 10px;
   border-bottom: 1px solid #706F6F;
 }
+
+a.dropdown-category:hover {
+  background-color: white;
+  color: #EA5B0C !important;
+}
+
+a.dropdown-category:hover .category-icon-naranja{
+  display: inline-block;
+}
+
+a.dropdown-category:hover .category-icon-gris{
+  display: none;
+}
+
 
 #menu-products a:hover{
   background-color: #9D9D9C;
