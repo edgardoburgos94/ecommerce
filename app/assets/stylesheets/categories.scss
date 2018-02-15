@@ -146,13 +146,22 @@
 .category-icon-naranja, .category-icon-gris {
   width: 37px;
 }
-
-@media screen and (max-width: 600px) {
-  .te-ofrecemos img {
-    width: 95%;
+@media screen and (max-width: 900px) {
+  a h5.category-title {
+    font-size: 1rem !important;
   }
 
-  .franja {
-    height: 7px;
+  @media screen and (max-width: 600px) {
+    .te-ofrecemos img {
+      width: 95%;
+    }
+
+    .franja {
+      height: 7px;
+    }
+
+    a h5.category-title {
+      font-size: 0.4rem !important;
+    }
   }
 }
