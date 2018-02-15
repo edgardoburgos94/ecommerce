@@ -4,8 +4,6 @@ class SuppliersController < ApplicationController
     @supplier = Supplier.find(params[:id])
 
     if params[:subcategory].present?
-      puts(params[:subcategory])
-      puts("<----------------------------")
       @product_search = @supplier.products.where(sub_category_id: params[:subcategory])
     else
       @product_search = @supplier.products.all
