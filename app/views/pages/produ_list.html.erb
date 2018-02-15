@@ -7,12 +7,7 @@
       <th scope="col">Imagen</th>
       <th scope="col">Categoría</th>
       <th scope="col">Nombre</th>
-      <th scope="col">xs</th>
-      <th scope="col">s</th>
-      <th scope="col">m</th>
-      <th scope="col">l</th>
-      <th scope="col">xl</th>
-      <th scope="col">xxl</th>
+      <th scope="col">Cantidad disponible</th>
       <th scope="col">Editar</th>
       <th scope="col">Eliminar</th>
     </tr>
@@ -21,26 +16,21 @@
     <% @products.each do |product|%>
       <tr>
         <th>
-          <%=link_to [product.category, product] do%>
+          <%=link_to [product.sub_category.category, product.sub_category, product] do%>
             <img src="<%=product.img_url%>" class="mini-img">
           <%end%>
 
         </th>
-        <td><%=product.category.title%></td>
+        <td><%=product.sub_category.category.title%></td>
         <td><%=product.title%></td>
-        <td><%=product.xs%></td>
-        <td><%=product.s%></td>
-        <td><%=product.m%></td>
-        <td><%=product.l%></td>
-        <td><%=product.xl%></td>
-        <td><%=product.xxl%></td>
+        <td><%=produ = product.xs + product.s + product.m + product.l + product.xl + product.xxl%></td>
         <td>
-          <%=link_to edit_category_product_path(product.category, product) do%>
+          <%=link_to edit_category_sub_category_product_path(product.sub_category.category, product.sub_category, product) do%>
             <i class="fa fa-pencil" aria-hidden="true"></i>
           <%end%>
         </td>
         <td>
-          <%=link_to [product.category, product], method: :delete, data:{ confirm: "¿Está seguro de eliminar este producto?"} do%>
+          <%=link_to [product.sub_category.category, product.sub_category, product], method: :delete, data:{ confirm: "¿Está seguro de eliminar este producto?"} do%>
             <i class="fa fa-trash-o" aria-hidden="true"></i>
           <%end%>
 
