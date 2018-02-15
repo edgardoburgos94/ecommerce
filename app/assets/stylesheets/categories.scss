@@ -98,6 +98,9 @@
   text-align: left;
   padding: 5px 5px 5px 20px;
   color: #706F6F;
+  height: 55px;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
 }
 
 
@@ -113,6 +116,8 @@
   max-width: 300px;
   display: inline-block;
   margin: 0% 1.25% 0% 1.25%;
+  overflow: hidden;
+  vertical-align: top;
 }
 
 .products-publicity a:hover {
@@ -126,6 +131,10 @@
 
 .products-publicity a:hover {
   border-bottom: 4px solid #EA5B0C;
+}
+
+.products-publicity a:hover .publicity-description{
+  height: 110px;
 }
 
 .medios-pago {

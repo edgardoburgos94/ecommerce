@@ -102,7 +102,11 @@
             <%puts(random_n[i].class)%>
             <%=link_to [@products_with_promotion[random_n[i].to_i].sub_category.category, @products_with_promotion[random_n[i].to_i].sub_category, @products_with_promotion[random_n[i].to_i]] do%>
               <img src="<%=@products_with_promotion[random_n[i].to_i].img_url%>" class="adjust-product-img">
-              <div class="publicity-description century-gothic">Precios especiales <br> <span class="color-naranja century-gothic-bold">Descuento del <%=@products_with_promotion[random_n[i].to_i].p_day + @products_with_promotion[random_n[i].to_i].p_registered_user%>%</span></div>
+              <div class="publicity-description century-gothic">Precios especiales <br>
+                <span class="color-naranja century-gothic-bold">Descuento del <%=@products_with_promotion[random_n[i].to_i].p_day + @products_with_promotion[random_n[i].to_i].p_registered_user%>%</span> <br>
+                Otra cosa super cuca <br>
+                Compra ya :)
+              </div>
             <%end%>
         <%end%>
       </div>
@@ -135,7 +139,12 @@
         <%4.times do |i|%>
           <%=link_to [@all_products[random_n[i].to_i].sub_category.category,@all_products[random_n[i].to_i].sub_category, @all_products[random_n[i].to_i]] do%>
             <img src="<%=@all_products[random_n[i].to_i].img_url%>" class="adjust-product-img">
-            <div class="publicity-description century-gothic">Precios especiales <br> <span class="color-naranja century-gothic-bold"><%=@all_products[random_n[i].to_i].supplier.full_name%></span></div>
+            <div class="publicity-description century-gothic">
+              Precios especiales <br>
+              <span class="color-naranja century-gothic-bold"><%=@all_products[random_n[i].to_i].supplier.full_name%></span> <br>
+              Otra cosa super cuca <br>
+              Compra ya :)
+            </div>
           <%end%>
         <%end%>
       </div>
