@@ -1,34 +1,37 @@
-<h1>Proveedores registrados (<%=@suppliers.length%>)</h1>
+<div class="container">
+  <h1>Proveedores registrados (<%=@suppliers.length%>)</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Email</th>
-      <th scope="col"># de productos</th>
-      <th scope="col">Fecha de registro</th>
-      <th scope="col">Detalles proveedor</th>
-      <th scope="col">Eliminar proveedor</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @suppliers.each do |supplier|%>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <th><%=supplier.full_name%></th>
-        <th><%=supplier.email%></th>
-        <th>
-          <%=supplier.products.length%>
-        </th>
-        <td><%=supplier.created_at%></td>
-        <td><%=link_to supplier_path(supplier) do%>
-          <i class="fa fa-info-circle" aria-hidden="true"></i>
-        <%end%>
-        </td>
-        <td><%= link_to admin_destroy_supplier_path(supplier), method: :delete, data: { confirm: "You sure?" } do%>
-          <i class="fa fa-trash-o" aria-hidden="true"></i>
-        <%end%>
-        </td>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col"># de productos</th>
+        <th scope="col">Fecha de registro</th>
+        <th scope="col">Detalles proveedor</th>
+        <th scope="col">Eliminar proveedor</th>
       </tr>
-    <%end%>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @suppliers.each do |supplier|%>
+        <tr>
+          <th><%=supplier.full_name%></th>
+          <th><%=supplier.email%></th>
+          <th>
+            <%=supplier.products.length%>
+          </th>
+          <td><%=supplier.created_at%></td>
+          <td><%=link_to supplier_path(supplier) do%>
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+          <%end%>
+          </td>
+          <td><%= link_to admin_destroy_supplier_path(supplier), method: :delete, data: { confirm: "¿Estás seguro de eliminar este proveedor?" } do%>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          <%end%>
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+
+</div>
