@@ -1,19 +1,21 @@
 <div class="cover-image supplier-cover" style="background-image: url(<%=@supplier.cover_img%>);">
   <!-- <img src="<%=@supplier.cover_img%> " class="supplier-cover"> -->
+
+</div>
+<div class="franja" id="espaciadora">
   <div class="profile-image">
     <img src="<%=@supplier.profile_img%>">
   </div>
 </div>
-<div class="franja" id="espaciadora"></div>
 <div class="description-container">
   <div class="supplier-options color-naranja">
     <% if supplier_signed_in? && current_supplier.id == @supplier.id%>
       <%= link_to edit_supplier_registration_path, class: "admin-link" do%>
-        <button type="button" name="button" class="redirect-button">Editar pefil proveedor</button>
+        <button type="button" name="button" class="redirect-button arial-bold color-gris-oscuro">Editar pefil proveedor</button>
       <%end%>
     <%end%>
 
-    <h4 class="arial-bold">Categorías <%=@supplier.full_name%></h4>
+    <h4 class="arial-bold color-naranja-oscuro">Categorías <%=@supplier.full_name%></h4>
 
     |<%= form_tag supplier_path, method: :get, remote: true do%>
       <div class="form-group">
@@ -33,9 +35,46 @@
 
     <%end%>
   </div>
+
   <div class="supplier-description">
     <h4 class="arial-bold">Descripción</h4>
     <p><%=@supplier.description%></p>
+    <table class="table table-striped supplier-table">
+        <tr>
+          <th scope="col">Nombre:</th>
+          <th><%=@supplier.full_name%></th>
+        </tr>
+        <tr>
+          <th scope="col">Pais:</th>
+          <th><%=@supplier.country%></th>
+        </tr>
+        <tr>
+          <th scope="col">Ciudad:</th>
+          <th><%=@supplier.city%></th>
+        </tr>
+        <tr>
+          <th scope="col">Descuentos entre:</th>
+          <th>2% y 15%</th>
+        </tr>
+        <!-- <tr>
+          <th scope="col">Email:</th>
+          <th><%=@supplier.email%></th>
+        </tr>
+        <tr>
+          <th scope="col">Celular:</th>
+          <th><%=@supplier.cel%></th>
+        </tr>
+        <tr>
+          <th scope="col">Dirección:</th>
+          <th><%=@supplier.dir%></th>
+        </tr>
+        <tr>
+          <th scope="col">Número de productos:</th>
+          <th>
+            <%=@supplier.products.length%>
+          </th>
+        </tr> -->
+    </table>
   </div>
 </div>
 
@@ -56,44 +95,6 @@
   <%end%>
 </div>
 
-<h1>Detalles del proveedor</h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Nombre:</th>
-      <th><%=@supplier.full_name%></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="col">Email:</th>
-      <th><%=@supplier.email%></th>
-    </tr>
-    <tr>
-      <th scope="col">Celular:</th>
-      <th><%=@supplier.cel%></th>
-    </tr>
-    <tr>
-      <th scope="col">Dirección:</th>
-      <th><%=@supplier.dir%></th>
-    </tr>
-    <tr>
-      <th scope="col">Pais:</th>
-      <th><%=@supplier.country%></th>
-    </tr>
-    <tr>
-      <th scope="col">Ciudad:</th>
-      <th><%=@supplier.city%></th>
-    </tr>
-    <tr>
-      <th scope="col">Número de productos:</th>
-      <th>
-        <%=@supplier.products.length%>
-      </th>
-    </tr>
-
-  </tbody>
-</table>
 <h4 class="our-products century-gothic">Comentarios</h4>
 <div class="product_comments">
 	<% @supplier.supplier_comments.each do |comment| %>
