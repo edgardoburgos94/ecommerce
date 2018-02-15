@@ -90,21 +90,6 @@
   <h1 class="century-gothic-bold">¡Bienvenido <%=current_user.full_name%>!</h1>
   <%end%>
 
-  <div class="category-page">
-    <div class="categories">
-      <% @categories.each do |category| %>
-        <div class="category-container adjust-category-icon">
-          <%=link_to category_sub_categories_path(category) do%>
-            <img src= "<%= category.img_url %>">
-            <h5 class= "category-title"><%= category.title %></h5>
-          <%end%>
-        </div>
-      <%end%>
-    </div>
-
-    </div>
-
-
   <div class="publicity">
     <%if @products_with_promotion.length >0%>
       <div class="publicity-title">
@@ -123,6 +108,22 @@
       </div>
       <%=link_to "Ver más", descuentos_path%>
     <%end%>
+
+    <div class="category-page">
+      <div class="publicity-title">
+        <h4 class="century-gothic">Categorías para ti</h4>
+      </div>
+      <div class="categories">
+        <% @categories.each do |category| %>
+          <div class="category-container adjust-category-icon">
+            <%=link_to category_sub_categories_path(category) do%>
+              <img src= "<%= category.img_url %>">
+              <h5 class= "category-title"><%= category.title %></h5>
+            <%end%>
+          </div>
+        <%end%>
+      </div>
+    </div>
 
     <%if @all_products.length >0%>
       <div class="publicity-title">
