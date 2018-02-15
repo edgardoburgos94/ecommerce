@@ -1,43 +1,50 @@
-<h1>Categorías</h1>
+<div class="container">
+  <h1>Categorías</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Imagen</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Productos disponibles</th>
-      <th scope="col">Agregar producto</th>
-      <th scope="col">Editar</th>
-      <th scope="col">Eliminar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @categories.each do |category|%>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <th><img src="<%=category.img_url%>" class="mini-img"></th>
-        <td><%=category.title%></td>
-        <td>
-          <%produ=0%>
-          <%category.products.each do |product|%>
-            <%produ = produ + product.xs + product.s + product.m + product.l + product.xl + product.xxl%>
-          <%end%>
-          <%=produ%>
-        </td>
-        <td><%= link_to new_category_product_path(category) do%>
-          <i class="fa fa-plus-square" aria-hidden="true"></i>
-        <%end%>
-        </td>
-        <td>
-          <%=link_to edit_category_path(category) do%>
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-          <%end%>
-        </td>
-        <td>
-          <%=link_to category_path(category), method: :delete, data:{ confirm: "¿Está seguro de eliminar esta categoría?"} do%>
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
-          <%end%>
-        </td>
+        <th scope="col">Imagen</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Productos disponibles</th>
+        <th scope="col">Sub categorías</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
       </tr>
-    <%end%>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @categories.each do |category|%>
+        <tr>
+          <th><img src="<%=category.img_url%>" class="mini-img"></th>
+          <td><%=category.title%></td>
+          <td>
+            <%produ=0%>
+            <%category.sub_categories.each do |subcategory|%>
+              <%subcategory.products.each do |product|%>
+                <%produ = produ + product.xs + product.s + product.m + product.l + product.xl + product.xxl%>
+              <%end%>
+            <%end%>
+
+            <%=produ%>
+          </td>
+          <td>
+            <%category.sub_categories.each do |subcategory|%>
+              <%=subcategory.title%> -
+            <%end%>
+          </td>
+          <td>
+            <%=link_to edit_category_path(category) do%>
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            <%end%>
+          </td>
+          <td>
+            <%=link_to category_path(category), method: :delete, data:{ confirm: "Si elimina esta categoría puede que ocurra fallas en la barra de navegación. ¿Está seguro que desea continuar?"} do%>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <%end%>
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+
+</div>

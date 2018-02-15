@@ -44,7 +44,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id])
-    @category.destroy
+    @category.delete
 
     redirect_to cate_list_url
   end
@@ -55,7 +55,7 @@ class CategoriesController < ApplicationController
 
   private
   def category_params
-    params.require(:category).permit(:title, :img_url, :supplier_id)
+    params.require(:category).permit(:title, :img_url)
   end
 
   def products_in_promotion

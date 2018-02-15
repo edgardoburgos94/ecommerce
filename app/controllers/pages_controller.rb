@@ -20,6 +20,7 @@ class PagesController < ApplicationController
 
   def cate_list
     @categories = Category.all
+    @products = Product.all
   end
 
   def produ_list
