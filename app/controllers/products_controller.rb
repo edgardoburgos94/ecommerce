@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
 
-    redirect_to produ_list_url
+    redirect_to request.referrer
   end
 
   private
