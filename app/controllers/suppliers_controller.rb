@@ -9,7 +9,10 @@ class SuppliersController < ApplicationController
       @product_search = @supplier.products.all
     end
     params.delete(:subcategory)
+  end
 
+  def my_products
+    @products = current_supplier.products
   end
 
   def edit

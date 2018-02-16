@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Category.find(params[:category_id]).products.new
+    @product = Product.new(sub_category_id: SubCategory.all.first.id)
   end
 
   def create
