@@ -14,6 +14,15 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def show
+    @subcategories = Category.find(params[:id]).sub_categories
+
+    @products = []
+    @subcategories.each do |subcategory|
+      @products = @products + subcategory.products
+    end
+  end
+
   def new
     @category = Category.new()
   end
