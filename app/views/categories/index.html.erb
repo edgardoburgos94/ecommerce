@@ -122,7 +122,7 @@
       <div class="categories">
         <% @categories.each do |category| %>
           <div class="category-container adjust-category-icon">
-            <%=link_to category_sub_categories_path(category) do%>
+            <%=link_to category_path(category) do%>
               <img src= "<%= category.img_url %>">
               <h5 class= "category-title"><%= category.title %></h5>
             <%end%>
