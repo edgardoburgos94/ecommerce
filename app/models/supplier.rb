@@ -35,6 +35,10 @@ class Supplier < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :products, dependent: :delete_all
+  has_many :favourites, dependent: :delete_all
+  has_many :users, through: :favourite
+
+
   has_many :supplier_comments, dependent: :delete_all
 
   devise :database_authenticatable, :registerable,
