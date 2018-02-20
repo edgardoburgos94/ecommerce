@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'favourites/create'
+
+  get 'favourite/create'
+
   devise_for :suppliers
   devise_for :users
   match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
@@ -20,6 +24,9 @@ Rails.application.routes.draw do
   resources :suppliers, only: [:show] do
     resources :supplier_comments, only: [:create]
   end
+
+  resources :favourites, only: [:create]
+
   get '/descuentos', to: 'categories#descuentos', as: 'descuentos'
 
 

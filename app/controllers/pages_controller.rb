@@ -12,12 +12,6 @@ class PagesController < ApplicationController
   def admin
   end
 
-  def my_profile
-    if user_signed_in?
-      @user = current_user
-    end
-  end
-
   def cate_list
     @categories = Category.all
     @products = Product.all

@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206002521) do
+ActiveRecord::Schema.define(version: 20180220162918) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "favourites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "supplier_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["supplier_id"], name: "index_favourites_on_supplier_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
   create_table "order_items", force: :cascade do |t|

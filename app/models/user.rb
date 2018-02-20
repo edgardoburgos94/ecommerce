@@ -32,7 +32,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :favourites, dependent: :delete_all
-  has_many :suppliers, through: :favourite
+  has_many :suppliers, through: :favourites
 
   has_many :product_comments, dependent: :delete_all
   has_many :supplier_comments, dependent: :delete_all

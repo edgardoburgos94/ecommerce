@@ -33,7 +33,7 @@
         Proveedor <%=image_tag "inicio/Provepng.png"%>
         <%end%>
         <%= link_to user_session_path, class:"arial-italic", id:'user-link' do%>
-        Cliente <%=image_tag "inicio/Usuariopng.png"%> 
+        Cliente <%=image_tag "inicio/Usuariopng.png"%>
         <%end%>
         <a href="javascript:void(0);" id="hamburger" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
       </div>
@@ -196,7 +196,7 @@
       <%= render 'layouts/cart' %>
     <%end%>
     <% if user_signed_in? %>
-      <%= link_to "Mi perfil usuario", my_profile_path, class:"arial-bold", id:'u-profile'  %>
+      <%= link_to "Mi perfil usuario", user_path(current_user), class:"arial-bold", id:'u-profile'  %>
     <%end%>
     <% if supplier_signed_in? %>
       <%= link_to "Mi perfil proveedor", supplier_path(current_supplier), class:"arial-bold", id:'s-profile'%>
