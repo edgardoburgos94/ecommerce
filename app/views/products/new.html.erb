@@ -6,7 +6,7 @@
   <% end %>
 <% end %>
 
-<% categories = SubCategory.all %>
+<% categories = @category.sub_categories.all %>
 <% sub_categories_list = [] %>
 <% categories.each do |subcategory| %>
   <% selector = [subcategory.title, subcategory.id]%>

@@ -1,0 +1,19 @@
+<div class="category-page">
+  <div class="publicity-title">
+    <h4 class="century-gothic">Escoge la categoría a la que pertenece tu producto</h4>
+  </div>
+  <div class="categories">
+    <% @categories.each do |category| %>
+      <div class="category-container adjust-category-icon">
+        <%=link_to new_category_sub_category_product_path(category,1) do%>
+          <img src= "<%= category.img_url %>">
+          <h5 class= "category-title"><%= category.title %></h5>
+        <%end%>
+      </div>
+    <%end%>
+  </div>
+</div>
+
+<script>
+  new ResizeCategoryIcon();
+</script>

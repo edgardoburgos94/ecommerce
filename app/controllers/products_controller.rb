@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new(sub_category_id: SubCategory.all.first.id)
+    @category = Category.find(params[:category_id])
   end
 
   def create
@@ -34,6 +35,10 @@ class ProductsController < ApplicationController
       render :edit
     end
 
+  end
+
+  def choose
+    @categories = Category.all
   end
 
   def destroy
