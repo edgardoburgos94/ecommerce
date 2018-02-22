@@ -13,10 +13,12 @@ Rails.application.routes.draw do
   resources :categories do
     resources :sub_categories do
       resources :products do
+        resources :favourites, only: [:create, :destroy]
         resources :product_comments, only: [:create]
       end
     end
   end
+
 
   resources :order_items
   resource :carts, only: [:show]
@@ -25,7 +27,7 @@ Rails.application.routes.draw do
     resources :supplier_comments, only: [:create]
   end
 
-  resources :favourites, only: [:create]
+
 
   get '/descuentos', to: 'categories#descuentos', as: 'descuentos'
 

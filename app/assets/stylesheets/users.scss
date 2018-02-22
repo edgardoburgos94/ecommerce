@@ -1,3 +1,24 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-info {
+  float: left;
+  width: 35%;
+  border: 1px solid red;
+}
+.favourite-suppliers {
+  width: 60%;
+  float: right;
+  border: 1px solid green;
+}
+
+.favourite-supplier img{
+  width: 250px;
+  display: block;
+}
+
+.favourite-products {
+  width: 60%;
+  float: right;
+  border: 1px solid blue;
+}

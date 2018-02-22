@@ -43,6 +43,10 @@ class Supplier < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+   def favourite_by?(user)
+     favourites.exists?(user: user)
+   end
 end
 
 class Supplier::ParameterSanitizer < Devise::ParameterSanitizer
