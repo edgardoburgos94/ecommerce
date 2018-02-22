@@ -34,6 +34,9 @@ class User < ApplicationRecord
   has_many :favourites, dependent: :delete_all
   has_many :suppliers, through: :favourites
 
+  has_many :likes, dependent: :delete_all
+  has_many :products, through: :likes
+
   has_many :product_comments, dependent: :delete_all
   has_many :supplier_comments, dependent: :delete_all
 

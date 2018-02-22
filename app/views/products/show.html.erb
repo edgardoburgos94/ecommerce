@@ -56,10 +56,20 @@
 					<% end %>
 				<%else%>
 					<%= link_to category_sub_category_product_favourites_path(@product.sub_category.category,@product.sub_category,@product), method: :post, class: "product-upvote" do %>
-				    <span class="upvote-count">Agregar proveedor a favoritos <%= @product.supplier.favourites.count %></span>
+				    <span class="upvote-count">Agregar proveedor a favoritos <i class="fa fa-star"></i> <%= @product.supplier.favourites.count %></span>
 				  <% end %>
 				<%end%>
-				
+
+				<% if @product.like_by? current_user %>
+					<%=link_to category_sub_category_product_like_path(@product.sub_category.category,@product.sub_category,@product, @product.supplier.favourites.where(user: current_user).first), method: :delete, class: "product-upvote upvote-active" do %>
+						<span class="upvote-count">Ya no me gusta <%= @product.likes.count %></span>
+					<% end %>
+				<%else%>
+					<%= link_to category_sub_category_product_likes_path(@product.sub_category.category,@product.sub_category,@product), method: :post, class: "product-upvote" do %>
+				    <span class="upvote-count">Me gusta <i class="fa fa-thumbs-up"></i> <%= @product.likes.count %></span>
+				  <% end %>
+				<%end%>
+
 			</div>
 		<% else %>
 		  <h1 class="arial">Producto agotado</h1>

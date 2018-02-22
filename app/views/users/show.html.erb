@@ -51,7 +51,12 @@
 
 <div class="favourite-products">
   <h5>Productos favoritos</h5>
-
+  <%@user.products.each do |product|%>
+  <div class="favourite-product">
+    <img src="<%=product.img_url%>">
+    <span><%=product.title%></span>
+  </div>
+  <%end%>
 </div>
 
 <script>

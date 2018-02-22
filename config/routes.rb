@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'likes/create'
+
+  get 'likes/destroy'
+
   get 'favourites/create'
 
   get 'favourite/create'
@@ -14,6 +18,8 @@ Rails.application.routes.draw do
     resources :sub_categories do
       resources :products do
         resources :favourites, only: [:create, :destroy]
+        resources :likes, only: [:create, :destroy]
+
         resources :product_comments, only: [:create]
       end
     end
