@@ -61,7 +61,7 @@
 				<%end%>
 
 				<% if @product.like_by? current_user %>
-					<%=link_to category_sub_category_product_like_path(@product.sub_category.category,@product.sub_category,@product, @product.supplier.favourites.where(user: current_user).first), method: :delete, class: "product-upvote upvote-active" do %>
+					<%=link_to category_sub_category_product_like_path(@product.sub_category.category,@product.sub_category,@product, @product.supplier.likes.where(user: current_user).first), method: :delete, class: "product-upvote upvote-active" do %>
 						<span class="upvote-count">Ya no me gusta <%= @product.likes.count %></span>
 					<% end %>
 				<%else%>
