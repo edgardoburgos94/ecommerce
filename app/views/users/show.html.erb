@@ -43,8 +43,10 @@
   <h5>Proveedores favoritos</h5>
   <%@user.suppliers.each do |supplier|%>
   <div class="favourite-supplier">
-    <img src="<%=supplier.profile_img%>">
-    <span><%=supplier.full_name%></span>
+    <%=link_to supplier_path(supplier) do%>
+      <img src="<%=supplier.profile_img%>">
+      <span><%=supplier.full_name%></span>
+    <%end%>
   </div>
   <%end%>
 </div>
@@ -53,8 +55,10 @@
   <h5>Productos favoritos</h5>
   <%@user.products.each do |product|%>
   <div class="favourite-product">
-    <img src="<%=product.img_url%>">
-    <span><%=product.title%></span>
+    <%=link_to [product.sub_category.category, product.sub_category, product] do%>
+      <img src="<%=product.img_url%>">
+      <span><%=product.title%></span>
+    <%end%>
   </div>
   <%end%>
 </div>
