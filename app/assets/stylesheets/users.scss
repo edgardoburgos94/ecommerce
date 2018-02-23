@@ -11,7 +11,10 @@
   float: right;
   border: 1px solid green;
 }
-
+.favourite-supplier {
+  width: 24%;
+  display: inline-block;
+}
 .favourite-supplier img{
   width: 250px;
   display: block;
@@ -20,5 +23,16 @@
 .favourite-products {
   width: 60%;
   float: right;
+  display: inline-block;
   border: 1px solid blue;
+}
+
+.favourite-product {
+  width: 24%;
+  display: inline-block;
+}
+
+.favourite-product img {
+  width: 250px;
+  display: block;
 }
