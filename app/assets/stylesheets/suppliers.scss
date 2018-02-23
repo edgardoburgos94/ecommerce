@@ -70,6 +70,19 @@ table.supplier-table {
   margin: 0px -17px;
 }
 
+.supplier-link {
+  width: 22%;
+  margin: auto;
+  display: inline-block;
+}
+
+.supplier-link img{
+  width: 100%;
+}
+
+.suppliers-container {
+  text-align: center;
+}
 @media screen and (max-width: 600px) {
   .profile-image img {
     margin: auto;

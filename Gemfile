@@ -60,7 +60,6 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'b
 gem 'faker', '~> 1.6', '>= 1.6.6'
 
 
-
 group :production do
   gem 'rails_12factor'
   gem 'pg', '0.21.0'

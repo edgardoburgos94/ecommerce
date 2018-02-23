@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   resources :order_items
   resource :carts, only: [:show]
   resources :users, only: [:show]
-  resources :suppliers, only: [:show] do
+  resources :suppliers, only: [:show, :index] do
     resources :supplier_comments, only: [:create]
   end
 

@@ -1,4 +1,7 @@
 class SuppliersController < ApplicationController
+  def index
+    @suppliers = Supplier.all
+  end
   def show
     find_supplier_subcategories()
     @supplier = Supplier.find(params[:id])
@@ -13,9 +16,6 @@ class SuppliersController < ApplicationController
 
   def my_products
     @products = current_supplier.products
-  end
-
-  def edit
   end
 
   def destroy

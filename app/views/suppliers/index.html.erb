@@ -1,0 +1,12 @@
+<h1>Acá se motrarán todos los Proveedores</h1>
+
+<div class="suppliers-container">
+  <% @suppliers.each do |supplier|%>
+  <div class="supplier-link">
+    <%=link_to supplier_path(supplier) do%>
+      <img src="<%=supplier.profile_img%>">
+      <%=supplier.full_name%>
+    <%end%>
+  </div>
+  <%end%>
+</div>
