@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222175558) do
+ActiveRecord::Schema.define(version: 20180223212621) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -96,6 +96,10 @@ ActiveRecord::Schema.define(version: 20180222175558) do
     t.integer "q4"
     t.integer "supplier_id"
     t.integer "sub_category_id"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["sub_category_id"], name: "index_products_on_sub_category_id"
     t.index ["supplier_id"], name: "index_products_on_supplier_id"
   end

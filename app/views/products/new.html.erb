@@ -23,6 +23,9 @@
   <%= f.text_area :description, autocomplete: "off"%> <br> <br>
   <%= f.label "Link de la imagen:"%> <br>
   <%= f.text_field :img_url,value: "https://drive.google.com/uc?export=view&id=", autocomplete: "off"%> <br> <br>
+  <div class="form-group">
+    <%= f.file_field :image %> <br> <br>
+  </div>
   <%= f.label "Precio:"%> <br>
   <%= f.number_field :price, autocomplete: "off"%> <br> <br>
   <%= f.label "Tallas:"%> <br> <br>
