@@ -9,8 +9,8 @@ Rails.application.configure do
         authentication: "plain",
         domain: 'edgardo.burgos94.com',
         enable_starttls_auto: true,
-        user_name: "edgardo.burgos94@gmail.com",
-        password: "e1d9b9a4"
+        user_name: "info@boomket.com",
+        password: "Marketboom17+"
 
     }
     # Link para acceder a las cuentas de gmail

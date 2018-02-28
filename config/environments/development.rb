@@ -7,8 +7,8 @@ Rails.application.configure do
         port: 587,
         authentication: "plain",
         enable_starttls_auto: true,
-        user_name: "edgardo.burgos94@gmail.com",
-        password: "e1d9b9a4"
+        user_name: "info@boomket.com",
+        password: "Marketboom17+"
 
     }
   # Settings specified here will take precedence over those in config/application.rb.
@@ -64,8 +64,6 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   # Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'
-  Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin; C:\Program Files\ImageMagick-6.7.6-3-Q16'
-  Paperclip.options[:swallow_stderr] = false
 
 
 end
