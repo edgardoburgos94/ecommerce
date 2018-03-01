@@ -18,11 +18,41 @@
     <%= devise_error_messages! %>
 
     <% if resource_name.to_s == "supplier"%>
-      <%= f.hidden_field :p_ure, :value => 0 %>
-      <%= f.hidden_field :p_dia, :value => 0 %>
-      <%= f.hidden_field :p_cmin, :value => 0 %>
-      <%= f.hidden_field :p_cmay, :value => 0 %>
-      <%= f.hidden_field :cant_may, :value => 0 %>
+      <%= f.hidden_field :q1, :value => 0 %>
+      <%= f.hidden_field :q2, :value => 0 %>
+      <%= f.hidden_field :q3, :value => 0 %>
+      <%= f.hidden_field :q4, :value => 0 %>
+      <%= f.hidden_field :p_q1, :value => 0 %>
+      <%= f.hidden_field :p_q2, :value => 0 %>
+      <%= f.hidden_field :p_q3, :value => 0 %>
+      <%= f.hidden_field :p_q4, :value => 0 %>
+
+      <%= f.hidden_field :p1, :value => 0 %>
+      <%= f.hidden_field :p2, :value => 0 %>
+      <%= f.hidden_field :p3, :value => 0 %>
+      <%= f.hidden_field :p4, :value => 0 %>
+      <%= f.hidden_field :p_p1, :value => 0 %>
+      <%= f.hidden_field :p_p2, :value => 0 %>
+      <%= f.hidden_field :p_p3, :value => 0 %>
+      <%= f.hidden_field :p_p4, :value => 0 %>
+
+      <%= f.hidden_field :sq1, :value => 0 %>
+      <%= f.hidden_field :sq2, :value => 0 %>
+      <%= f.hidden_field :sq3, :value => 0 %>
+      <%= f.hidden_field :sq4, :value => 0 %>
+      <%= f.hidden_field :sp_q1, :value => 0 %>
+      <%= f.hidden_field :sp_q2, :value => 0 %>
+      <%= f.hidden_field :sp_q3, :value => 0 %>
+      <%= f.hidden_field :sp_q4, :value => 0 %>
+
+      <%= f.hidden_field :sp1, :value => 0 %>
+      <%= f.hidden_field :sp2, :value => 0 %>
+      <%= f.hidden_field :sp3, :value => 0 %>
+      <%= f.hidden_field :sp4, :value => 0 %>
+      <%= f.hidden_field :sp_p1, :value => 0 %>
+      <%= f.hidden_field :sp_p2, :value => 0 %>
+      <%= f.hidden_field :sp_p3, :value => 0 %>
+      <%= f.hidden_field :sp_p4, :value => 0 %>
     <%end%>
 
     <div class="field">
