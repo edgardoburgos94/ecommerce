@@ -42,4 +42,32 @@
   <%= f.label "Talla xxl:"%> <br>
   <%= f.number_field :xxl, value: 0, min: 0%> <br> <br>
   <%= f.submit "Crear producto" %>
+  <div class="field">
+    <h5>Rango de envios por precio</h5>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Rango</th>
+          <th scope="col">Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Compras mayores a $<%=f.number_field :sp1, autofocus: true%></td>
+          <td>$<%=f.number_field :sp_p1, autofocus: true%></td>
+        </tr>
+        <tr>
+          <td>Compras mayores a $<%=f.number_field :sp2, autofocus: true%></td>
+          <td>$<%=f.number_field :sp_p2, autofocus: true%></td>
+        </tr>
+        <tr>
+          <td>Compras mayores a $<%=f.number_field :sp3, autofocus: true%></td>
+          <td>$<%=f.number_field :sp_p3, autofocus: true%></td>
+        </tr>
+        <tr>
+          <td>Compras mayores a $<%=f.number_field :sp4, autofocus: true%></td>
+          <td>$<%=f.number_field :sp_p4, autofocus: true%></td>
+        </tr>
+      </tbody>
+    </table>
 <%end%>
