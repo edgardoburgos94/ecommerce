@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :lists
   get 'likes/create'
 
   get 'likes/destroy'
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
   resource :carts, only: [:show]
   resources :users, only: [:show]
   resources :suppliers, only: [:show, :index] do
+    resources :lists
     resources :supplier_comments, only: [:create]
   end
 
@@ -47,18 +49,9 @@ Rails.application.routes.draw do
   get '/mis_productos', to: 'suppliers#my_products', as: 'my_products'
   get '/user_list', to: 'pages#user_list', as: 'user_list'
   get '/suppli_list', to: 'pages#suppli_list', as: 'suppli_list'
-  get '/mi_perfil', to: 'pages#my_profile', as: 'my_profile'
   get '/blog', to: 'pages#blog', as: 'blog'
 
   get '/choose', to: 'products#choose', as: 'choose'
-
-
-  get '/blog1', to: 'blogs#blog1', as: 'blog1'
-  get '/blog2', to: 'blogs#blog2', as: 'blog2'
-  get '/blog3', to: 'blogs#blog3', as: 'blog3'
-  get '/blog4', to: 'blogs#blog4', as: 'blog4'
-
-
 
   root 'categories#index'
 

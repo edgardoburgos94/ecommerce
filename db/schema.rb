@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180301024142) do
+ActiveRecord::Schema.define(version: 20180302021327) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -96,10 +96,22 @@ ActiveRecord::Schema.define(version: 20180301024142) do
     t.integer "q4"
     t.integer "supplier_id"
     t.integer "sub_category_id"
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
+    t.integer "sq1"
+    t.integer "sq2"
+    t.integer "sq3"
+    t.integer "sq4"
+    t.float "sp_q1"
+    t.float "sp_q2"
+    t.float "sp_q3"
+    t.float "sp_q4"
+    t.float "sp1"
+    t.float "sp2"
+    t.float "sp3"
+    t.float "sp4"
+    t.float "sp_p1"
+    t.float "sp_p2"
+    t.float "sp_p3"
+    t.float "sp_p4"
     t.index ["sub_category_id"], name: "index_products_on_sub_category_id"
     t.index ["supplier_id"], name: "index_products_on_supplier_id"
   end
@@ -136,8 +148,6 @@ ActiveRecord::Schema.define(version: 20180301024142) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "profile_img"
-    t.string "cover_img"
     t.string "full_name"
     t.text "description"
     t.string "cel"
@@ -145,6 +155,8 @@ ActiveRecord::Schema.define(version: 20180301024142) do
     t.string "country"
     t.string "city"
     t.integer "sales"
+    t.string "profile_img"
+    t.string "cover_img"
     t.string "state"
     t.string "phone"
     t.boolean "free_shipping"
@@ -164,22 +176,6 @@ ActiveRecord::Schema.define(version: 20180301024142) do
     t.float "p_p2"
     t.float "p_p3"
     t.float "p_p4"
-    t.integer "sq1"
-    t.integer "sq2"
-    t.integer "sq3"
-    t.integer "sq4"
-    t.float "sp_q1"
-    t.float "sp_q2"
-    t.float "sp_q3"
-    t.float "sp_q4"
-    t.float "sp1"
-    t.float "sp2"
-    t.float "sp3"
-    t.float "sp4"
-    t.float "sp_p1"
-    t.float "sp_p2"
-    t.float "sp_p3"
-    t.float "sp_p4"
     t.index ["email"], name: "index_suppliers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_suppliers_on_reset_password_token", unique: true
   end

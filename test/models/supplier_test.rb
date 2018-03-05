@@ -15,8 +15,6 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  profile_img            :string
-#  cover_img              :string
 #  full_name              :string
 #  description            :text
 #  cel                    :string
@@ -24,6 +22,8 @@
 #  country                :string
 #  city                   :string
 #  sales                  :integer
+#  profile_img            :string
+#  cover_img              :string
 #  state                  :string
 #  phone                  :string
 #  free_shipping          :boolean
@@ -43,22 +43,6 @@
 #  p_p2                   :float
 #  p_p3                   :float
 #  p_p4                   :float
-#  sq1                    :integer
-#  sq2                    :integer
-#  sq3                    :integer
-#  sq4                    :integer
-#  sp_q1                  :float
-#  sp_q2                  :float
-#  sp_q3                  :float
-#  sp_q4                  :float
-#  sp1                    :float
-#  sp2                    :float
-#  sp3                    :float
-#  sp4                    :float
-#  sp_p1                  :float
-#  sp_p2                  :float
-#  sp_p3                  :float
-#  sp_p4                  :float
 #
 # Indexes
 #
