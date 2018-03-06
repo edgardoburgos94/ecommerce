@@ -30,25 +30,11 @@
 #  q4                :integer
 #  supplier_id       :integer
 #  sub_category_id   :integer
-#  sq1               :integer
-#  sq2               :integer
-#  sq3               :integer
-#  sq4               :integer
-#  sp_q1             :float
-#  sp_q2             :float
-#  sp_q3             :float
-#  sp_q4             :float
-#  sp1               :float
-#  sp2               :float
-#  sp3               :float
-#  sp4               :float
-#  sp_p1             :float
-#  sp_p2             :float
-#  sp_p3             :float
-#  sp_p4             :float
+#  list_id           :integer
 #
 # Indexes
 #
+#  index_products_on_list_id          (list_id)
 #  index_products_on_sub_category_id  (sub_category_id)
 #  index_products_on_supplier_id      (supplier_id)
 #

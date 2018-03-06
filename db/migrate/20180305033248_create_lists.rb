@@ -4,6 +4,12 @@ class CreateLists < ActiveRecord::Migration[5.1]
       t.string :title
       t.references :supplier, index: true, foreign_key: {on_delete: :cascade}
 
+      # Envío gratis
+      t.boolean :free_shipping
+      t.boolean :promotion
+      t.boolean :quantity
+      t.boolean :price
+
       # Descuento por cantidad
       t.integer :q2
       t.integer :q1

@@ -5,205 +5,205 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# User.all.delete_all
-# Supplier.all.delete_all
-# Category.all.delete_all
-# Product.all.delete_all
-# OrderItem.all.delete_all
-#
-#   dir = Faker::Address.street_address + Faker::Address.secondary_address
-#   cel = Faker::PhoneNumber.cell_phone
-#   country = Faker::Address.country
-#   city = Faker::Address.state
-#   email = Faker::Internet.email
-#   name = Faker::Name.name
-#
-#
-# 50.times do |i|
-#   dir = Faker::Address.street_address + Faker::Address.secondary_address
-#   cel = Faker::PhoneNumber.cell_phone
-#   country = Faker::Address.country
-#   city = Faker::Address.state
-#   email = Faker::Internet.email
-#   name = Faker::Name.name
-#   User.create(email: "test#{i}@gmail.com", password:"123456", password_confirmation:"123456", full_name: name, dir: dir, cel:cel, country: country, city: city)
-# end
-#
-# dir = Faker::Address.street_address + Faker::Address.secondary_address
-# cel = Faker::PhoneNumber.cell_phone
-# country = Faker::Address.country
-# city = Faker::Address.state
-# email = Faker::Internet.email
-# name = Faker::Name.name
-# p1 = Supplier.create(email: "prove1@gmail.com", password:"123456", password_confirmation:"123456", full_name: "Alfa", description: "Somos una empresa familiar de venta de ropa y artículos para bebe, que nació al ver la necesidad de muchas mamás de comprar artículos para su bebe de excelente calidad y con buenos precios, la idea surgió a principios de 2011 donde empezamos a importar para nuestros conocidos y a ofertar por medio del facebook lo que íbamos trayendo, y gracias a nuestros buenos precios y nuestra excelente atención, el negocio empezó a crecer hasta llegar a ser  lo que somos hoy, una tienda virtual con mas de 400 productos para que las mamas puedan vestir a sus bebes con las mejores  marcas a los mejores precios.", dir: dir, cel:cel, country: "Colombia", city: city, cover_img: "https://drive.google.com/uc?export=view&id=1GFIol_2bUDUcfIf1ubzIhU3uysm3Nrdo", profile_img: "https://drive.google.com/uc?export=view&id=1DTJPmDdR9N2Y79iL0ZNrOycv9kJLzET-")
-#
-# dir = Faker::Address.street_address + Faker::Address.secondary_address
-# cel = Faker::PhoneNumber.cell_phone
-# country = Faker::Address.country
-# city = Faker::Address.state
-# email = Faker::Internet.email
-# name = Faker::Name.name
-# p2 = Supplier.create(email: "prove2@gmail.com", password:"123456", password_confirmation:"123456", full_name: "Tennis", description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.", dir: dir, cel:cel, country: "Peru", city: city)
-#
-# dir = Faker::Address.street_address + Faker::Address.secondary_address
-# cel = Faker::PhoneNumber.cell_phone
-# country = Faker::Address.country
-# city = Faker::Address.state
-# email = Faker::Internet.email
-# name = Faker::Name.name
-# p3 = Supplier.create(email: "prove3@gmail.com", password:"123456", password_confirmation:"123456", full_name: "Arturo Calle", dir: dir, cel:cel, country: "Colombia", city: city)
-#
-# dir = Faker::Address.street_address + Faker::Address.secondary_address
-# cel = Faker::PhoneNumber.cell_phone
-# country = Faker::Address.country
-# city = Faker::Address.state
-# email = Faker::Internet.email
-# name = Faker::Name.name
-# p4 = Supplier.create(email: "prove4@gmail.com", password:"123456", password_confirmation:"123456", full_name: "Gef", dir: dir, cel:cel, country: "Colombia", city: city)
-# c1 = Category.create(title:"Hombre", img_url: "https://drive.google.com/uc?export=view&id=1hUehEfIEET6zd8_jASJhiVLN2HzJNwZ8" )
-# c2 = Category.create(title:"Mujer", img_url: "https://drive.google.com/uc?export=view&id=1th63Mxt6EcF7yLv6XxLgoxYK0tJ_qmyA")
-# c3 = Category.create(title:"Niños y bebés", img_url: "https://drive.google.com/uc?export=view&id=1iUUgT-7u2EwP2tWaALI_F5nhIwhLzbRK")
-# c4 = Category.create(title:"Calzado y bolsos", img_url: "https://drive.google.com/uc?export=view&id=1LlaSkstIbtSKxULDwNhcoa0oar4wjEkU")
-# c5 = Category.create(title:"Tecnología y accesorios", img_url: "https://drive.google.com/uc?export=view&id=1C8oSpeSUz8lC_60ITiy1aHh2iy_P8pKO")
-# c6 = Category.create(title:"Bisutería", img_url: "https://drive.google.com/uc?export=view&id=1ETvTZpskhwie6y8nHXXiARyLLwLf8QCP")
-# c7 = Category.create(title:"Casa y jardín", img_url: "https://drive.google.com/uc?export=view&id=1FTiREk-1jt3tLklNifr45ffukc1OzyG3")
-# c8 = Category.create(title:"Cocina comedor y bar", img_url: "https://drive.google.com/uc?export=view&id=1spr_2bS6M9x_eUZ6Yar3he-qhpQU21-G")
-# c9 = Category.create(title:"Deportes y ocio", img_url: "https://drive.google.com/uc?export=view&id=1WV_vY7VrXWdviJyp2wT65M-SexDPoI57")
-# c10 = Category.create(title:"Salud y belleza", img_url: "https://drive.google.com/uc?export=view&id=1JmCLc-O2AKaKMYo8VBef6h3Y4zt9Lztb")
-# c11 = Category.create(title:"Ferretería y herramientas", img_url: "https://drive.google.com/uc?export=view&id=1A4DTtWFo3yOna1isnZtkgNHsJK3V8y4p")
-# c12 = Category.create(title:"Maquinaria y accesorios", img_url: "https://drive.google.com/uc?export=view&id=1ka23jfbnKuGVERpeIWFakHzvY8RrkBz8")
-#
-# # Categoría hombres
-# sc1 = SubCategory.create(title:"Camisas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc2 = SubCategory.create(title:"Camisetas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc3 = SubCategory.create(title:"Chaquetas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc4 = SubCategory.create(title:"Jeans", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc5 = SubCategory.create(title:"Pantalones", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Pijamas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Sudaderas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Blazers", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Sueteres", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Trajes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Calcetines", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Ropa interior", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Pantalonetas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Correas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Gafas de sol", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Gorras", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Pañuelos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Corbatas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Bufandas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Guantes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Sombreros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Bolsos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-# sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
-#
-# # Categoría mujer
-# sc6 = SubCategory.create(title:"Blusas y camisas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Camisetas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Chaquetas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Jeans", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Pantalones", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Leggins", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Faldas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Pijamas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Sudaderas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Blazers", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Sueteres", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Trajes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Calcetines", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Ropa interior", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Vestidos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Trajes de baño", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Correas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Gafas de sol", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Gorras", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Bufandas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Guantes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Sombreros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Bolsos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-# sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
-#
-# # Categoría Niños y bebés
-# sc6 = SubCategory.create(title:"Ropa niña", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
-# sc6 = SubCategory.create(title:"Ropa niño", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
-# sc6 = SubCategory.create(title:"Ropa bebé niña", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
-# sc6 = SubCategory.create(title:"Ropa bebé niño", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
-# sc6 = SubCategory.create(title:"Vestidos para niña", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
-# sc6 = SubCategory.create(title:"Pijamas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
-# sc6 = SubCategory.create(title:"Bolsos y mochilas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
-# sc6 = SubCategory.create(title:"Calzado", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
-# sc6 = SubCategory.create(title:"Peluches", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
-# sc6 = SubCategory.create(title:"Juguetes en general", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
-# sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
-#
-#
-#
-# # Categoría Calzado y bolsos
-# sc6 = SubCategory.create(title:"Zapatos hombre", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
-# sc6 = SubCategory.create(title:"Tenis hombre", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
-# sc6 = SubCategory.create(title:"Billeteras hombre", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
-# sc6 = SubCategory.create(title:"Bolsos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
-# sc6 = SubCategory.create(title:"Zapatos mujer", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
-# sc6 = SubCategory.create(title:"Tenis mujer", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
-# sc6 = SubCategory.create(title:"Sandalias", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
-# sc6 = SubCategory.create(title:"Tacones", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
-# sc6 = SubCategory.create(title:"Carteras", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
-# sc6 = SubCategory.create(title:"Billeteras mujer", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
-# sc6 = SubCategory.create(title:"Bolsos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
-# sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
-#
-# # Categoría Tecnología y accesorios
-# sc6 = SubCategory.create(title:"Fundas y estuches", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
-# sc6 = SubCategory.create(title:"Protector pantalla", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
-# sc6 = SubCategory.create(title:"Cargadores", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
-# sc6 = SubCategory.create(title:"Soportes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
-# sc6 = SubCategory.create(title:"Auriculares", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
-# sc6 = SubCategory.create(title:"Altavoces", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
-# sc6 = SubCategory.create(title:"Memorias", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
-# sc6 = SubCategory.create(title:"Tripodes y soportes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
-# sc6 = SubCategory.create(title:"Cámaras", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
-# sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
-#
-# # Categoría Bisutería
-# sc6 = SubCategory.create(title:"Collares", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c6.id )
-# sc6 = SubCategory.create(title:"Anillos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c6.id )
-# sc6 = SubCategory.create(title:"Brazaletes y pulseras", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c6.id )
-# sc6 = SubCategory.create(title:"Aretes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c6.id )
-# sc6 = SubCategory.create(title:"Llaveros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c6.id )
-# sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c6.id )
-#
-# # Categoría Casa y jardín
-# sc6 = SubCategory.create(title:"Artesanías", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Cuadros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Relojes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Albumes de fotos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Limpieza del hogar", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Jardinería", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Decoración", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Acolchados", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Cortinas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Toallas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Almohadas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Fundas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Cojines", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Manteles", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Decoración", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-# sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
-#
-# # Categoría Cocina comedor y bar
-# sc6 = SubCategory.create(title:"Vasos y copas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
-# sc6 = SubCategory.create(title:"Para hornear", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
-# sc6 = SubCategory.create(title:"De cocina", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
-# sc6 = SubCategory.create(title:"De bar", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
-# sc6 = SubCategory.create(title:"Vajillas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
-# sc6 = SubCategory.create(title:"Decoración", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
-# sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
-#
-# # Categoría Deportes y ocio
-# sc6 = SubCategory.create(title:"Ropa deportiva", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c9.id )
-# sc6 = SubCategory.create(title:"Calzado deportivo", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c9.id )
-# sc6 = SubCategory.create(title:"Accesorios", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c9.id )
+User.all.delete_all
+Supplier.all.delete_all
+Category.all.delete_all
+Product.all.delete_all
+OrderItem.all.delete_all
+
+  dir = Faker::Address.street_address + Faker::Address.secondary_address
+  cel = Faker::PhoneNumber.cell_phone
+  country = Faker::Address.country
+  city = Faker::Address.state
+  email = Faker::Internet.email
+  name = Faker::Name.name
+
+
+50.times do |i|
+  dir = Faker::Address.street_address + Faker::Address.secondary_address
+  cel = Faker::PhoneNumber.cell_phone
+  country = Faker::Address.country
+  city = Faker::Address.state
+  email = Faker::Internet.email
+  name = Faker::Name.name
+  User.create(email: "test#{i}@gmail.com", password:"123456", password_confirmation:"123456", full_name: name, dir: dir, cel:cel, country: country, city: city)
+end
+
+dir = Faker::Address.street_address + Faker::Address.secondary_address
+cel = Faker::PhoneNumber.cell_phone
+country = Faker::Address.country
+city = Faker::Address.state
+email = Faker::Internet.email
+name = Faker::Name.name
+p1 = Supplier.create(email: "prove1@gmail.com", password:"123456", password_confirmation:"123456", full_name: "Alfa", description: "Somos una empresa familiar de venta de ropa y artículos para bebe, que nació al ver la necesidad de muchas mamás de comprar artículos para su bebe de excelente calidad y con buenos precios, la idea surgió a principios de 2011 donde empezamos a importar para nuestros conocidos y a ofertar por medio del facebook lo que íbamos trayendo, y gracias a nuestros buenos precios y nuestra excelente atención, el negocio empezó a crecer hasta llegar a ser  lo que somos hoy, una tienda virtual con mas de 400 productos para que las mamas puedan vestir a sus bebes con las mejores  marcas a los mejores precios.", dir: dir, cel:cel, country: "Colombia", city: city, cover_img: "https://drive.google.com/uc?export=view&id=1GFIol_2bUDUcfIf1ubzIhU3uysm3Nrdo", profile_img: "https://drive.google.com/uc?export=view&id=1DTJPmDdR9N2Y79iL0ZNrOycv9kJLzET-")
+
+dir = Faker::Address.street_address + Faker::Address.secondary_address
+cel = Faker::PhoneNumber.cell_phone
+country = Faker::Address.country
+city = Faker::Address.state
+email = Faker::Internet.email
+name = Faker::Name.name
+p2 = Supplier.create(email: "prove2@gmail.com", password:"123456", password_confirmation:"123456", full_name: "Tennis", description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.", dir: dir, cel:cel, country: "Peru", city: city)
+
+dir = Faker::Address.street_address + Faker::Address.secondary_address
+cel = Faker::PhoneNumber.cell_phone
+country = Faker::Address.country
+city = Faker::Address.state
+email = Faker::Internet.email
+name = Faker::Name.name
+p3 = Supplier.create(email: "prove3@gmail.com", password:"123456", password_confirmation:"123456", full_name: "Arturo Calle", dir: dir, cel:cel, country: "Colombia", city: city)
+
+dir = Faker::Address.street_address + Faker::Address.secondary_address
+cel = Faker::PhoneNumber.cell_phone
+country = Faker::Address.country
+city = Faker::Address.state
+email = Faker::Internet.email
+name = Faker::Name.name
+p4 = Supplier.create(email: "prove4@gmail.com", password:"123456", password_confirmation:"123456", full_name: "Gef", dir: dir, cel:cel, country: "Colombia", city: city)
+c1 = Category.create(title:"Hombre", img_url: "https://drive.google.com/uc?export=view&id=1hUehEfIEET6zd8_jASJhiVLN2HzJNwZ8" )
+c2 = Category.create(title:"Mujer", img_url: "https://drive.google.com/uc?export=view&id=1th63Mxt6EcF7yLv6XxLgoxYK0tJ_qmyA")
+c3 = Category.create(title:"Niños y bebés", img_url: "https://drive.google.com/uc?export=view&id=1iUUgT-7u2EwP2tWaALI_F5nhIwhLzbRK")
+c4 = Category.create(title:"Calzado y bolsos", img_url: "https://drive.google.com/uc?export=view&id=1LlaSkstIbtSKxULDwNhcoa0oar4wjEkU")
+c5 = Category.create(title:"Tecnología y accesorios", img_url: "https://drive.google.com/uc?export=view&id=1C8oSpeSUz8lC_60ITiy1aHh2iy_P8pKO")
+c6 = Category.create(title:"Bisutería", img_url: "https://drive.google.com/uc?export=view&id=1ETvTZpskhwie6y8nHXXiARyLLwLf8QCP")
+c7 = Category.create(title:"Casa y jardín", img_url: "https://drive.google.com/uc?export=view&id=1FTiREk-1jt3tLklNifr45ffukc1OzyG3")
+c8 = Category.create(title:"Cocina comedor y bar", img_url: "https://drive.google.com/uc?export=view&id=1spr_2bS6M9x_eUZ6Yar3he-qhpQU21-G")
+c9 = Category.create(title:"Deportes y ocio", img_url: "https://drive.google.com/uc?export=view&id=1WV_vY7VrXWdviJyp2wT65M-SexDPoI57")
+c10 = Category.create(title:"Salud y belleza", img_url: "https://drive.google.com/uc?export=view&id=1JmCLc-O2AKaKMYo8VBef6h3Y4zt9Lztb")
+c11 = Category.create(title:"Ferretería y herramientas", img_url: "https://drive.google.com/uc?export=view&id=1A4DTtWFo3yOna1isnZtkgNHsJK3V8y4p")
+c12 = Category.create(title:"Maquinaria y accesorios", img_url: "https://drive.google.com/uc?export=view&id=1ka23jfbnKuGVERpeIWFakHzvY8RrkBz8")
+
+# Categoría hombres
+sc1 = SubCategory.create(title:"Camisas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc2 = SubCategory.create(title:"Camisetas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc3 = SubCategory.create(title:"Chaquetas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc4 = SubCategory.create(title:"Jeans", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc5 = SubCategory.create(title:"Pantalones", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Pijamas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Sudaderas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Blazers", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Sueteres", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Trajes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Calcetines", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Ropa interior", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Pantalonetas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Correas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Gafas de sol", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Gorras", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Pañuelos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Corbatas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Bufandas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Guantes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Sombreros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Bolsos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c1.id )
+
+# Categoría mujer
+sc6 = SubCategory.create(title:"Blusas y camisas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Camisetas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Chaquetas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Jeans", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Pantalones", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Leggins", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Faldas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Pijamas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Sudaderas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Blazers", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Sueteres", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Trajes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Calcetines", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Ropa interior", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Vestidos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Trajes de baño", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Correas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Gafas de sol", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Gorras", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Bufandas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Guantes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Sombreros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Bolsos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c2.id )
+
+# Categoría Niños y bebés
+sc6 = SubCategory.create(title:"Ropa niña", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+sc6 = SubCategory.create(title:"Ropa niño", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+sc6 = SubCategory.create(title:"Ropa bebé niña", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+sc6 = SubCategory.create(title:"Ropa bebé niño", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+sc6 = SubCategory.create(title:"Vestidos para niña", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+sc6 = SubCategory.create(title:"Pijamas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+sc6 = SubCategory.create(title:"Bolsos y mochilas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+sc6 = SubCategory.create(title:"Calzado", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+sc6 = SubCategory.create(title:"Peluches", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+sc6 = SubCategory.create(title:"Juguetes en general", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c3.id )
+
+
+
+# Categoría Calzado y bolsos
+sc6 = SubCategory.create(title:"Zapatos hombre", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
+sc6 = SubCategory.create(title:"Tenis hombre", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
+sc6 = SubCategory.create(title:"Billeteras hombre", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
+sc6 = SubCategory.create(title:"Bolsos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
+sc6 = SubCategory.create(title:"Zapatos mujer", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
+sc6 = SubCategory.create(title:"Tenis mujer", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
+sc6 = SubCategory.create(title:"Sandalias", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
+sc6 = SubCategory.create(title:"Tacones", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
+sc6 = SubCategory.create(title:"Carteras", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
+sc6 = SubCategory.create(title:"Billeteras mujer", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
+sc6 = SubCategory.create(title:"Bolsos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
+sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c4.id )
+
+# Categoría Tecnología y accesorios
+sc6 = SubCategory.create(title:"Fundas y estuches", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
+sc6 = SubCategory.create(title:"Protector pantalla", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
+sc6 = SubCategory.create(title:"Cargadores", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
+sc6 = SubCategory.create(title:"Soportes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
+sc6 = SubCategory.create(title:"Auriculares", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
+sc6 = SubCategory.create(title:"Altavoces", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
+sc6 = SubCategory.create(title:"Memorias", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
+sc6 = SubCategory.create(title:"Tripodes y soportes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
+sc6 = SubCategory.create(title:"Cámaras", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
+sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c5.id )
+
+# Categoría Bisutería
+sc6 = SubCategory.create(title:"Collares", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c6.id )
+sc6 = SubCategory.create(title:"Anillos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c6.id )
+sc6 = SubCategory.create(title:"Brazaletes y pulseras", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c6.id )
+sc6 = SubCategory.create(title:"Aretes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c6.id )
+sc6 = SubCategory.create(title:"Llaveros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c6.id )
+sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c6.id )
+
+# Categoría Casa y jardín
+sc6 = SubCategory.create(title:"Artesanías", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Cuadros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Relojes", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Albumes de fotos", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Limpieza del hogar", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Jardinería", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Decoración", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Acolchados", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Cortinas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Toallas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Almohadas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Fundas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Cojines", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Manteles", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Decoración", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c7.id )
+
+# Categoría Cocina comedor y bar
+sc6 = SubCategory.create(title:"Vasos y copas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
+sc6 = SubCategory.create(title:"Para hornear", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
+sc6 = SubCategory.create(title:"De cocina", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
+sc6 = SubCategory.create(title:"De bar", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
+sc6 = SubCategory.create(title:"Vajillas", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
+sc6 = SubCategory.create(title:"Decoración", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
+sc6 = SubCategory.create(title:"Otros", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c8.id )
+
+# Categoría Deportes y ocio
+sc6 = SubCategory.create(title:"Ropa deportiva", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c9.id )
+sc6 = SubCategory.create(title:"Calzado deportivo", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c9.id )
+sc6 = SubCategory.create(title:"Accesorios", img_url: "https://drive.google.com/uc?export=view&id=1vCueqSzTnGwhwFSx1HTbumISWm8vUbBy", category_id: c9.id )
 #
 #
 # 7.times do |i|
@@ -254,20 +254,20 @@
 #
 # end
 
-User.all.delete_all
-Supplier.all.delete_all
-Product.all.delete_all
-SubCategory.all.delete_all
-Category.all.delete_all
-
-s1 = Supplier.create(email: "prove3@gmail.com", password:"123456", password_confirmation:"123456")
-
-u1 = User.create(email: "test1@gmail.com", password:"123456", password_confirmation:"123456")
-
-c1 = Category.create(title: "Categoría de prueba")
-
-sc1 = c1.sub_categories.create(title: "Sub categoría de prueba")
-
-p1 = s1.products.create(title:"Producto de prueba", sub_category_id: sc1.id, supplier_id: s1.id)
-
-com1 = p1.product_comments.create(body:"Holaaaa :)", user_id: u1.id)
+# User.all.delete_all
+# Supplier.all.delete_all
+# Product.all.delete_all
+# SubCategory.all.delete_all
+# Category.all.delete_all
+#
+# s1 = Supplier.create(email: "prove3@gmail.com", password:"123456", password_confirmation:"123456")
+#
+# u1 = User.create(email: "test1@gmail.com", password:"123456", password_confirmation:"123456")
+#
+# c1 = Category.create(title: "Categoría de prueba")
+#
+# sc1 = c1.sub_categories.create(title: "Sub categoría de prueba")
+#
+# p1 = s1.products.create(title:"Producto de prueba", sub_category_id: sc1.id, supplier_id: s1.id)
+#
+# com1 = p1.product_comments.create(body:"Holaaaa :)", user_id: u1.id)

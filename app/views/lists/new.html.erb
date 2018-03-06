@@ -1,0 +1,90 @@
+<h3>Descuentos mayoristas y envíos</h3>
+<%= form_for @list, url: supplier_lists_path do |f| %>
+
+<%= f.hidden_field :supplier_id, :value => current_supplier.id %>
+
+<div class="field">
+  Título
+  <%= f.text_field :title, autofocus: true%> <br> <br>
+  <%= f.check_box :free_shipping, class: "check-free-shipping"%> Envíos gratis</br></br>
+</div>
+<div class="field">
+  <%= f.check_box :promotion, class: "check-discount-range"%> Utilizar descuentos por rango</br></br>
+</div>
+
+<div class="field">
+  Organizar rangos por: <%= f.check_box :quantity, checked: true, class: "check-quantity"%> Cantidad       <%= f.check_box :price, class: "check-price"%> Precio     </br></br>
+</div>
+<div class="field">
+  <h4 class="no-discount-no-shipping">Precio fijo sin costos de envío</h4>
+  <table class="table table-of-prices">
+    <thead>
+      <tr>
+        <th scope="col">Rango por precio</th>
+        <th scope="col" class= "discount-col">Descuento</th>
+        <th scope="col" class= "shipping-col">Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Compras mayores a $<%=f.number_field :p1, autofocus: true%></td>
+        <td class = "discount-col"><%=f.number_field :p_p1, autofocus: true%>%</td>
+        <td class = "shipping-col">$<%=f.number_field :sp_p1, autofocus: true %></td>
+      </tr>
+      <tr>
+        <td>Compras mayores a $<%=f.number_field :p2, autofocus: true%></td>
+        <td class = "discount-col"><%=f.number_field :p_p2, autofocus: true%>%</td>
+        <td class = "shipping-col">$<%=f.number_field :sp_p2, autofocus: true %></td>
+      </tr>
+      <tr>
+        <td>Compras mayores a $<%=f.number_field :p3, autofocus: true%></td>
+        <td class = "discount-col"><%=f.number_field :p_p3, autofocus: true%>%</td>
+        <td class = "shipping-col">$<%=f.number_field :sp_p3, autofocus: true %></td>
+      </tr>
+      <tr>
+        <td>Compras mayores a $<%=f.number_field :p4, autofocus: true%></td>
+        <td class = "discount-col"><%=f.number_field :p_p4, autofocus: true%>%</td>
+        <td class = "shipping-col">$<%=f.number_field :sp_p4, autofocus: true %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="field">
+  <table class="table table-of-quantity">
+    <thead>
+      <tr>
+        <th scope="col">Rango por cantidad</th>
+        <th scope="col"class= "discount-col">Descuento</th>
+        <th scope="col"class= "shipping-col">Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Compras mayores a <%=f.number_field :q1, autofocus: true%> unidades</td>
+        <td class = "discount-col"><%=f.number_field :p_q1, autofocus: true%>%</td>
+        <td class = "shipping-col">$<%=f.number_field :sp_q1, autofocus: true %></td>
+      </tr>
+      <tr>
+        <td>Compras mayores a <%=f.number_field :q2, autofocus: true%> unidades</td>
+        <td class = "discount-col"><%=f.number_field :p_q2, autofocus: true%>%</td>
+        <td class = "shipping-col">$<%=f.number_field :sp_q2, autofocus: true %></td>
+      </tr>
+      <tr>
+        <td>Compras mayores a <%=f.number_field :q3, autofocus: true%> unidades</td>
+        <td class = "discount-col"><%=f.number_field :p_q3, autofocus: true%>%</td>
+        <td class = "shipping-col">$<%=f.number_field :sp_q3, autofocus: true %></td>
+      </tr>
+      <tr>
+        <td>Compras mayores a <%=f.number_field :q4, autofocus: true%> unidades</td>
+        <td class = "discount-col"><%=f.number_field :p_q4, autofocus: true%>%</td>
+        <td class = "shipping-col">$<%=f.number_field :sp_q4, autofocus: true %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<%=f.submit "Crear lista"%>
+<%end%>
+
+<script>
+   new ListForm();
+</script>

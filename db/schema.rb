@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180302021327) do
+ActiveRecord::Schema.define(version: 20180305223909) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -35,6 +35,50 @@ ActiveRecord::Schema.define(version: 20180302021327) do
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_likes_on_product_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string "title"
+    t.integer "supplier_id"
+    t.boolean "free_shipping"
+    t.boolean "promotion"
+    t.boolean "quantity"
+    t.boolean "price"
+    t.integer "q2"
+    t.integer "q1"
+    t.integer "q3"
+    t.integer "q4"
+    t.float "p_q1"
+    t.float "p_q2"
+    t.float "p_q3"
+    t.float "p_q4"
+    t.float "p1"
+    t.float "p2"
+    t.float "p3"
+    t.float "p4"
+    t.float "p_p1"
+    t.float "p_p2"
+    t.float "p_p3"
+    t.float "p_p4"
+    t.integer "sq1"
+    t.integer "sq2"
+    t.integer "sq3"
+    t.integer "sq4"
+    t.float "sp_q1"
+    t.float "sp_q2"
+    t.float "sp_q3"
+    t.float "sp_q4"
+    t.float "sp1"
+    t.float "sp2"
+    t.float "sp3"
+    t.float "sp4"
+    t.float "sp_p1"
+    t.float "sp_p2"
+    t.float "sp_p3"
+    t.float "sp_p4"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["supplier_id"], name: "index_lists_on_supplier_id"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -96,22 +140,8 @@ ActiveRecord::Schema.define(version: 20180302021327) do
     t.integer "q4"
     t.integer "supplier_id"
     t.integer "sub_category_id"
-    t.integer "sq1"
-    t.integer "sq2"
-    t.integer "sq3"
-    t.integer "sq4"
-    t.float "sp_q1"
-    t.float "sp_q2"
-    t.float "sp_q3"
-    t.float "sp_q4"
-    t.float "sp1"
-    t.float "sp2"
-    t.float "sp3"
-    t.float "sp4"
-    t.float "sp_p1"
-    t.float "sp_p2"
-    t.float "sp_p3"
-    t.float "sp_p4"
+    t.integer "list_id"
+    t.index ["list_id"], name: "index_products_on_list_id"
     t.index ["sub_category_id"], name: "index_products_on_sub_category_id"
     t.index ["supplier_id"], name: "index_products_on_supplier_id"
   end
@@ -155,27 +185,10 @@ ActiveRecord::Schema.define(version: 20180302021327) do
     t.string "country"
     t.string "city"
     t.integer "sales"
-    t.string "profile_img"
-    t.string "cover_img"
     t.string "state"
     t.string "phone"
-    t.boolean "free_shipping"
-    t.integer "q1"
-    t.integer "q2"
-    t.integer "q3"
-    t.integer "q4"
-    t.float "p_q1"
-    t.float "p_q2"
-    t.float "p_q3"
-    t.float "p_q4"
-    t.float "p1"
-    t.float "p2"
-    t.float "p3"
-    t.float "p4"
-    t.float "p_p1"
-    t.float "p_p2"
-    t.float "p_p3"
-    t.float "p_p4"
+    t.string "profile_img"
+    t.string "cover_img"
     t.index ["email"], name: "index_suppliers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_suppliers_on_reset_password_token", unique: true
   end

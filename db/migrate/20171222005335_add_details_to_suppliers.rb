@@ -7,5 +7,7 @@ class AddDetailsToSuppliers < ActiveRecord::Migration[5.1]
     add_column :suppliers, :country, :string
     add_column :suppliers, :city, :string
     add_column :suppliers, :sales, :integer
+    add_column :suppliers, :state, :string
+    add_column :suppliers, :phone, :string
   end
 end

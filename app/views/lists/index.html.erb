@@ -1,0 +1,68 @@
+<h1>Acá se emostrarán las listas</h1>
+
+<%=link_to "Nueva lista", new_supplier_list_path%> <br><br>
+
+<%@lists.each do |list|%>
+  <h3><%=list.title%></h3><%=link_to "Editar lista", edit_supplier_list_path(current_supplier,list)%>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Rango</th>
+        <th scope="col">Descuento</th>
+        <th scope="col">Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%=list.q1%></td>
+        <td><%=list.p_q1%></td>
+        <td><%=list.sp_q1%></td>
+      </tr>
+      <tr>
+        <td><%=list.q2%></td>
+        <td><%=list.p_q2%></td>
+        <td><%=list.sp_q2%></td>
+      </tr>
+      <tr>
+        <td><%=list.q3%></td>
+        <td><%=list.p_q3%></td>
+        <td><%=list.sp_q3%></td>
+      </tr>
+      <tr>
+        <td><%=list.q4%></td>
+        <td><%=list.p_q3%></td>
+        <td><%=list.sp_q3%></td>
+      </tr>
+    </tbody>
+  </table>
+<%end%>
+
+
+<br><br>
+<h3>Jeans en descuento</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Rango</th>
+      <th scope="col">Descuento</th>
+      <th scope="col">Precio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Compras mayores a 20 unidads</td>
+      <td>5%</td>
+      <td>Gratis</td>
+    </tr>
+    <tr>
+      <td>Compras mayores a 40 unidads</td>
+      <td>7.5%</td>
+      <td>Gratis</td>
+    </tr>
+    <tr>
+      <td>Compras mayores a 60 unidads</td>
+      <td>10%</td>
+      <td>Gratis</td>
+    </tr>
+  </tbody>
+</table>

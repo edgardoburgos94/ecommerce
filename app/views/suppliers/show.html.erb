@@ -17,6 +17,10 @@
       <%= link_to my_products_path, class: "admin-link" do%>
         <button type="button" name="button" class="redirect-button arial-bold color-gris-oscuro">Administrar mis productos</button>
       <%end%>
+
+      <%= link_to supplier_lists_path(current_supplier), class: "admin-link" do%>
+        <button type="button" name="button" class="redirect-button arial-bold color-gris-oscuro">Mis descuentos y envíos</button>
+      <%end%>
     <%end%>
 
     <h4 class="arial-bold color-naranja-oscuro">Categorías <%=@supplier.full_name%></h4>
