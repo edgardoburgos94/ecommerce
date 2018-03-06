@@ -3,66 +3,107 @@
 <%=link_to "Nueva lista", new_supplier_list_path%> <br><br>
 
 <%@lists.each do |list|%>
-  <h3><%=list.title%></h3><%=link_to "Editar lista", edit_supplier_list_path(current_supplier,list)%>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Rango</th>
-        <th scope="col">Descuento</th>
-        <th scope="col">Precio</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%=list.q1%></td>
-        <td><%=list.p_q1%></td>
-        <td><%=list.sp_q1%></td>
-      </tr>
-      <tr>
-        <td><%=list.q2%></td>
-        <td><%=list.p_q2%></td>
-        <td><%=list.sp_q2%></td>
-      </tr>
-      <tr>
-        <td><%=list.q3%></td>
-        <td><%=list.p_q3%></td>
-        <td><%=list.sp_q3%></td>
-      </tr>
-      <tr>
-        <td><%=list.q4%></td>
-        <td><%=list.p_q3%></td>
-        <td><%=list.sp_q3%></td>
-      </tr>
-    </tbody>
-  </table>
+  <%if (list.free_shipping ==true )&&(list.promotion == false)%>
+    <h3><%=list.title%></h3><%=link_to "Editar lista", edit_supplier_list_path(current_supplier,list)%>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Rango por cantidad</th>
+          <th scope="col">Procentaje de descuento</th>
+          <th scope="col">Costo de envío</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Para todas las cantidades</td>
+          <td>Precio único</td>
+          <td>Gratis</td>
+        </tr>
+      </tbody>
+    </table>
+  <%else%>
+    <h3><%=list.title%></h3><%=link_to "Editar lista", edit_supplier_list_path(current_supplier,list)%>
+    <%if list.quantity == true%>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Rango por cantidad</th>
+            <th scope="col">Procentaje de descuento</th>
+            <th scope="col">Costo de envío</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%if list.q1 != nil%>
+          <tr>
+            <td><%=list.q1%> unidades</td>
+            <td><%= (list.promotion == true) ? (list.p_q1).to_s+"%" : "Costo fijo"%></td>
+            <td><%= (list.free_shipping == false) ? "$"+(list.sp_q1).to_s : "Gratis"%></td>
+          </tr>
+          <%end%>
+          <%if list.q1 != nil%>
+          <tr>
+            <td><%=list.q2%> unidades</td>
+            <td><%= (list.promotion == true) ? (list.p_q2).to_s+"%" : "Costo fijo"%></td>
+            <td><%= (list.free_shipping == false) ? "$"+(list.sp_q2).to_s : "Gratis"%></td>
+          </tr>
+          <%end%>
+          <%if list.q1 != nil%>
+          <tr>
+            <td><%=list.q3%> unidades</td>
+            <td><%= (list.promotion == true) ? (list.p_q3).to_s+"%" : "Costo fijo"%></td>
+            <td><%= (list.free_shipping == false) ? "$"+(list.sp_q3).to_s : "Gratis"%></td>
+          </tr>
+          <%end%>
+          <%if list.q1 != nil%>
+          <tr>
+            <td><%=list.q4%> unidades</td>
+            <td><%= (list.promotion == true) ? (list.p_q4).to_s+"%" : "Costo fijo"%></td>
+            <td><%= (list.free_shipping == false) ? "$"+(list.sp_q4).to_s : "Gratis"%></td>
+          </tr>
+          <%end%>
+        </tbody>
+      </table>
+    <%else%>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Rango por precio</th>
+            <th scope="col">Procentaje de descuento</th>
+            <th scope="col">Costo de envío</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%if list.p1 != nil%>
+          <tr>
+            <td>$<%=list.p1%></td>
+            <td><%= (list.promotion == true) ? (list.p_p1).to_s+"%" : "Costo fijo"%></td>
+            <td><%= (list.free_shipping == false) ? "$"+(list.sp_p1).to_s : "Gratis"%></td>
+          </tr>
+          <%end%>
+          <%if list.p2 != nil%>
+          <tr>
+            <td>$<%=list.p2%></td>
+            <td><%= (list.promotion == true) ? (list.p_p2).to_s+"%" : "Costo fijo"%></td>
+            <td><%= (list.free_shipping == false) ? "$"+(list.sp_p2).to_s : "Gratis"%></td>
+          </tr>
+          <%end%>
+          <%if list.p3 != nil%>
+          <tr>
+            <td>$<%=list.p3%></td>
+            <td><%= (list.promotion == true) ? (list.p_p3).to_s+"%" : "Costo fijo"%></td>
+            <td><%= (list.free_shipping == false) ? "$"+(list.sp_p3).to_s : "Gratis"%></td>
+          </tr>
+          <%end%>
+          <%if list.p4 != nil%>
+          <tr>
+            <td>$<%=list.p4%></td>
+            <td><%= (list.promotion == true) ? (list.p_p4).to_s+"%" : "Costo fijo"%></td>
+            <td><%= (list.free_shipping == false) ? "$"+(list.sp_p4).to_s : "Gratis"%></td>
+          </tr>
+          <%end%>
+        </tbody>
+      </table>
+    <%end%>
+  <%end%>
+
 <%end%>
-
-
-<br><br>
-<h3>Jeans en descuento</h3>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Rango</th>
-      <th scope="col">Descuento</th>
-      <th scope="col">Precio</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Compras mayores a 20 unidads</td>
-      <td>5%</td>
-      <td>Gratis</td>
-    </tr>
-    <tr>
-      <td>Compras mayores a 40 unidads</td>
-      <td>7.5%</td>
-      <td>Gratis</td>
-    </tr>
-    <tr>
-      <td>Compras mayores a 60 unidads</td>
-      <td>10%</td>
-      <td>Gratis</td>
-    </tr>
-  </tbody>
-</table>

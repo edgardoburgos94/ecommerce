@@ -1,6 +1,12 @@
 <h3>Editar descuento mayorista y envíos</h3>
 <%= form_for @list, url: supplier_list_path(@list) do |f| %>
 
+<% if @list.errors.any? %>
+  <% @list.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>
+
 <%= f.hidden_field :supplier_id, :value => current_supplier.id %>
 
 <div class="field">

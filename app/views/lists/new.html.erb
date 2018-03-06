@@ -1,4 +1,9 @@
 <h3>Descuentos mayoristas y envíos</h3>
+<% if @list.errors.any? %>
+  <% @list.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>
 <%= form_for @list, url: supplier_lists_path do |f| %>
 
 <%= f.hidden_field :supplier_id, :value => current_supplier.id %>
