@@ -32,8 +32,11 @@ class ListsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @List = List.find(params[:id])
+    @List.destroy
 
+    redirect_to request.referrer
   end
 
   private

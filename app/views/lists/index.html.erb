@@ -4,7 +4,9 @@
 
 <%@lists.each do |list|%>
   <%if (list.free_shipping ==true )&&(list.promotion == false)%>
-    <h3><%=list.title%></h3><%=link_to "Editar lista", edit_supplier_list_path(current_supplier,list)%>
+    <h3><%=list.title%></h3>
+    <%=link_to "Editar", edit_supplier_list_path(current_supplier,list)%>
+    <%= link_to "Eliminar", list, method: :delete, data: { confirm: '¿Estás seguro de eliminar este producto?' } %>
     <table class="table">
       <thead>
         <tr>
@@ -22,7 +24,9 @@
       </tbody>
     </table>
   <%else%>
-    <h3><%=list.title%></h3><%=link_to "Editar lista", edit_supplier_list_path(current_supplier,list)%>
+    <h3><%=list.title%></h3>
+    <%=link_to "Editar", edit_supplier_list_path(current_supplier,list)%>
+    <%= link_to "Eliminar", list, method: :delete, data: { confirm: '¿Estás seguro de eliminar este producto?' } %>
     <%if list.quantity == true%>
       <table class="table">
         <thead>
