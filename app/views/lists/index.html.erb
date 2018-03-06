@@ -40,21 +40,21 @@
             <td><%= (list.free_shipping == false) ? "$"+(list.sp_q1).to_s : "Gratis"%></td>
           </tr>
           <%end%>
-          <%if list.q1 != nil%>
+          <%if list.q2 != nil%>
           <tr>
             <td><%=list.q2%> unidades</td>
             <td><%= (list.promotion == true) ? (list.p_q2).to_s+"%" : "Costo fijo"%></td>
             <td><%= (list.free_shipping == false) ? "$"+(list.sp_q2).to_s : "Gratis"%></td>
           </tr>
           <%end%>
-          <%if list.q1 != nil%>
+          <%if list.q3 != nil%>
           <tr>
             <td><%=list.q3%> unidades</td>
             <td><%= (list.promotion == true) ? (list.p_q3).to_s+"%" : "Costo fijo"%></td>
             <td><%= (list.free_shipping == false) ? "$"+(list.sp_q3).to_s : "Gratis"%></td>
           </tr>
           <%end%>
-          <%if list.q1 != nil%>
+          <%if list.q3 != nil%>
           <tr>
             <td><%=list.q4%> unidades</td>
             <td><%= (list.promotion == true) ? (list.p_q4).to_s+"%" : "Costo fijo"%></td>
