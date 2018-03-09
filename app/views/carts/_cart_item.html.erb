@@ -36,6 +36,7 @@
 			<% end %>
 			<div class="shopping-listgroup-details">
 				<div>
+					<h5>Cantidad de productos en la lista: <%=list_group.quantity%></h5>
 					<h5>Subtotal: <%=list_group.subtotal%></h5>
 					<h5>Envío: <%=list_group.shipping%></h5>
 					<h5>Total: <%=list_group.total%></h5>
@@ -44,9 +45,9 @@
 		</div>
 	<%end%>
 	<h4>Subtotal de tu compra: <%=current_order.subtotal%></h4>
-	<h4>Ahorro en decuentos: <%=current_order.subtotal%></h4>
-	<h4>Costo total de envío: <%=current_order.subtotal%></h4>
-	<h4>Valor total de la compra: <%=current_order.subtotal%></h4>
+	<h4>Ahorro en decuentos: <%=current_order.subtotal - current_order.total + current_order.order_shipping%></h4>
+	<h4>Costo total de envío: <%=current_order.order_shipping%></h4>
+	<h4>Valor total de la compra: <%=current_order.order_total%></h4>
 	<button class="show-btn">Comprar</button>
 
 	<script>

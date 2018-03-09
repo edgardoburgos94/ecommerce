@@ -14,14 +14,34 @@
 class Order < ApplicationRecord
   has_many :list_groups
   before_save :set_subtotal
+  before_save :set_shipping
+  before_save :set_order_total
 
-	def subtotal
-		# order_items.collect {|order_item| order_item.valid? ? (order_item.unit_price*order_item.quantity-order_item.unit_price*order_item.quantity*order_item.promotion) : 0}.sum
-    100
+  before_update :set_subtotal, :set_shipping, :set_order_total
+
+	def order_subtotal
+		list_groups.collect {|list_group| list_group.valid? ? (list_group.subtotal) : 0}.sum
 	end
+
+  def order_shipping
+		list_groups.collect {|list_group| list_group.valid? ? (list_group.shipping) : 0}.sum
+	end
+
+  def order_total
+    list_groups.collect {|list_group| list_group.valid? ? (list_group.total ) : 0}.sum
+  end
 
 	private
 		def set_subtotal
-			self[:subtotal] = subtotal
+			self[:subtotal] = order_subtotal
+		end
+    def set_shipping
+			self[:shipping] = order_shipping
+		end
+    def set_order_total
+      puts("Order subtotal#{self[:subtotal]}")
+      puts("Order shipping#{self[:shipping]}")
+
+			self[:total] = order_total
 		end
 end
