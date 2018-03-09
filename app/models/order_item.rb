@@ -23,11 +23,25 @@ class OrderItem < ApplicationRecord
   belongs_to :product
   belongs_to :list_group
 
+  validate :quantity_can_not_be_greater_than_disponiblitity
+
   before_save :set_unit_price
   before_save :set_total_price
 	before_save :set_discount
   before_save :set_shipping
   before_update :set_discount, :set_shipping
+
+  def quantity_can_not_be_greater_than_disponiblitity
+    puts("Entró a la validación")
+    puts("Catidad seleccionada: #{self[:quantity]}")
+    puts("Tamaño seleccionado: #{self[:size].split('|')[0].to_i}")
+
+    if self[:quantity] > self[:size].split('|')[0].to_i
+      puts("Tenemos un ERRORRRR <<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+      errors.add(:quantity, "La cantidad seleccionada excede a la cantidad disponible")
+    end
+
+  end
 
 	def unit_price
 		if persisted?

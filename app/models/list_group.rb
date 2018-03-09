@@ -110,11 +110,11 @@ class ListGroup < ApplicationRecord
       self[:discount] = list_discount
     end
     def set_total
-      puts("cantidad: #{self[:quantity]} <-------------------")
-      puts("subtotal: #{self[:subtotal]} <-------------------")
-      puts("envío: #{self[:shipping]} <-------------------")
-      puts("Descuento: #{self[:discount]} <-------------------")
-      puts("Holaaa")
+      # puts("cantidad: #{self[:quantity]} <-------------------")
+      # puts("subtotal: #{self[:subtotal]} <-------------------")
+      # puts("envío: #{self[:shipping]} <-------------------")
+      # puts("Descuento: #{self[:discount]} <-------------------")
+      # puts("Holaaa")
 
 
       self[:total] = (self[:subtotal] - self[:subtotal]*self[:discount]/100)+self[:shipping]
