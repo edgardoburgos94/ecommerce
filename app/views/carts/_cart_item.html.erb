@@ -21,19 +21,6 @@
 						<%= form_for(item, remote: true) do |f| %>
 						<%= f.hidden_field :product_id, value: item.product.id %>
 						<h5>Precio unitario: $<%= item.product.price %></h5>
-						<%if user_signed_in?%>
-						<h6>Descuento por:</h6>
-						<h6>Usuario registrado: -$<%= item.product.price * item.product.category.supplier.p_ure/100 %></h6>
-						<%if item.quantity >= item.product.category.supplier.cant_may%>
-						<h6>Usuario mayorista: -$<%= item.product.price * item.product.category.supplier.p_cmay/100 %></h6>
-						<%end%>
-						<%if current_user.sign_in_count > 50%>
-						<h6>Usuario recurrente: -$<%= item.product.price * item.product.category.supplier.p_cmin/100 %></h6>
-						<%end%>
-						<%if item.product.category.supplier.p_dia/100 > 0%>
-						<h6>Promoción especial proveedor: -$<%= item.product.price * item.product.category.supplier.p_dia/100 %></h6>
-						<%end%>
-						<%end%>
 						<div class="form-group">
 							<%= f.number_field :quantity, value: item.quantity.to_i, min: 1,max: item.size.split('|')[0].to_i, class: 'form-control', autocomplete: "off" %>
 						</div>
