@@ -1,37 +1,26 @@
 class OrderItemsController < ApplicationController
   def create
 		@order = current_order
-		@order_item = @order.order_items.new(order_item_params)
-    if user_signed_in?
-      promo1 = @order_item.product.category.supplier.p_ure/100
-      promo2 = []
-      if @order_item.quantity >= @order_item.product.category.supplier.cant_may
-        puts("Descuento por usuario mayorista <-----------------------------------------")
-        promo2.push(@order_item.product.category.supplier.p_cmay/100)
-      end
-      if @order_item.product.category.supplier.p_dia/100 > 0
-        puts("Descuento por promoción del día <-----------------------------------------")
-        promo2.push(@order_item.product.category.supplier.p_dia/100)
-      end
-      if current_user.sign_in_count > 50
-        puts("Descuento por usuario frecuente <-----------------------------------------")
-        promo2.push(@order_item.product.category.supplier.p_cmin/100)
-      end
-      if promo2.length > 0
-        promotion = promo1 + promo2.max
-      else
-        promotion = promo1
-      end
+
+    product_list_id = Product.find(params[:order_item][:product_id]).list.id
+    if @order.list_groups.where(list_id: product_list_id).length == 1
+      @order_item = @order.list_groups.where(list_id: product_list_id).first.order_items.new(order_item_params)
     else
-      promotion = 0
+      @list = @order.list_groups.create(list_id: product_list_id)
+      @order_item = @list.order_items.new(order_item_params)
     end
-    @order_item.discount = promotion
-    # OrderItem.validate_order_item(@order_item.size.to_i)
+
+    @order_item.discount = 0
+
     if @order_item.quantity <= @order_item.size.split('|')[0].to_i
-  		@order.save
-  		session[:order_id] = @order.id
-      flash[:notice] = "El producto se a agregado a tu carrito"
-      redirect_to request.referrer
+  		if @order.save && @order_item.save
+    		session[:order_id] = @order.id
+        flash[:notice] = "El producto se a agregado a tu carrito"
+        redirect_to request.referrer
+      else
+        flash[:notice] = "Error en guardar el producto"
+        redirect_to request.referrer
+      end
     else
       flash[:alert] = "La cantidad máxima para el producto seleccionado es de #{@order_item.size.split('|')[0].to_i}"
       redirect_to request.referrer
@@ -58,11 +47,16 @@ class OrderItemsController < ApplicationController
 
 	def destroy
 		puts("Entra al destroy <-----------------------------")
-		@order = current_order
-		@order_item = @order.order_items.find(params[:id])
-		@order_item.destroy
-		@order_items = @order.order_items
-
+    puts("#{params} paramssss <-------------------------")
+		@order_item = OrderItem.find(params[:id])
+    if @order_item.list_group.order_items.length == 1
+      @order_item.destroy
+      @order_item.list_group.destroy
+    else
+		  @order_item.destroy
+    end
+		@list_groups = current_order.list_groups
+    redirect_to request.referrer
 	end
 
 	private

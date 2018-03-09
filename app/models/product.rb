@@ -42,12 +42,15 @@
 class Product < ApplicationRecord
   belongs_to :supplier
   belongs_to :sub_category
+  belongs_to :list
 
   has_many :likes, dependent: :delete_all
   has_many :users, through: :likes
 
   has_many :order_items, dependent: :delete_all
   has_many :product_comments, dependent: :delete_all
+
+  validates :list_id,  presence: true
 
   def like_by?(user)
     likes.exists?(user: user)

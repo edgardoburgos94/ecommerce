@@ -6,24 +6,35 @@
   <% end %>
 <% end %>
 
-<% categories = SubCategory.all %>
+<% categories = @category.sub_categories.all %>
 <% sub_categories_list = [] %>
 <% categories.each do |subcategory| %>
   <% selector = [subcategory.title, subcategory.id]%>
   <% sub_categories_list.push(selector) %>
 <%end%>
 
+<% lists = current_supplier.lists %>
+<% lists_list = [] %>
+<% lists.each do |list| %>
+  <% selector = [list.title, list.id]%>
+  <% lists_list.push(selector) %>
+<%end%>
+
 <%= form_for @product, url: category_sub_category_product_path do |f| %>
   <%= f.label "Título:"%> <br>
   <%= f.text_field :title%> <br> <br>
+  <%= f.label "Categoría:"%> <br>
+  <%= f.select(:sub_category_id, options_for_select(sub_categories_list, [@product.sub_category.title, @product.sub_category.id]), {}, class: 'category-selector') %> <br> <br>
+  <%= f.label "Lista:"%> <br>
+  <%= f.select(:list_id, options_for_select(lists_list), {}, class: 'category-selector') %> <br> <br>
   <%= f.label "Descripción:"%> <br>
   <%= f.text_area :description%> <br> <br>
   <%= f.label "Link de la imagen:"%> <br>
   <%= f.text_field :img_url%> <br> <br>
   <%= f.label "Precio:"%> <br>
   <%= f.number_field :price, min: 0%> <br> <br>
-  <%= f.label "Categoría:"%> <br>
-  <%= f.select(:sub_category_id, options_for_select(sub_categories_list, [@product.sub_category.title, @product.sub_category.id]), {}, class: 'category-selector') %> <br> <br>
+  <%= f.label "Descuento del día:"%> <br>
+  <%= f.number_field :p_day, min: 0%>% <br> <br>
   <%= f.label "Tallas:"%> <br> <br>
   <%= f.label "xs:"%> <br>
   <%= f.number_field :xs, min: 0%> <br> <br>

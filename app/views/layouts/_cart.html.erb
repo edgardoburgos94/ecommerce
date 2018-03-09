@@ -1,3 +1,7 @@
 <%= link_to carts_path, :class=>"nav-link", id: "carrito", class:"arial-bold" do%>
-  Carrito de compras (<%=current_order.order_items.size%>) <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+  <%items=0%>
+  <%current_order.list_groups.each do |listgroup|%>
+    <%items = items + listgroup.order_items.size%>
+  <%end%>
+  Carrito de compras (<%=items%>) <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 <%end%>

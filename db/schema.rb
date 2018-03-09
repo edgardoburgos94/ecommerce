@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305223909) do
+ActiveRecord::Schema.define(version: 20180308222508) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -35,6 +35,20 @@ ActiveRecord::Schema.define(version: 20180305223909) do
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_likes_on_product_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "list_groups", force: :cascade do |t|
+    t.integer "quantity"
+    t.float "subtotal"
+    t.float "shipping"
+    t.float "discount"
+    t.float "total"
+    t.integer "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "list_id"
+    t.index ["list_id"], name: "index_list_groups_on_list_id"
+    t.index ["order_id"], name: "index_list_groups_on_order_id"
   end
 
   create_table "lists", force: :cascade do |t|
@@ -83,7 +97,6 @@ ActiveRecord::Schema.define(version: 20180305223909) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer "product_id"
-    t.integer "order_id"
     t.float "unit_price"
     t.integer "quantity"
     t.float "total_price"
@@ -91,6 +104,9 @@ ActiveRecord::Schema.define(version: 20180305223909) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "discount"
+    t.float "shipping"
+    t.integer "list_group_id"
+    t.index ["list_group_id"], name: "index_order_items_on_list_group_id"
   end
 
   create_table "orders", force: :cascade do |t|

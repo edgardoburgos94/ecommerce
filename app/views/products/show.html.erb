@@ -47,9 +47,10 @@
 			  		<h5 class="arial">Cantidad: <%= f.number_field :quantity, value: 1, min: 1, class: 'amount', autocomplete: "off" %></h5>
 			  	</div>
 			  	<%= f.submit "Agregar al carrito", class: 'btn add-to-cart' %>
-					<%=link_to "Perfil proveedor", supplier_path(@product.supplier)%>
 				<% end %>
 
+				<!-- links, favoritos y me gusta <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+				<%=link_to "Perfil proveedor", supplier_path(@product.supplier)%>
 				<% if @product.supplier.favourite_by? current_user %>
 					<%=link_to category_sub_category_product_favourite_path(@product.sub_category.category,@product.sub_category,@product, @product.supplier.favourites.where(user: current_user).first), method: :delete, class: "product-upvote upvote-active" do %>
 						<span class="upvote-count">Eliminar proveedor de favoritos <%= @product.supplier.favourites.count %></span>
@@ -79,7 +80,7 @@
 
 
 
-
+<!-- Productos recomendados <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 	<div class="recomended-products">
 		<%all_products = [] %>
 		<h4 class="century-gothic">Otros productos de este proveedor</h4>
@@ -103,6 +104,7 @@
 	</div>
 </div>
 
+<!-- Comentarios <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 <h4 class="our-products century-gothic" id="product-comments-title">Comentarios del producto</h4>
 <div class="show-product-comments">
 	<% @product.product_comments.each do |comment| %>
@@ -123,6 +125,110 @@
   <% end %>
 <% end %>
 </div>
+
+<!-- Tabla de descuentos y envíos <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+<%if (@product.list.free_shipping ==true )&&(@product.list.promotion == false)%>
+	<h3><%=@product.list.title%></h3>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Rango por cantidad</th>
+				<th scope="col">Procentaje de descuento</th>
+				<th scope="col">Costo de envío</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Para todas las cantidades</td>
+				<td>Precio único</td>
+				<td>Gratis</td>
+			</tr>
+		</tbody>
+	</table>
+<%else%>
+	<h3><%=@product.list.title%></h3>
+	<%if @product.list.quantity == true%>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Rango por cantidad</th>
+					<th scope="col">Procentaje de descuento</th>
+					<th scope="col">Costo de envío</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%if @product.list.q1 != nil%>
+				<tr>
+					<td><%=@product.list.q1%> unidades</td>
+					<td><%= (@product.list.promotion == true) ? (@product.list.p_q1).to_s+"%" : "Costo fijo"%></td>
+					<td><%= (@product.list.free_shipping == false) ? "$"+(@product.list.sp_q1).to_s : "Gratis"%></td>
+				</tr>
+				<%end%>
+				<%if @product.list.q2 != nil%>
+				<tr>
+					<td><%=@product.list.q2%> unidades</td>
+					<td><%= (@product.list.promotion == true) ? (@product.list.p_q2).to_s+"%" : "Costo fijo"%></td>
+					<td><%= (@product.list.free_shipping == false) ? "$"+(@product.list.sp_q2).to_s : "Gratis"%></td>
+				</tr>
+				<%end%>
+				<%if @product.list.q3 != nil%>
+				<tr>
+					<td><%=@product.list.q3%> unidades</td>
+					<td><%= (@product.list.promotion == true) ? (@product.list.p_q3).to_s+"%" : "Costo fijo"%></td>
+					<td><%= (@product.list.free_shipping == false) ? "$"+(@product.list.sp_q3).to_s : "Gratis"%></td>
+				</tr>
+				<%end%>
+				<%if @product.list.q3 != nil%>
+				<tr>
+					<td><%=@product.list.q4%> unidades</td>
+					<td><%= (@product.list.promotion == true) ? (@product.list.p_q4).to_s+"%" : "Costo fijo"%></td>
+					<td><%= (@product.list.free_shipping == false) ? "$"+(@product.list.sp_q4).to_s : "Gratis"%></td>
+				</tr>
+				<%end%>
+			</tbody>
+		</table>
+	<%else%>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Rango por precio</th>
+					<th scope="col">Procentaje de descuento</th>
+					<th scope="col">Costo de envío</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%if @product.list.p1 != nil%>
+				<tr>
+					<td>$<%=@product.list.p1%></td>
+					<td><%= (@product.list.promotion == true) ? (@product.list.p_p1).to_s+"%" : "Costo fijo"%></td>
+					<td><%= (@product.list.free_shipping == false) ? "$"+(@product.list.sp_p1).to_s : "Gratis"%></td>
+				</tr>
+				<%end%>
+				<%if @product.list.p2 != nil%>
+				<tr>
+					<td>$<%=@product.list.p2%></td>
+					<td><%= (@product.list.promotion == true) ? (@product.list.p_p2).to_s+"%" : "Costo fijo"%></td>
+					<td><%= (@product.list.free_shipping == false) ? "$"+(@product.list.sp_p2).to_s : "Gratis"%></td>
+				</tr>
+				<%end%>
+				<%if @product.list.p3 != nil%>
+				<tr>
+					<td>$<%=@product.list.p3%></td>
+					<td><%= (@product.list.promotion == true) ? (@product.list.p_p3).to_s+"%" : "Costo fijo"%></td>
+					<td><%= (@product.list.free_shipping == false) ? "$"+(@product.list.sp_p3).to_s : "Gratis"%></td>
+				</tr>
+				<%end%>
+				<%if @product.list.p4 != nil%>
+				<tr>
+					<td>$<%=@product.list.p4%></td>
+					<td><%= (@product.list.promotion == true) ? (@product.list.p_p4).to_s+"%" : "Costo fijo"%></td>
+					<td><%= (@product.list.free_shipping == false) ? "$"+(@product.list.sp_p4).to_s : "Gratis"%></td>
+				</tr>
+				<%end%>
+			</tbody>
+		</table>
+	<%end%>
+<%end%>
 
 <script>
   new DeleteActiveClass();

@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+    @category = Category.find(params[:category_id])
     @product = Product.new(product_params)
     if @product.save
       flash[:notice] = 'Se creó el producto exitosamente'
@@ -20,11 +21,12 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @order_item = current_order.order_items.new
+    @order_item = current_order.list_groups.new.order_items.new
   end
 
   def edit
     @product = Product.find(params[:id])
+    @category = Category.find(params[:category_id])
   end
 
   def update
@@ -50,7 +52,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:title, :description, :img_url, :price, :sub_category_id, :xs, :s, :m, :l, :xl, :xxl, :supplier_id, :image)
+    params.require(:product).permit(:title, :description, :img_url, :price, :sub_category_id, :list_id, :xs, :s, :m, :l, :xl, :xxl, :supplier_id, :image)
   end
 
 end

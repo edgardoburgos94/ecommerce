@@ -2,16 +2,21 @@
 #
 # Table name: order_items
 #
-#  id          :integer          not null, primary key
-#  product_id  :integer
-#  order_id    :integer
-#  unit_price  :float
-#  quantity    :integer
-#  total_price :float
-#  size        :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  discount    :float
+#  id            :integer          not null, primary key
+#  product_id    :integer
+#  unit_price    :float
+#  quantity      :integer
+#  total_price   :float
+#  size          :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  discount      :float
+#  shipping      :float
+#  list_group_id :integer
+#
+# Indexes
+#
+#  index_order_items_on_list_group_id  (list_group_id)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -13,10 +13,19 @@
   <% sub_categories_list.push(selector) %>
 <%end%>
 
+<% lists = current_supplier.lists %>
+<% lists_list = [] %>
+<% lists.each do |list| %>
+  <% selector = [list.title, list.id]%>
+  <% lists_list.push(selector) %>
+<%end%>
+
 <%= form_for @product, url: category_sub_category_products_path do |f| %>
   <%= f.hidden_field :supplier_id, :value => current_supplier.id %>
   <%= f.label "Categoría:"%> <br>
   <%= f.select(:sub_category_id, options_for_select(sub_categories_list, [@product.sub_category.title, @product.sub_category.id]), {}, class: 'category-selector') %> <br> <br>
+  <%= f.label "Lista:"%> <br>
+  <%= f.select(:list_id, options_for_select(lists_list), {}, class: 'category-selector') %> <br> <br>
   <%= f.label "Título:"%> <br>
   <%= f.text_field :title, autocomplete: "off"%> <br> <br>
   <%= f.label "Descripción:"%> <br>
@@ -28,6 +37,8 @@
   </div>
   <%= f.label "Precio:"%> <br>
   <%= f.number_field :price, autocomplete: "off"%> <br> <br>
+  <%= f.label "Descuento del día:"%> <br>
+  <%= f.number_field :p_day,value: 0, min: 0%>% <br> <br>
   <%= f.label "Tallas:"%> <br> <br>
   <%= f.label "Talla xs:"%> <br>
   <%= f.number_field :xs, value: 0, min: 0%> <br> <br>
@@ -42,5 +53,5 @@
   <%= f.label "Talla xxl:"%> <br>
   <%= f.number_field :xxl, value: 0, min: 0%> <br> <br>
   <%= f.submit "Crear producto" %>
-  
+
 <%end%>

@@ -1,13 +1,15 @@
-<% if !@order_item.nil? && @order_item.errors.any? %>
-	<ul>
-		<% @order_item.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-	</ul>
-<% end %>
 
-<% if @order_items.size>0 %>
-	<% @order_items.each do |item| %>
+
+<% if @list_groups.size>0 %>
+	<%title=""%>
+	<% @list_groups.each do |list_group| %>
+	<h1><%=if not (title == list_group.list.supplier.full_name) then list_group.list.supplier.full_name end%></h1>
+	<%title = list_group.list.supplier.full_name%>
+	<h4><%=list_group.list.title%></h4>
+
+
+		<% list_group.order_items.each do |item| %>
+
 		<div class="well">
 			<div class="row">
 				<div class="col-sm-8">
@@ -16,14 +18,14 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="pull-right">
-					<%= form_for(item, remote: true) do |f| %>
+						<%= form_for(item, remote: true) do |f| %>
 						<%= f.hidden_field :product_id, value: item.product.id %>
 						<h5>Precio unitario: $<%= item.product.price %></h5>
 						<%if user_signed_in?%>
 						<h6>Descuento por:</h6>
 						<h6>Usuario registrado: -$<%= item.product.price * item.product.category.supplier.p_ure/100 %></h6>
 						<%if item.quantity >= item.product.category.supplier.cant_may%>
-							<h6>Usuario mayorista: -$<%= item.product.price * item.product.category.supplier.p_cmay/100 %></h6>
+						<h6>Usuario mayorista: -$<%= item.product.price * item.product.category.supplier.p_cmay/100 %></h6>
 						<%end%>
 						<%if current_user.sign_in_count > 50%>
 						<h6>Usuario recurrente: -$<%= item.product.price * item.product.category.supplier.p_cmin/100 %></h6>
@@ -40,12 +42,14 @@
 							<%= link_to "Eliminar", item, method: :delete, remote: true, data: { confirm: '¿Estás seguro de eliminar este producto?' }, class: 'btn btn-danger' %>
 						</div> <br>
 						<h5>Precio total por producto: <%= item.total_price %></h5>
-					<% end %>
+						<% end %>
 					</div>
 				</div>
 			</div>
 		</div>
-	<% end %>
+		<% end %>
+	<%end%>
+
 	<h2>Valor total de la compra: <%=current_order.subtotal%></h2>
 	<button class="show-btn">Comprar</button>
 

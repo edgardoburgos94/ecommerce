@@ -192,9 +192,9 @@
 
     <%= link_to "Noticias", blog_path, class:"arial-bold", id:'blog'%>
     <a href="#contact" ><span class="arial-bold">Preguntas frecuentes</span></a>
-    <% if not supplier_signed_in?%>
-      <%= render 'layouts/cart' %>
-    <%end%>
+                                                                                                                    <%= render 'layouts/cart' %>
+                                                                                                                    <% if not supplier_signed_in?%>
+                                                                                                                    <%end%>
     <% if user_signed_in? %>
       <%= link_to "Mi perfil usuario", user_path(current_user), class:"arial-bold", id:'u-profile'  %>
     <%end%>

@@ -50,7 +50,9 @@
 #
 
 class List < ApplicationRecord
+  belongs_to :supplier
   has_many :products, dependent: :delete_all
+  has_many :list_groups, dependent: :delete_all
 
   validates :title, presence: true
   validate :quantity_cannot_be_less_than_previous_quantity
