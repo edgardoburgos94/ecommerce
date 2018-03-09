@@ -98,7 +98,7 @@ class OrderItem < ApplicationRecord
   end
 
 	def total_price
-		unit_price * quantity - (unit_price * quantity)*self[:discount]
+		unit_price * quantity - (unit_price * quantity)*self[:discount]/100
 	end
 
   def number_of_ranges(discount_vals)

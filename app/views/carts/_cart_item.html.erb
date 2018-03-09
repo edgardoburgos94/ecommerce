@@ -3,24 +3,22 @@
 <% if @list_groups.size>0 %>
 	<%title=""%>
 	<% @list_groups.each do |list_group| %>
-	<h1><%=if not (title == list_group.list.supplier.full_name) then list_group.list.supplier.full_name end%></h1>
-	<%title = list_group.list.supplier.full_name%>
-	<h4><%=list_group.list.title%></h4>
+		<h1><%=if not (title == list_group.list.supplier.full_name) then list_group.list.supplier.full_name end%></h1>
 
-
-		<% list_group.order_items.each do |item| %>
-
-		<div class="well">
-			<div class="row">
-				<div class="col-sm-8">
-					<h3><%= item.product.title %> talla <%= item.size.split('|')[1] %> <%= item.size.split('|')[0] %></h3>
-					<img src="<%= item.product.img_url %>", class= "shopping-img">
-				</div>
-				<div class="col-sm-4">
-					<div class="pull-right">
+		<div class="list-group">
+			<%title = list_group.list.supplier.full_name%>
+			<h3><%=list_group.list.title%></h3>
+			<% list_group.order_items.each do |item| %>
+			<div class="order-item">
+					<div class="shopping-product-info">
+						<h4><%= item.product.title %> talla <%= item.size.split('|')[1] %> <%= item.size.split('|')[0] %></h4>
+						<img src="<%= item.product.img_url %>", class= "shopping-img">
+						<h5>Precio unitario: $<%= item.product.price %></h5>
+						<h5>Costo de envío: <%= (item.shipping != 0) ? "$" + item.shipping.to_s : "¡Gratis!"%></h5>
+					</div>
+					<div class="shopping-edit-delete">
 						<%= form_for(item, remote: true) do |f| %>
 						<%= f.hidden_field :product_id, value: item.product.id %>
-						<h5>Precio unitario: $<%= item.product.price %></h5>
 						<div class="form-group">
 							<%= f.number_field :quantity, value: item.quantity.to_i, min: 1,max: item.size.split('|')[0].to_i, class: 'form-control', autocomplete: "off" %>
 						</div>
@@ -28,16 +26,27 @@
 							<%= f.submit "Editar cantidad", class: 'btn btn-primary' %>
 							<%= link_to "Eliminar", item, method: :delete, remote: true, data: { confirm: '¿Estás seguro de eliminar este producto?' }, class: 'btn btn-danger' %>
 						</div> <br>
-						<h5>Precio total por producto: <%= item.total_price %></h5>
 						<% end %>
 					</div>
+					<div class="shopping-product-total-price">
+						<h5>Precio total por producto: <%= item.total_price %></h5>
+						<h5>Descuento del producto: <%= item.discount %>%</h5>
+					</div>
+			</div>
+			<% end %>
+			<div class="shopping-listgroup-details">
+				<div>
+					<h5>Subtotal: <%=list_group.subtotal%></h5>
+					<h5>Envío: <%=list_group.shipping%></h5>
+					<h5>Total: <%=list_group.total%></h5>
 				</div>
 			</div>
 		</div>
-		<% end %>
 	<%end%>
-
-	<h2>Valor total de la compra: <%=current_order.subtotal%></h2>
+	<h4>Subtotal de tu compra: <%=current_order.subtotal%></h4>
+	<h4>Ahorro en decuentos: <%=current_order.subtotal%></h4>
+	<h4>Costo total de envío: <%=current_order.subtotal%></h4>
+	<h4>Valor total de la compra: <%=current_order.subtotal%></h4>
 	<button class="show-btn">Comprar</button>
 
 	<script>

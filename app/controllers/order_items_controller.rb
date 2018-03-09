@@ -32,7 +32,7 @@ class OrderItemsController < ApplicationController
 		@order = current_order
 		@order_item = OrderItem.find(params[:id])
 		@order_item.update_attributes(order_item_params)
-    @list_groups = current_order.list_groups
+    @list_groups = current_order.list_groups.order(:list_id)
 	end
 
 	def show
@@ -54,7 +54,7 @@ class OrderItemsController < ApplicationController
     else
 		  @order_item.destroy
     end
-		@list_groups = current_order.list_groups
+		@list_groups = current_order.list_groups.order(:list_id)
     redirect_to request.referrer
 	end
 

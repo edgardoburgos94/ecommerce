@@ -11,3 +11,34 @@
    max-height: 100%;
    max-width: 100%;
  }
+
+ .list-group {
+   margin-top: 30px;
+   border: 1px solid blue;
+ }
+
+ .order-item {
+   display: flex;
+   padding-left: 20px;
+   margin-top: 30px;
+   margin-bottom: 20px;
+ }
+
+.shopping-product-info {
+  width: 33%;
+  border: 1px solid green;
+}
+.shopping-edit-delete {
+  width: 33%;
+  border: 1px solid green;
+}
+.shopping-product-total-price {
+  width: 33%;
+  border: 1px solid green;
+}
+.shopping-listgroup-details {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+  border: 1px solid yellow;
+}

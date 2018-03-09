@@ -1,12 +1,15 @@
 <h1>Acá se emostrarán las listas</h1>
-
-<%=link_to "Nueva lista", new_supplier_list_path%> <br><br>
+<% if supplier_signed_in? && current_supplier.id == @supplier.id%>
+  <%=link_to "Nueva lista", new_supplier_list_path%> <br><br>
+  <%end%>
 
 <%@lists.each do |list|%>
   <%if (list.free_shipping ==true )&&(list.promotion == false)%>
     <h3><%=list.title%></h3>
-    <%=link_to "Editar", edit_supplier_list_path(current_supplier,list)%>
-    <%= link_to "Eliminar", list, method: :delete, data: { confirm: '¿Estás seguro de eliminar este producto?' } %>
+    <% if supplier_signed_in? && current_supplier.id == @supplier.id%>
+      <%=link_to "Editar", edit_supplier_list_path(current_supplier,list)%>
+      <%= link_to "Eliminar", list, method: :delete, data: { confirm: '¿Estás seguro de eliminar este producto?' } %>
+    <%end%>
     <table class="table">
       <thead>
         <tr>
@@ -25,8 +28,10 @@
     </table>
   <%else%>
     <h3><%=list.title%></h3>
-    <%=link_to "Editar", edit_supplier_list_path(current_supplier,list)%>
-    <%= link_to "Eliminar", list, method: :delete, data: { confirm: '¿Estás seguro de eliminar este producto?' } %>
+    <% if supplier_signed_in? && current_supplier.id == @supplier.id%>
+      <%=link_to "Editar", edit_supplier_list_path(current_supplier,list)%>
+      <%= link_to "Eliminar", list, method: :delete, data: { confirm: '¿Estás seguro de eliminar este producto?' } %>
+    <%end%>
     <%if list.quantity == true%>
       <table class="table">
         <thead>
