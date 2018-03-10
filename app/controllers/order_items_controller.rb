@@ -1,6 +1,7 @@
 class OrderItemsController < ApplicationController
   def create
 		@order = current_order
+    @order.save
 
     product_list_id = Product.find(params[:order_item][:product_id]).list.id
     if @order.list_groups.where(list_id: product_list_id).length == 1
@@ -10,9 +11,9 @@ class OrderItemsController < ApplicationController
       @order_item.list_group.order_items.each do |order_item|
         order_item.save
       end
+      @order.save
     else
       @list = @order.list_groups.create(list_id: product_list_id, shipping: 0, discount: 0, quantity:0)
-      puts("Antes de crear la variable")
       @order_item = @list.order_items.new(order_item_params)
       # puts("Precio del order item:#{@order_item.price}")
       # puts("Cantidad de order item:#{@order_item.quantity}")
@@ -70,19 +71,28 @@ class OrderItemsController < ApplicationController
 	def destroy
     @order = current_order
 		@order_item = OrderItem.find(params[:id])
-    if @order_item.list_group.order_items.length == 1
+    @list_group_id = OrderItem.find(params[:id]).list_group.id
+
+    if ListGroup.find(@list_group_id).order_items.length == 1
       @order_item.destroy
-      @order_item.list_group.save
-      @order_item.list_group.destroy
+      @list_group.save
+      @list_group.destroy
+      @order.save
     else
 		  @order_item.destroy
-      @order_item.list_group.save
-      @order_item.list_group.order_items.each do |order_item|
+      @list_group = ListGroup.find(@list_group_id)
+      puts("Cargar el order item eliminado: #{@order_item} <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+      puts("Order item eliminado: #{@order_item.quantity}  #{@order_item.present?} <<<<<<<<<<<<<<<<<<<<<<<<<")
+      puts("List group quantity function: #{@list_group.list_quantity} <<<<<<<<<<<<<<<<<<<<<<<<<")
+      puts("List group quantity antes dde eliminar: #{@list_group.quantity} <<<<<<<<<<<<<<<<<<<<<<<<<")
+      @list_group.save
+      puts("List group quantity al eliminar: #{@list_group.quantity} <<<<<<<<<<<<<<<<<<<<<<<<<")
+      @list_group.order_items.each do |order_item|
         order_item.save
       end
+      @order.save
     end
 
-    @order.save
 		@list_groups = current_order.list_groups.order(:list_id)
     redirect_to request.referrer
 	end
