@@ -26,21 +26,16 @@ class OrderItem < ApplicationRecord
   validate :quantity_can_not_be_greater_than_disponiblitity
 
   before_save :set_unit_price
-  before_save :set_total_price
 	before_save :set_discount
   before_save :set_shipping
-  before_update :set_discount, :set_shipping
+  before_save :set_total_price
+  before_update :set_discount, :set_shipping, :set_total_price
 
   def quantity_can_not_be_greater_than_disponiblitity
-    puts("Entró a la validación")
-    puts("Catidad seleccionada: #{self[:quantity]}")
-    puts("Tamaño seleccionado: #{self[:size].split('|')[0].to_i}")
-
     if self[:quantity] > self[:size].split('|')[0].to_i
       puts("Tenemos un ERRORRRR <<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
       errors.add(:quantity, "La cantidad seleccionada excede a la cantidad disponible")
     end
-
   end
 
 	def unit_price
@@ -84,6 +79,11 @@ class OrderItem < ApplicationRecord
     end
 
     def set_total_price
-      self[:total_price] = (self[:quantity]*self[:unit_price])  - (self[:unit_price]  * quantity)*self[:discount]/100
+      puts("Precio del order item:#{self[:unit_price]}")
+      puts("Cantidad de order item:#{self[:quantity]}")
+      puts("Descuento de order item:#{self[:discount]}")
+      puts("Sub total de order item#{self[:quantity]*self[:unit_price]}")
+      puts("Total de order item: #{(self[:quantity]*self[:unit_price])  - (self[:unit_price]  * self[:quantity])*self[:discount]/100}")
+      self[:total_price] = (self[:quantity]*self[:unit_price])  - (self[:unit_price]  * self[:quantity])*self[:discount]/100
     end
 end

@@ -25,9 +25,9 @@ class ListGroup < ApplicationRecord
   has_many :order_items
 
   before_save :set_subtotal
+  before_save :set_quantity
   before_save :set_shipping
   before_save :set_discount
-  before_save :set_quantity
   before_save :set_total
 
   before_update :set_subtotal, :set_shipping, :set_discount, :set_quantity, :set_total

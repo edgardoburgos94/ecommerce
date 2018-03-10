@@ -5,10 +5,24 @@ class OrderItemsController < ApplicationController
     product_list_id = Product.find(params[:order_item][:product_id]).list.id
     if @order.list_groups.where(list_id: product_list_id).length == 1
       @list=@order.list_groups.where(list_id: product_list_id).first
-      @order_item = @order.list_groups.where(list_id: product_list_id).first.order_items.new(order_item_params)
+      @order_item = @order.list_groups.where(list_id: product_list_id).first.order_items.create(order_item_params)
+      @order_item.list_group.save
+      @order_item.list_group.order_items.each do |order_item|
+        order_item.save
+      end
     else
       @list = @order.list_groups.create(list_id: product_list_id, shipping: 0, discount: 0, quantity:0)
+      puts("Antes de crear la variable")
       @order_item = @list.order_items.new(order_item_params)
+      # puts("Precio del order item:#{@order_item.price}")
+      # puts("Cantidad de order item:#{@order_item.quantity}")
+      # puts("Descuento de order item:#{@order_item.discount}")
+      # puts("Sub total de order item#{@order_item.subtotal}")
+      # puts("Total de order item: #{@order_item.total}")
+
+      @order_item.list_group.save
+      @order_item.save
+      @order.save
     end
     # puts("List group: #{@list} <-----------------------------")
     # puts("List group shipping: #{@list.shipping} <-----------------------------")
