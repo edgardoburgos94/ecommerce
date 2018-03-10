@@ -75,7 +75,7 @@ class OrderItemsController < ApplicationController
 
     if ListGroup.find(@list_group_id).order_items.length == 1
       @order_item.destroy
-      @list_group.save
+      @list_group = ListGroup.find(@list_group_id)
       @list_group.destroy
       @order.save
     else
