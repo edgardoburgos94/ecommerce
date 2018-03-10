@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    puts(params)
+    @supplier = current_supplier
     @lists = Supplier.find(params[:supplier_id]).lists
   end
 
