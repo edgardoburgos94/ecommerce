@@ -46,6 +46,7 @@ class OrderItemsController < ApplicationController
       @order_item.list_group.order_items.each do |order_item|
         order_item.save
       end
+      current_order.save
   		session[:order_id] = @order.id
       flash[:notice] = "El producto se a agregado a tu carrito"
       redirect_to request.referrer

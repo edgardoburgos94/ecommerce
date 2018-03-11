@@ -33,7 +33,6 @@ class OrderItem < ApplicationRecord
 
   def quantity_can_not_be_greater_than_disponiblitity
     if self[:quantity] > self[:size].split('|')[0].to_i
-      puts("Tenemos un ERRORRRR <<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
       errors.add(:quantity, "La cantidad seleccionada excede a la cantidad disponible")
     end
   end
