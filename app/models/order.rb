@@ -39,9 +39,6 @@ class Order < ApplicationRecord
 			self[:shipping] = order_shipping
 		end
     def set_order_total
-      # puts("Order subtotal#{self[:subtotal]}")
-      # puts("Order shipping#{self[:shipping]}")
-
 			self[:total] = order_total
 		end
 end

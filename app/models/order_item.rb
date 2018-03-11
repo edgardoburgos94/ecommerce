@@ -78,11 +78,6 @@ class OrderItem < ApplicationRecord
     end
 
     def set_total_price
-      puts("Precio del order item:#{self[:unit_price]}")
-      puts("Cantidad de order item:#{self[:quantity]}")
-      puts("Descuento de order item:#{self[:discount]}")
-      puts("Sub total de order item#{self[:quantity]*self[:unit_price]}")
-      puts("Total de order item: #{(self[:quantity]*self[:unit_price])  - (self[:unit_price]  * self[:quantity])*self[:discount]/100}")
       self[:total_price] = (self[:quantity]*self[:unit_price])  - (self[:unit_price]  * self[:quantity])*self[:discount]/100
     end
 end

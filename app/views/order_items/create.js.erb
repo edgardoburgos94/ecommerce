@@ -1,5 +1,9 @@
 <% if @order.errors.any? || @order_item.errors.any? %>
 	alert( "Error")
 <% else %>
-	$(".cart").html("<%= escape_javascript(render 'layouts/cart') %>")
+	console.log("Entra al create");
+	$('#prueba').hide();
+	$(".cart").html("<%= escape_javascript(render 'layouts/cart') %>");
+	$(".notices-alerts").html("<%= escape_javascript(render 'layouts/notices-alerts') %>");
+
 <% end %>

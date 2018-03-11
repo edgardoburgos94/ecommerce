@@ -192,7 +192,9 @@
 
     <%= link_to "Noticias", blog_path, class:"arial-bold", id:'blog'%>
     <a href="#contact" ><span class="arial-bold">Preguntas frecuentes</span></a>
-                                                                                                                    <%= render 'layouts/cart' %>
+    <%= link_to carts_path, :class=>"nav-link ", id: "carrito", class:"arial-bold cart" do%>
+      <%= render 'layouts/cart' %>
+    <%end%>
                                                                                                                     <% if not supplier_signed_in?%>
                                                                                                                     <%end%>
     <% if user_signed_in? %>
@@ -209,26 +211,9 @@
       <%= link_to "Cerrar sesión", destroy_supplier_session_path, method: :delete, class:"arial-bold"%>
     <% end %>
   </div>
-
-  <% if (not notice == nil) || (not alert== nil)%>
-  <div class=" notifications">
-    <% if  not notice== nil%>
-    <p class="alert alert-info alert-dismissible fade show"><%= notice %>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </p>
-
-    <%end%>
-    <% if not alert== nil%>
-    <p class="alert alert-danger alert-dismissible fade show"><%= alert %>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </p>
-    <%end%>
+  <div class="notices-alerts">
+    <%= render 'layouts/notices-alerts'%>
   </div>
-  <%end%>
 
   <%= yield %>
 

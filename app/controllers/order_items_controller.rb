@@ -15,27 +15,12 @@ class OrderItemsController < ApplicationController
     else
       @list = @order.list_groups.create(list_id: product_list_id, shipping: 0, discount: 0, quantity:0)
       @order_item = @list.order_items.new(order_item_params)
-      # puts("Precio del order item:#{@order_item.price}")
-      # puts("Cantidad de order item:#{@order_item.quantity}")
-      # puts("Descuento de order item:#{@order_item.discount}")
-      # puts("Sub total de order item#{@order_item.subtotal}")
-      # puts("Total de order item: #{@order_item.total}")
 
       @order_item.list_group.save
       @order_item.save
       @order.save
     end
-    # puts("List group: #{@list} <-----------------------------")
-    # puts("List group shipping: #{@list.shipping} <-----------------------------")
-    # puts("List group discount: #{@list.discount} <-----------------------------")
-    # puts("List group quantity: #{@list.quantity} <-----------------------------")
-    #
-    #
-    #
-    # puts("Order Item: #{@order_item} <---------------------------")
-    # puts("Order Item dicount: #{@order_item.discount} <---------------------------")
-    # puts("Order Item shipping: #{@order_item.shipping} <---------------------------")
-    # puts("Order Item total: #{@order_item.total_price} <---------------------------")
+
     @order_item.discount = @order_item.list_group.discount
 
 		if @order.save && @order_item.save
@@ -49,10 +34,17 @@ class OrderItemsController < ApplicationController
       current_order.save
   		session[:order_id] = @order.id
       flash[:notice] = "El producto se a agregado a tu carrito"
-      redirect_to request.referrer
+      # respond_to do |format|
+      #   format.html {redirect_to request.referrer}
+      #   format.js
+      # end
+
     else
       flash[:alert] = "La cantidad máxima para el producto seleccionado es de #{@order_item.size.split('|')[0].to_i}"
-      redirect_to request.referrer
+      # respond_to do |format|
+      #   format.html {redirect_to request.referrer}
+      #   format.js
+      # end
     end
 
 	end
@@ -82,12 +74,7 @@ class OrderItemsController < ApplicationController
     else
 		  @order_item.destroy
       @list_group = ListGroup.find(@list_group_id)
-      puts("Cargar el order item eliminado: #{@order_item} <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
-      puts("Order item eliminado: #{@order_item.quantity}  #{@order_item.present?} <<<<<<<<<<<<<<<<<<<<<<<<<")
-      puts("List group quantity function: #{@list_group.list_quantity} <<<<<<<<<<<<<<<<<<<<<<<<<")
-      puts("List group quantity antes dde eliminar: #{@list_group.quantity} <<<<<<<<<<<<<<<<<<<<<<<<<")
       @list_group.save
-      puts("List group quantity al eliminar: #{@list_group.quantity} <<<<<<<<<<<<<<<<<<<<<<<<<")
       @list_group.order_items.each do |order_item|
         order_item.save
       end
@@ -95,7 +82,6 @@ class OrderItemsController < ApplicationController
     end
 
 		@list_groups = current_order.list_groups.order(:list_id)
-    redirect_to request.referrer
 	end
 
 	private
