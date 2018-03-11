@@ -50,49 +50,78 @@ class ListGroup < ApplicationRecord
 
   def list_shipping
     if list.free_shipping == true
-      1
+      0
     else
-      1
-    #   if product.list.quantity == true
-    #     shipping_vals = [product.list.q1, product.list.q2, product.list.q3, product.list.q4]
-    #     shipping_prices = [product.list.sp_q1,product.list.sp_q2,product.list.sp_q3,product.list.sp_q4]
-    #     number_of_ranges(shipping_vals)
-    #     puts("#{shipping_vals}<----------------------------------------------")
-    #     puts("#{shipping_prices}<----------------------------------------------")
-    #     @shipping_val=nil
-    #     @ranges.times do |i|
-    #       puts("#{self[:unit_price]}Precio unitario <= #{shipping_vals[i]} <---------------------------------------------")
-    #       if shipping_vals[i] >= self[:unit_price]
-    #         puts("Entró #{shipping_prices[i]}")
-    #         @shipping_val = shipping_prices[i]
-    #         puts("shipping_val #{shipping_val}")
-    #       end
-    #     end
-    #     puts("#{shipping_val}<----------------------------------------------")
-    #     if not(defined?(@shipping_val)).nil?
+      if list.quantity == true
+        shipping_vals = [list.q1, list.q2, list.q3, list.q4]
+        shipping_prices = [list.sp_q1,list.sp_q2,list.sp_q3,list.sp_q4]
+        ranges = number_of_ranges(shipping_vals)
+        puts("#{ranges}<----------------------------------------------")
+        puts("Precios de envpio: #{shipping_prices}<----------------------------------------------")
+        puts("Valores de envío: #{shipping_vals}<----------------------------------------------")
+
+        ranges
+        shipping_val=nil
+        (ranges).times do |i|
+          puts(i)
+          puts("Comparación cantidad con rangos: #{self[:quantity]} >= #{shipping_vals[i]} <---------------------------------------------")
+          if shipping_vals[i] <= list_quantity
+            puts("Entró #{shipping_prices[i]}")
+            shipping_val = shipping_prices[i]
+            puts("shipping_val #{shipping_val}")
+          end
+        end
+        puts("#{shipping_val.class}<----------------------------------------------")
+        if shipping_val.class == Float
     #       puts("#{shipping_val}costo de envío <----------------------------------------------")
-    #       return @shipping_val
-    #     else
+          shipping_val
+        else
     #       puts("#{product.list.sp_p1}costo de envío primerito<----------------------------------------------")
-    #       return product.list.sp_p1
-    #     end
-    #   else
-    #     discount_vals= [product.list.p1,product.list.p2,product.list.p3,product.list.p4]
-    #     shipping_prices = [product.list.sp_p1,product.list.sp_p2,product.list.sp_p3,product.list.sp_p4]
-    #     number_of_ranges(discount_vals)
-    #     puts("#{discount_vals}<----------------------------------------------")
-    #     @ranges.times do |i|
-    #       if shipping_vals[i] <= self[:unit_price]
-    #         shipping_val = shipping_prices[i]
-    #       end
-    #     end
-    #     if shipping_val =! nil
-    #       return shipping_val
-    #     else
-    #       return product.list.sp_p1
-    #     end
-    #   end
+          list.sp_q1
+        end
+      else
+        shipping_vals = [list.p1, list.p2, list.p3, list.p4]
+        shipping_prices = [list.sp_p1,list.sp_p2,list.sp_p3,list.sp_p4]
+        ranges = number_of_ranges(shipping_vals)
+        puts("#{ranges}<----------------------------------------------")
+        puts("Precios de envpio: #{shipping_prices}<----------------------------------------------")
+        puts("Valores de envío: #{shipping_vals}<----------------------------------------------")
+
+        ranges
+        shipping_val=nil
+        (ranges).times do |i|
+          puts(i)
+          puts("Comparación cantidad con rangos: #{self[:quantity]} >= #{shipping_vals[i]} <---------------------------------------------")
+          if shipping_vals[i] <= list_quantity
+            puts("Entró #{shipping_prices[i]}")
+            shipping_val = shipping_prices[i]
+            puts("shipping_val #{shipping_val}")
+          end
+        end
+        puts("#{shipping_val.class}<----------------------------------------------")
+        if shipping_val.class == Float
+    #       puts("#{shipping_val}costo de envío <----------------------------------------------")
+          shipping_val
+        else
+    #       puts("#{product.list.sp_p1}costo de envío primerito<----------------------------------------------")
+          list.sp_p1
+        end
+      end
     end
+  end
+
+  def number_of_ranges(vals)
+    ranges=0
+    puts("Valores de envío #{vals}")
+    vals.each do |val|
+      puts("Valor de envío #{val.class}")
+      if val.class == Fixnum
+        puts("Valor de envío #{val}")
+        puts(ranges)
+        ranges=ranges+1
+      end
+    end
+    ranges
   end
 
 
@@ -110,13 +139,6 @@ class ListGroup < ApplicationRecord
       self[:discount] = list_discount
     end
     def set_total
-      # puts("cantidad: #{self[:quantity]} <-------------------")
-      # puts("subtotal: #{self[:subtotal]} <-------------------")
-      # puts("envío: #{self[:shipping]} <-------------------")
-      # puts("Descuento: #{self[:discount]} <-------------------")
-      # puts("Holaaa")
-
-
       self[:total] = (self[:subtotal] - self[:subtotal]*self[:discount]/100)+self[:shipping]
     end
 
