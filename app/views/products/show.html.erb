@@ -1,28 +1,13 @@
 <% sizes_list = [] %>
 <% selector = [] %>
-<%if @product.xs > 0 %>
-	<%selector = ["Talla XS",@product.xs.to_s+"|xs"]%>
-	<% sizes_list.push(selector) %>
-<%end%>
-<%if @product.s > 0 %>
-	<%selector = ["Talla S",@product.s.to_s+"|s" ]%>
-	<% sizes_list.push(selector) %>
-<%end%>
-<%if @product.m > 0 %>
-	<%selector = ["Talla M",@product.m.to_s+"|m"]%>
-	<% sizes_list.push(selector) %>
-<%end%>
-<%if @product.l > 0 %>
-	<%selector = ["Talla L",@product.l.to_s+"|l"]%>
-	<% sizes_list.push(selector) %>
-<%end%>
-<%if @product.xl > 0 %>
-	<%selector = ["Talla XL",@product.xl.to_s+"|xl"]%>
-	<% sizes_list.push(selector) %>
-<%end%>
-<%if @product.xxl > 0 %>
-	<%selector = ["Talla XXL",@product.xxl.to_s+"|xxl"]%>
-	<% sizes_list.push(selector) %>
+<%quantities = [@product.q1, @product.q2,@product.q3,@product.q4,@product.q5, @product.q6, @product.q7,@product.q8,@product.q9,@product.q10]%>
+<%sizes = [@product.s1, @product.s2,@product.s3,@product.s4,@product.s5, @product.s6, @product.s7,@product.s8,@product.s9,@product.s10]%>
+
+<%sizes.each_with_index do |size, i|%>
+	<%if size.class == String%>
+		<%selector = [size, quantities[i].to_s+"|"+size]%>
+		<% sizes_list.push(selector) %>
+	<%end%>
 <%end%>
 
 <div>
@@ -35,19 +20,26 @@
 			<h3 class="arial-bold"><%= @product.title %></h3>
 
 		  <h5 class="arial-bold color-naranja">$<%= @product.price %></h5> <br>
-		  <%if @product.xs + @product.s + @product.m + @product.l + @product.xl + @product.xxl > 0 %>
+			<%puts(quantities.sum > 0 && @product.check_unique==false)%>
+			<%puts("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")%>
+			<%puts(@product.unique )%>
+			<%puts("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")%>
+		  <%if (quantities.sum > 0 && @product.check_unique==false) || (@product.unique > 0 && @product.check_unique==true) %>
 
 			<div>
 				<%= form_for(@order_item, remote: true) do |f| %>
 			  	<%= f.hidden_field :product_id, value: @product.id %>
-			    <div class="form-group">
-			  		<h5 class="arial">Tallas disponibles: <%= f.select(:size, options_for_select(sizes_list), {}, class: 'size-selector') %> <br> <br>
-			    </div>
+					<%if @product.check_unique==false%>
+						<div class="form-group">
+				  		<h5 class="arial">Tallas disponibles: <%= f.select(:size, options_for_select(sizes_list), {}, class: 'size-selector') %> <br> <br>
+				    </div>
+					<%else%>
+						<%= f.hidden_field :size, value: @product.unique.to_s+"|"+"talla única" %>
+					<%end%>
 			  	<div class="form-group">
 			  		<h5 class="arial">Cantidad: <%= f.number_field :quantity, value: 1, min: 1, class: 'amount', autocomplete: "off" %></h5>
 			  	</div>
 			  	<%= f.submit "Agregar al carrito", class: 'btn add-to-cart' %>
-					<button type="button" id="prueba">Esto debe cambiar</button>
 				<% end %>
 
 				<!-- links, favoritos y me gusta <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->

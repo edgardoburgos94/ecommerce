@@ -23,7 +23,7 @@
           </th>
           <td><%=product.sub_category.category.title%></td>
           <td><%=product.title%></td>
-          <td><%=produ = product.xs + product.s + product.m + product.l + product.xl + product.xxl%></td>
+          <td><%=(product.check_unique == true) ? (produ = product.unique) : (produ = product.q1 + product.q2 + product.q3 + product.q4 + product.q5 + product.q6 + product.q7 + product.q8 + product.q9 + product.q10)%></td>
           <td>
             <%=link_to edit_category_sub_category_product_path(product.sub_category.category, product.sub_category, product) do%>
               <i class="fa fa-pencil" aria-hidden="true"></i>

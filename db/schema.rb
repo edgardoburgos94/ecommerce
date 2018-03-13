@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308222508) do
+ActiveRecord::Schema.define(version: 20180313025409) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -137,26 +137,32 @@ ActiveRecord::Schema.define(version: 20180308222508) do
     t.string "img_url3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "xs"
-    t.integer "s"
-    t.integer "m"
-    t.integer "l"
-    t.integer "xl"
-    t.integer "xxl"
     t.integer "unique"
-    t.float "p_registered_user"
     t.float "p_day"
-    t.float "p_q1"
-    t.float "p_q2"
-    t.float "p_q3"
-    t.float "p_q4"
+    t.integer "supplier_id"
+    t.integer "sub_category_id"
+    t.integer "list_id"
+    t.string "s1"
+    t.string "s2"
+    t.string "s3"
+    t.string "s4"
+    t.string "s5"
+    t.string "s6"
+    t.string "s7"
+    t.string "s8"
+    t.string "s9"
+    t.string "s10"
     t.integer "q1"
     t.integer "q2"
     t.integer "q3"
     t.integer "q4"
-    t.integer "supplier_id"
-    t.integer "sub_category_id"
-    t.integer "list_id"
+    t.integer "q5"
+    t.integer "q6"
+    t.integer "q7"
+    t.integer "q8"
+    t.integer "q9"
+    t.integer "q10"
+    t.boolean "check_unique"
     t.index ["list_id"], name: "index_products_on_list_id"
     t.index ["sub_category_id"], name: "index_products_on_sub_category_id"
     t.index ["supplier_id"], name: "index_products_on_supplier_id"

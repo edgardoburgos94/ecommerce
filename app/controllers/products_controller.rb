@@ -52,7 +52,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:title, :description, :img_url, :price, :sub_category_id, :list_id, :xs, :s, :m, :l, :xl, :xxl, :supplier_id, :p_day)
+    params.require(:product).permit(:title, :description, :img_url, :price, :sub_category_id, :list_id, :supplier_id, :p_day, :s1, :s2, :s3, :s4, :s5, :s6, :s7, :s8, :s9, :s10, :q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :q10, :check_unique, :unique)
   end
-
 end

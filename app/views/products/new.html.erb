@@ -39,19 +39,46 @@
   <%= f.number_field :price, autocomplete: "off"%> <br> <br>
   <%= f.label "Descuento del día:"%> <br>
   <%= f.number_field :p_day,value: 0, min: 0%>% <br> <br>
-  <%= f.label "Tallas:"%> <br> <br>
-  <%= f.label "Talla xs:"%> <br>
-  <%= f.number_field :xs, value: 0, min: 0%> <br> <br>
-  <%= f.label "Talla s:"%> <br>
-  <%= f.number_field :s, value: 0, min: 0%> <br> <br>
-  <%= f.label "Talla m:"%> <br>
-  <%= f.number_field :m, value: 0, min: 0%> <br> <br>
-  <%= f.label "Talla l:"%> <br>
-  <%= f.number_field :l, value: 0, min: 0%> <br> <br>
-  <%= f.label "Talla xl:"%> <br>
-  <%= f.number_field :xl, value: 0, min: 0%> <br> <br>
-  <%= f.label "Talla xxl:"%> <br>
-  <%= f.number_field :xxl, value: 0, min: 0%> <br> <br>
+
+  <%= f.label "Definir tallas y cantidades:"%> <br> <br>
+
+  <%= f.radio_button :check_unique, false, :checked => true %>
+  <%= f.label :check_unique, "Cantidades por tallas", :value => "false" %>
+  <%= f.radio_button :check_unique, true %>
+  <%= f.label :check_unique, "Tamaño único" %> <br><br>
+
+  <%= f.label "Cantidad talla única"%>
+  <%= f.number_field :unique, value: 0, min: 0%> <br> <br>
+
+  <%= f.text_field :s1, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+    <%= f.number_field :q1, value: 0, min: 0%> <br> <br>
+
+  <%= f.text_field :s2, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+    <%= f.number_field :q2, value: 0, min: 0%> <br> <br>
+
+  <%= f.text_field :s3, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+    <%= f.number_field :q3, value: 0, min: 0%> <br> <br>
+
+  <%= f.text_field :s4, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+    <%= f.number_field :q4, value: 0, min: 0%> <br> <br>
+
+  <%= f.text_field :s5, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+    <%= f.number_field :q5, value: 0, min: 0%> <br> <br>
+
+  <%= f.text_field :s6, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+    <%= f.number_field :q6, value: 0, min: 0%> <br> <br>
+
+  <%= f.text_field :s7, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+    <%= f.number_field :q7, value: 0, min: 0%> <br> <br>
+
+  <%= f.text_field :s8, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+    <%= f.number_field :q8, value: 0, min: 0%> <br> <br>
+
+  <%= f.text_field :s9, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+    <%= f.number_field :q9, value: 0, min: 0%> <br> <br>
+
+  <%= f.text_field :s10, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+  <%= f.number_field :q10, value: 0, min: 0%> <br> <br>
   <%= f.submit "Crear producto" %>
 
 <%end%>
