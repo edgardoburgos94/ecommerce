@@ -4,7 +4,7 @@
 <%sizes = [@product.s1, @product.s2,@product.s3,@product.s4,@product.s5, @product.s6, @product.s7,@product.s8,@product.s9,@product.s10]%>
 
 <%sizes.each_with_index do |size, i|%>
-	<%if size.class == String%>
+	<%if quantities[i] > 0%>
 		<%selector = [size, quantities[i].to_s+"|"+size]%>
 		<% sizes_list.push(selector) %>
 	<%end%>
