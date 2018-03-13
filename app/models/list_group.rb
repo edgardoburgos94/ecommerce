@@ -36,6 +36,10 @@ class ListGroup < ApplicationRecord
     order_items.collect {|order_item| order_item.valid? ? (order_item.unit_price * order_item.quantity) : 0}.sum
   end
 
+  def list_total
+    order_items.collect {|order_item| order_item.valid? ? (order_item.total_price) : 0}.sum
+  end
+
   def list_quantity
     order_items.collect {|order_item| order_item.valid? ? (order_item.quantity) : 0}.sum
   end
@@ -91,6 +95,7 @@ class ListGroup < ApplicationRecord
         puts("#{shipping_val.class}<----------------------------------------------")
         if shipping_val.class == Float
           puts("DESCUENTO APLICADO : #{shipping_val}<----------------------------------------------")
+
           shipping_val
         else
           puts("DESCUENTO APLICADO NINGUNO: 0%<----------------------------------------------")
@@ -193,7 +198,7 @@ class ListGroup < ApplicationRecord
       self[:discount] = list_discount
     end
     def set_total
-      self[:total] = (self[:subtotal] - self[:subtotal]*self[:discount]/100)+self[:shipping]
+      self[:total] = list_total+self[:shipping]
     end
 
 end

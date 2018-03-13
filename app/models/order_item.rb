@@ -50,7 +50,14 @@ class OrderItem < ApplicationRecord
   end
 
   def product_discount
-    list_group.discount
+    puts("DESCUENTO DEL DÍA DEL PRODUCTO: #{product.p_day} <<<<<<<<<<<<<<<<<<<<<")
+    puts("DESCUENTO MAYORISTA DEL PRODUCTO: #{list_group.discount} <<<<<<<<<<<<<<<<<<<<<<<")
+    
+    if product.p_day > list_group.discount
+      product.p_day
+    else
+      list_group.discount
+    end
   end
 
   def number_of_ranges(discount_vals)
