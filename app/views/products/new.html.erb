@@ -1,5 +1,10 @@
 <h1>Crear nuevo producto</h1>
 
+<% if @list.errors.any? %>
+  <% @list.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>
 <% if @product.errors.any? %>
   <% @product.errors.full_messages.each do |message| %>
     <li><%= message %></li>
@@ -20,65 +25,165 @@
   <% lists_list.push(selector) %>
 <%end%>
 
-<%= form_for @product, url: category_sub_category_products_path do |f| %>
+
+<%= form_for @list, url: category_sub_category_products_path do |f| %>
+<h2>Descuento y envío</h2>
+<%= radio_button_tag :new_list, false, class: "existing-list-check"%>
+<%= label :new_list, "Usar descuentos y envíos existentes", :value => "false" %>
+<%= radio_button_tag :new_list, true %>
+<%= label :new_list, "Crear nuevos descuentos y envíos" %> <br><br>
+<div class="new-list">
   <%= f.hidden_field :supplier_id, :value => current_supplier.id %>
-  <%= f.label "Categoría:"%> <br>
-  <%= f.select(:sub_category_id, options_for_select(sub_categories_list, [@product.sub_category.title, @product.sub_category.id]), {}, class: 'category-selector') %> <br> <br>
-  <%= f.label "Lista:"%> <br>
-  <%= f.select(:list_id, options_for_select(lists_list), {}, class: 'category-selector') %> <br> <br>
-  <%= f.label "Título:"%> <br>
-  <%= f.text_field :title, autocomplete: "off"%> <br> <br>
-  <%= f.label "Descripción:"%> <br>
-  <%= f.text_area :description, autocomplete: "off"%> <br> <br>
-  <%= f.label "Link de la imagen:"%> <br>
-  <%= f.text_field :img_url,value: "https://drive.google.com/uc?export=view&id=", autocomplete: "off"%> <br> <br>
-  <div class="form-group">
-    <%= f.file_field :image %> <br> <br>
+
+  <div class="field">
+    Título
+    <%= f.text_field :title, autofocus: true%> <br> <br>
+    <%= f.check_box :free_shipping, class: "check-free-shipping"%> Envíos gratis</br></br>
   </div>
-  <%= f.label "Precio:"%> <br>
-  <%= f.number_field :price, autocomplete: "off"%> <br> <br>
-  <%= f.label "Descuento del día:"%> <br>
-  <%= f.number_field :p_day,value: 0, min: 0%>% <br> <br>
+  <div class="field">
+    <%= f.check_box :promotion, class: "check-discount-range"%> Utilizar descuentos por rango</br></br>
+  </div>
 
-  <%= f.label "Definir tallas y cantidades:"%> <br> <br>
+  <div class="field">
+    Organizar rangos por: <%= f.check_box :quantity, checked: true, class: "check-quantity"%> Cantidad       <%= f.check_box :price, class: "check-price"%> Precio     </br></br>
+  </div>
+  <div class="field">
+    <h4 class="no-discount-no-shipping">Precio fijo sin costos de envío</h4>
+    <table class="table table-of-prices">
+      <thead>
+        <tr>
+          <th scope="col">Rango por precio</th>
+          <th scope="col" class= "discount-col">Descuento</th>
+          <th scope="col" class= "shipping-col">Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Compras mayores a $<%=f.number_field :p1, autofocus: true%></td>
+          <td class = "discount-col"><%=f.number_field :p_p1, autofocus: true%>%</td>
+          <td class = "shipping-col">$<%=f.number_field :sp_p1, autofocus: true %></td>
+        </tr>
+        <tr>
+          <td>Compras mayores a $<%=f.number_field :p2, autofocus: true%></td>
+          <td class = "discount-col"><%=f.number_field :p_p2, autofocus: true%>%</td>
+          <td class = "shipping-col">$<%=f.number_field :sp_p2, autofocus: true %></td>
+        </tr>
+        <tr>
+          <td>Compras mayores a $<%=f.number_field :p3, autofocus: true%></td>
+          <td class = "discount-col"><%=f.number_field :p_p3, autofocus: true%>%</td>
+          <td class = "shipping-col">$<%=f.number_field :sp_p3, autofocus: true %></td>
+        </tr>
+        <tr>
+          <td>Compras mayores a $<%=f.number_field :p4, autofocus: true%></td>
+          <td class = "discount-col"><%=f.number_field :p_p4, autofocus: true%>%</td>
+          <td class = "shipping-col">$<%=f.number_field :sp_p4, autofocus: true %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="field">
+    <table class="table table-of-quantity">
+      <thead>
+        <tr>
+          <th scope="col">Rango por cantidad</th>
+          <th scope="col"class= "discount-col">Descuento</th>
+          <th scope="col"class= "shipping-col">Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Compras mayores a <%=f.number_field :q1, autofocus: true%> unidades</td>
+          <td class = "discount-col"><%=f.number_field :p_q1, autofocus: true%>%</td>
+          <td class = "shipping-col">$<%=f.number_field :sp_q1, autofocus: true %></td>
+        </tr>
+        <tr>
+          <td>Compras mayores a <%=f.number_field :q2, autofocus: true%> unidades</td>
+          <td class = "discount-col"><%=f.number_field :p_q2, autofocus: true%>%</td>
+          <td class = "shipping-col">$<%=f.number_field :sp_q2, autofocus: true %></td>
+        </tr>
+        <tr>
+          <td>Compras mayores a <%=f.number_field :q3, autofocus: true%> unidades</td>
+          <td class = "discount-col"><%=f.number_field :p_q3, autofocus: true%>%</td>
+          <td class = "shipping-col">$<%=f.number_field :sp_q3, autofocus: true %></td>
+        </tr>
+        <tr>
+          <td>Compras mayores a <%=f.number_field :q4, autofocus: true%> unidades</td>
+          <td class = "discount-col"><%=f.number_field :p_q4, autofocus: true%>%</td>
+          <td class = "shipping-col">$<%=f.number_field :sp_q4, autofocus: true %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= f.fields_for :products, @produ  do |pf| %>
+  <div class="existing-list">
+    <%= pf.label "Lista:"%> <br>
+    <%= pf.select(:list_id, options_for_select(lists_list), {}, class: 'category-selector') %> <br> <br>
+  </div>
+  <div class="nested-product-params">
+    <h2>Información de tu producto</h2>
 
-  <%= f.radio_button :check_unique, false, :checked => true %>
-  <%= f.label :check_unique, "Cantidades por tallas", :value => "false" %>
-  <%= f.radio_button :check_unique, true %>
-  <%= f.label :check_unique, "Tamaño único" %> <br><br>
+    <%= pf.hidden_field :supplier_id, :value => current_supplier.id %>
+    <%= pf.label "Categoría:"%> <br>
+    <%= pf.select(:sub_category_id, options_for_select(sub_categories_list, [@product.sub_category.title, @product.sub_category.id]), {}, class: 'category-selector') %> <br> <br>
 
-  <%= f.label "Cantidad talla única"%>
-  <%= f.number_field :unique, value: 0, min: 0%> <br> <br>
+    <%= pf.label "Título:"%> <br>
+    <%= pf.text_field :title, autocomplete: "off"%> <br> <br>
+    <%= pf.label "Descripción:"%> <br>
+    <%= pf.text_area :description, autocomplete: "off"%> <br> <br>
+    <%= pf.label "Link de la imagen:"%> <br>
+    <%= pf.text_field :img_url,value: "https://drive.google.com/uc?export=view&id=", autocomplete: "off"%> <br> <br>
+    <%= pf.label "Precio:"%> <br>
+    <%= pf.number_field :price, autocomplete: "off"%> <br> <br>
 
-  <%= f.text_field :s1, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
-    <%= f.number_field :q1, value: 0, min: 0%> <br> <br>
+    <h2>Descuentos especiales</h2>
+    <%= pf.label "Descuento del día:"%> <br>
+    <%= pf.number_field :p_day,value: 0, min: 0%>% <br> <br>
 
-  <%= f.text_field :s2, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
-    <%= f.number_field :q2, value: 0, min: 0%> <br> <br>
+    <h2>Inventario y cantidades</h2>
+    <%= pf.radio_button :check_unique, false, :checked => true %>
+    <%= pf.label :check_unique, "Cantidades por tallas", :value => "false" %>
+    <%= pf.radio_button :check_unique, true %>
+    <%= pf.label :check_unique, "Tamaño único" %> <br><br>
 
-  <%= f.text_field :s3, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
-    <%= f.number_field :q3, value: 0, min: 0%> <br> <br>
+    <%= pf.label "Cantidad talla única"%>
+    <%= pf.number_field :unique, value: 0, min: 0%> <br> <br>
 
-  <%= f.text_field :s4, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
-    <%= f.number_field :q4, value: 0, min: 0%> <br> <br>
+    <%= pf.text_field :s1, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+      <%= pf.number_field :q1, value: 0, min: 0%> <br> <br>
 
-  <%= f.text_field :s5, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
-    <%= f.number_field :q5, value: 0, min: 0%> <br> <br>
+    <%= pf.text_field :s2, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+      <%= pf.number_field :q2, value: 0, min: 0%> <br> <br>
 
-  <%= f.text_field :s6, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
-    <%= f.number_field :q6, value: 0, min: 0%> <br> <br>
+    <%= pf.text_field :s3, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+      <%= pf.number_field :q3, value: 0, min: 0%> <br> <br>
 
-  <%= f.text_field :s7, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
-    <%= f.number_field :q7, value: 0, min: 0%> <br> <br>
+    <%= pf.text_field :s4, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+      <%= pf.number_field :q4, value: 0, min: 0%> <br> <br>
 
-  <%= f.text_field :s8, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
-    <%= f.number_field :q8, value: 0, min: 0%> <br> <br>
+    <%= pf.text_field :s5, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+      <%= pf.number_field :q5, value: 0, min: 0%> <br> <br>
 
-  <%= f.text_field :s9, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
-    <%= f.number_field :q9, value: 0, min: 0%> <br> <br>
+    <%= pf.text_field :s6, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+      <%= pf.number_field :q6, value: 0, min: 0%> <br> <br>
 
-  <%= f.text_field :s10, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
-  <%= f.number_field :q10, value: 0, min: 0%> <br> <br>
+    <%= pf.text_field :s7, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+      <%= pf.number_field :q7, value: 0, min: 0%> <br> <br>
+
+    <%= pf.text_field :s8, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+      <%= pf.number_field :q8, value: 0, min: 0%> <br> <br>
+
+    <%= pf.text_field :s9, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+      <%= pf.number_field :q9, value: 0, min: 0%> <br> <br>
+
+    <%= pf.text_field :s10, autocomplete: "off", placeholder: "Talla s/Talla 35/Talla 29-D"%>
+    <%= pf.number_field :q10, value: 0, min: 0%> <br> <br>
+  </div>
+  <%end%>
   <%= f.submit "Crear producto" %>
-
 <%end%>
+
+
+<script>
+   new ProductListForm();
+</script>

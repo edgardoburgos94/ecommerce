@@ -57,6 +57,8 @@ class Product < ApplicationRecord
   has_many :product_comments, dependent: :delete_all
 
   validates :list_id,  presence: true
+  validates :title, presence: true
+  
 
   def like_by?(user)
     likes.exists?(user: user)

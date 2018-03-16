@@ -54,6 +54,8 @@ class List < ApplicationRecord
   has_many :products, dependent: :delete_all
   has_many :list_groups, dependent: :delete_all
 
+  accepts_nested_attributes_for :products 
+
   validates :title, presence: true
   validate :quantity_cannot_be_less_than_previous_quantity
   validate :price_cannot_be_less_than_previous_price
