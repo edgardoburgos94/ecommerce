@@ -50,7 +50,7 @@ class OrderItem < ApplicationRecord
   end
 
   def product_discount
-    if product.p_day > list_group.discount
+    if product.p_day.to_i > list_group.discount
       product.p_day
     else
       list_group.discount

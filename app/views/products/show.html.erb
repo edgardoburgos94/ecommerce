@@ -1,6 +1,6 @@
 <% sizes_list = [] %>
 <% selector = [] %>
-<%quantities = [@product.q1, @product.q2,@product.q3,@product.q4,@product.q5, @product.q6, @product.q7,@product.q8,@product.q9,@product.q10]%>
+<%quantities = [@product.q1.to_i, @product.q2.to_i,@product.q3.to_i,@product.q4.to_i,@product.q5.to_i, @product.q6.to_i, @product.q7.to_i,@product.q8.to_i,@product.q9.to_i,@product.q10.to_i]%>
 <%sizes = [@product.s1, @product.s2,@product.s3,@product.s4,@product.s5, @product.s6, @product.s7,@product.s8,@product.s9,@product.s10]%>
 
 <%sizes.each_with_index do |size, i|%>

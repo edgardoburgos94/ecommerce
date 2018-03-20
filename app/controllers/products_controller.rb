@@ -12,51 +12,47 @@ class ProductsController < ApplicationController
 
   def create
     puts(params[:new_list])
-    puts("------------------------------------------------------------")
-    puts("PARAMS: #{params}" )
-    puts("------------------------------------------------------------")
-    puts("List params: #{list_params}" )
-    puts("-----------------------------------------")
-    puts("Nested params params: #{nested_product_params[:products_attributes]["0"]}" )
-    # puts("Nested products: #{nested_product_params}" )
-    # puts("List params #{product_params}" )
     @category = Category.find(params[:category_id])
-    puts(params[:new_list].class)
-    if params[:new_list] == "true"
+    puts(params[:new_list])
+    if params[:new_list] == "new"
       puts("----------------CREA UNA NUEVA LISTA----------------------")
       @list= List.new(list_params)
-      puts("LISTA: #{@list}")
-      puts("List title: #{@list.id}")
-      puts("List title: #{@list.title}")
-      puts("List free shipping: #{@list.free_shipping}")
-      puts("List promotion: #{@list.promotion}")
-      puts("List promotion: #{@list.supplier_id}")
 
       if @list.save
         @product = @list.products.new(nested_product_params[:products_attributes]["0"].except(:list_id))
-        puts("PRODUCT: #{@product} ")
-        puts("List title: #{@product.title}")
-        puts("List free shipping: #{@product.sub_category_id}")
-        puts("List promotion: #{@product.list_id}")
-        puts("List promotion: #{@product.supplier_id}")
 
         if @product.save
           flash[:notice] = 'Se creó el producto exitosamente'
           redirect_to choose_url
         else
-          puts("#{@product.errors.full_messages} <----------------------------")
-
+          @produ = @list.products.build(nested_product_params[:products_attributes]["0"].except(:list_id))
           render :new
         end
       else
-        puts("#{@list.errors.full_messages} <----------------------------")
         @produ = @list.products.build(nested_product_params[:products_attributes]["0"].except(:list_id))
         @product = @list.products.new(nested_product_params[:products_attributes]["0"].except(:list_id))
         render :new
       end
+    elsif params[:new_list] == "unique"
+      puts("----------------USA UNA LISTA PARA UN PRODUCTO ÚNICO---------------------")
+      puts("DEFAULT PRICE: #{params[:default_price]}")
+      @list= List.new(title:"Lista producto único",free_shipping: false, promotion:false, quantity:true, price: false, q1:1, sp_q1:params[:default_price], supplier_id: current_supplier.id)
 
+      if @list.save
+        @product = @list.products.new(nested_product_params[:products_attributes]["0"].except(:list_id))
 
-
+        if @product.save
+          flash[:notice] = 'Se creó el producto exitosamente'
+          redirect_to choose_url
+        else
+          @produ = @list.products.build(nested_product_params[:products_attributes]["0"].except(:list_id))
+          render :new
+        end
+      else
+        @produ = @list.products.build(nested_product_params[:products_attributes]["0"].except(:list_id))
+        @product = @list.products.new(nested_product_params[:products_attributes]["0"].except(:list_id))
+        render :new
+      end
     else
       puts("----------------USA UNA LISTA EXISTENTE----------------------")
       @product = Product.new(nested_product_params[:products_attributes]["0"])
