@@ -28,11 +28,11 @@
 
 <%= form_for @list, url: category_sub_category_products_path do |f| %>
 <h2>Descuento y envío</h2>
-<%= radio_button_tag :new_list, "existent", class: "existing-list-check"%>
-<%= label :new_list, "Usar descuentos y envíos existentes", :value => "false" %>
-<%= radio_button_tag :new_list, "unique", class: "unique-list-check" %>
+<%= radio_button_tag :new_list, "existent", true,class: "existing-list-check"%>
+<%= label :new_list, "Usar descuentos y envíos existentes" %>
+<%= radio_button_tag :new_list, "unique", false, class: "unique-list-check" %>
 <%= label :new_list, "Producto único" %>
-<%= radio_button_tag :new_list, "new", class: "new-list-check" %>
+<%= radio_button_tag :new_list, "new", false, class: "new-list-check" %>
 <%= label :new_list, "Crear nuevos descuentos y envíos" %> <br><br>
 <div class="new-list">
   <%= f.hidden_field :supplier_id, :value => current_supplier.id %>

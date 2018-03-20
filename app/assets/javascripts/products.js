@@ -1,43 +1,52 @@
-
 function DeleteActiveClass() {
   $(".active").removeClass( "active" )
 }
 
-function ProductListForm(){
-  if($('#new_list_false').prop('checked') === true){
+function ShowNewList(){
+  $('.existing-list').css("display", "none");
+  $('.new-list').css("display", "block");
+  $('.new-defoult-list').css("display", "none");
+}
+
+function ShowExistentList(){
+  $('.existing-list').css("display", "block");
+  $('.new-list').css("display", "none");
+  $('.new-defoult-list').css("display", "none");
+}
+
+function ShowDefaultList(){
+  $('.existing-list').css("display", "none");
+  $('.new-list').css("display", "none");
+  $('.new-defoult-list').css("display", "block");
+}
+
+function InitializeLists() {
+  if($('#new_list_existent').prop('checked') === true){
     console.log("Usa lista existente");
-    $('.existing-list').css("display", "block");
-    $('.new-list').css("display", "none");
-  }else {
+    ShowExistentList()
+  }else if ($('#new_list_new').prop('checked') === true){
     console.log("Crea nueva lista");
-    $('.existing-list').css("display", "none");
-    $('.new-list').css("display", "block");
+    ShowNewList()
+  }else {
+    console.log("Crea lista de producto único");
+    ShowDefaultList()
   };
+}
 
-  $('#new_list_false').on('change', function() {
-    console.log($('#new_list_false').prop('checked') === false);
+function ProductListForm(){
 
-    if($('#new_list_false').prop('checked') === true){
-      console.log("Usa lista existente");
-      $('.existing-list').css("display", "block");
-      $('.new-list').css("display", "none");
-    }else {
-      console.log("Crea nueva lista");
-      $('.existing-list').css("display", "none");
-      $('.new-list').css("display", "block");
-    };
+  InitializeLists()
+
+  $('#new_list_existent').on('change', function() {
+    InitializeLists()
   });
 
-  $('#new_list_true').on('change', function() {
-    if($('#new_list_false').prop('checked') === true){
-      console.log("Usa lista existente");
-      $('.existing-list').css("display", "block");
-      $('.new-list').css("display", "none");
-    }else {
-      console.log("Crea nueva lista");
-      $('.existing-list').css("display", "none");
-      $('.new-list').css("display", "block");
-    };
+  $('#new_list_new').on('change', function() {
+    InitializeLists()
+  });
+
+  $('#new_list_unique').on('change', function() {
+    InitializeLists()
   });
 
 
