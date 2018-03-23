@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313025409) do
+ActiveRecord::Schema.define(version: 20180321040157) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -163,6 +163,7 @@ ActiveRecord::Schema.define(version: 20180313025409) do
     t.integer "q9"
     t.integer "q10"
     t.boolean "check_unique"
+    t.string "reference"
     t.index ["list_id"], name: "index_products_on_list_id"
     t.index ["sub_category_id"], name: "index_products_on_sub_category_id"
     t.index ["supplier_id"], name: "index_products_on_supplier_id"

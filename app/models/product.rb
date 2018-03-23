@@ -37,6 +37,7 @@
 #  q9              :integer
 #  q10             :integer
 #  check_unique    :boolean
+#  reference       :string
 #
 # Indexes
 #
